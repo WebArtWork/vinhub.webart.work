@@ -5,26 +5,31 @@ import {
 	inject,
 	signal,
 } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
-import { ListingShortComponent } from '../../../listing/listing-short/listing-short.component';
-import { ListingService } from '../../../listing/listing.service';
 import { CarService } from '../../../car/car.service';
+import { ListingCardComponent } from '../../../listing/listing-card/listing-card.component';
+import { ListingService } from '../../../listing/listing.service';
 
 @Component({
 	selector: 'app-explore',
 	imports: [
 		FormsModule,
+		RouterLink,
+		ButtonModule,
 		InputTextModule,
 		SelectModule,
-		ListingShortComponent,
+		ListingCardComponent,
 	],
 	templateUrl: './explore.component.html',
 	styleUrl: './explore.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExplorePageComponent {
+	private readonly _router = inject(Router);
 	private readonly _listingService = inject(ListingService);
 	private readonly _carService = inject(CarService);
 
@@ -48,4 +53,8 @@ export class ExplorePageComponent {
 			return haystack.includes(query);
 		});
 	});
+
+	openListing(id: string): void {
+		this._router.navigate(['/listing', id]);
+	}
 }

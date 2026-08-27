@@ -8,7 +8,12 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { UserService } from '@wawjs/ngx-bos';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 import { CompanyService } from '../../company/company.service';
-import { ThemeState } from '../../theme/theme-state';
+import {
+	ThemeDensity,
+	ThemeMode,
+	ThemeRadius,
+	ThemeState,
+} from '../../theme/theme-state';
 import { FooterLink } from './footer.types';
 
 @Component({
@@ -36,15 +41,15 @@ export class FooterComponent {
 	readonly radius = computed(() => this.themeService.radius() ?? 'rounded');
 	readonly radiuses = computed(() => this.themeService.radiuses());
 
-	setMode(mode: string): void {
+	setMode(mode: ThemeMode): void {
 		this.themeService.setMode(mode);
 	}
 
-	setDensity(density: string): void {
+	setDensity(density: ThemeDensity): void {
 		this.themeService.setDensity(density);
 	}
 
-	setRadius(radius: string): void {
+	setRadius(radius: ThemeRadius): void {
 		this.themeService.setRadius(radius);
 	}
 

@@ -1,0 +1,42 @@
+<p-card styleClass="listing-card" (click)="onCardClick()">
+	<ng-template #header>
+		@if (image()) {
+		<img
+			class="listing-card__photo"
+			[src]="image()"
+			[alt]="subtitle()"
+			loading="lazy"
+		/>
+		} @else {
+		<div class="listing-card__photo listing-card__photo--placeholder">
+			<i class="pi pi-car"></i>
+		</div>
+		}
+	</ng-template>
+
+	<h3 class="listing-card__title">{{ listing().title }}</h3>
+	<p class="listing-card__subtitle">{{ subtitle() }}</p>
+
+	<div class="listing-card__tags">
+		<p-tag [value]="listing().kind | titlecase" severity="secondary" />
+		<p-tag
+			[value]="listing().status | titlecase"
+			[severity]="listing().status === 'active' ? 'success' : 'warn'"
+		/>
+	</div>
+
+	<div class="listing-card__meta">
+		<span class="listing-card__price">
+			{{ listing().price | currency: listing().currency : 'symbol' :
+			'1.0-0' }} @if (listing().rentalPeriod) {
+			<span class="listing-card__period"
+				>/{{ listing().rentalPeriod }}</span
+			>
+			}
+		</span>
+		@if (car(); as car) {
+		<span>{{ car.mileage | number }} mi</span>
+		}
+		<span>{{ listing().views }} views</span>
+	</div>
+</p-card>

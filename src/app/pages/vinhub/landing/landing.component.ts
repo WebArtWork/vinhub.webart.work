@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CardModule } from '@wawjs/ngx-prime/card';
+import { FooterComponent } from '../../../layouts/footer/footer.component';
 
 interface LandingScenario {
 	icon: string;
@@ -11,7 +12,7 @@ interface LandingScenario {
 
 @Component({
 	selector: 'app-landing',
-	imports: [RouterLink, ButtonModule, CardModule],
+	imports: [RouterLink, ButtonModule, CardModule, FooterComponent],
 	templateUrl: './landing.component.html',
 	styleUrl: './landing.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

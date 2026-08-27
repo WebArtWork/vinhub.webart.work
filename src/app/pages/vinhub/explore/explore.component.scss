@@ -1,21 +1,33 @@
-.explore {
+.explore-page__header {
 	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
 
-	&__filters {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
+.explore-page__title {
+	margin: 0 1rem 0 0;
+}
 
-	&__results {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
+.explore-page__search {
+	min-width: 200px;
+}
 
-	&__empty {
-		color: var(--text-color-secondary, #64748b);
-	}
+.explore-page__kind {
+	min-width: 160px;
+}
+
+.explore-page__map-link {
+	margin-left: auto;
+}
+
+.explore-page__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.explore-page__empty {
+	color: var(--c-text-muted);
 }

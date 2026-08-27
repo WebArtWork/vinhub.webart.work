@@ -1,0 +1,92 @@
+:host {
+	display: block;
+	cursor: pointer;
+}
+
+:host ::ng-deep .listing-card {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
+}
+
+:host ::ng-deep .listing-card .p-card-header {
+	position: relative;
+	overflow: hidden;
+	flex: 0 0 220px;
+	width: 220px;
+	min-height: 140px;
+
+	@media (max-width: 480px) {
+		flex-basis: auto;
+		width: 100%;
+		height: 140px;
+	}
+}
+
+:host ::ng-deep .listing-card .p-card-body {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.listing-card__photo {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: var(--radius-card, 10px) 0 0 var(--radius-card, 10px);
+
+	@media (max-width: 480px) {
+		border-radius: var(--radius-card, 10px) var(--radius-card, 10px) 0 0;
+	}
+
+	&--placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--surface-100, #f1f5f9);
+		font-size: 2rem;
+		color: var(--text-color-secondary, #64748b);
+	}
+}
+
+.listing-card__title {
+	margin: 0.25rem 0;
+	font-size: 1.05rem;
+}
+
+.listing-card__subtitle {
+	margin: 0 0 0.75rem;
+	color: var(--p-text-muted-color);
+	font-size: 0.85rem;
+}
+
+.listing-card__tags {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.listing-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+	font-size: 0.85rem;
+	color: var(--p-text-muted-color);
+}
+
+.listing-card__price {
+	font-weight: 600;
+	color: var(--c-text-primary);
+}
+
+.listing-card__period {
+	font-size: 0.75rem;
+	font-weight: 400;
+	color: var(--p-text-muted-color);
+}
