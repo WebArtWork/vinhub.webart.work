@@ -1,0 +1,29 @@
+<div class="editor">
+	<p-select class="editor__select" [options]="entities" [(ngModel)]="entity" />
+
+	<div class="editor__form">
+		@switch (entity()) {
+			@case ('car') {
+				<app-car-form />
+			}
+			@case ('listing') {
+				<app-listing-form />
+			}
+			@case ('record') {
+				<app-record-form />
+			}
+			@case ('manufacturer') {
+				<app-manufacturer-form />
+			}
+			@case ('dealership') {
+				<app-dealership-form />
+			}
+			@case ('salesperson') {
+				<app-salesperson-form />
+			}
+			@case ('user') {
+				<app-user-form />
+			}
+		}
+	</div>
+</div>

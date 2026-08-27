@@ -1,0 +1,16 @@
+<div class="records-page">
+	<h1 class="records-page__title">
+		Digital passport
+		@if (car(); as car) {
+			— {{ car.year }} {{ car.make }} {{ car.model }}
+		}
+	</h1>
+
+	@if (records().length) {
+		@for (record of records(); track record._id) {
+			<app-record-view [record]="record" />
+		}
+	} @else {
+		<p>No history records for this car yet.</p>
+	}
+</div>

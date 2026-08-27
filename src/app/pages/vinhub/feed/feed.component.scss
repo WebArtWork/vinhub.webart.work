@@ -1,0 +1,22 @@
+.feed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	max-width: 32rem;
+	margin: 0 auto;
+
+	&__card {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__actions {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	&__empty {
+		color: var(--text-color-secondary, #64748b);
+	}
+}

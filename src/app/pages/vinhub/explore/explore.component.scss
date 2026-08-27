@@ -1,0 +1,21 @@
+.explore {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	&__filters {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	&__results {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	&__empty {
+		color: var(--text-color-secondary, #64748b);
+	}
+}

@@ -1,0 +1,13 @@
+<div class="map-page">
+	<div class="map-page__canvas">
+		<app-leaflet-map [center]="center()" [markers]="markers()" (markerSelected)="onMarkerSelected($event)" />
+	</div>
+
+	@if (selectedDealership(); as dealership) {
+		<div class="map-page__preview">
+			<div class="map-page__preview-title">{{ dealership.name }}</div>
+			<div class="map-page__preview-address">{{ dealership.address }}, {{ dealership.city }}</div>
+			<button pButton type="button" (click)="openDealership(dealership._id)">Open dealership</button>
+		</div>
+	}
+</div>

@@ -1,0 +1,14 @@
+<div class="feed">
+	@if (currentCar(); as car) {
+		<div class="feed__card" (click)="openListing()">
+			<app-car-view [car]="car" />
+		</div>
+
+		<div class="feed__actions">
+			<button pButton severity="danger" (click)="ignore()"><i class="pi pi-times"></i></button>
+			<button pButton severity="success" (click)="favourite()"><i class="pi pi-heart"></i></button>
+		</div>
+	} @else {
+		<p class="feed__empty">No more listings to show. Check back later!</p>
+	}
+</div>

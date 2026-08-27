@@ -1,0 +1,19 @@
+.car-page {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	&__section {
+		h2 {
+			font-size: 1.1rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&__section-heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+}

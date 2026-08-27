@@ -65,10 +65,16 @@
 								"glob": "**/*",
 								"input": "node_modules/tinymce",
 								"output": "assets/tinymce"
+							},
+							{
+								"glob": "**/*",
+								"input": "node_modules/leaflet/dist/images",
+								"output": "assets/leaflet"
 							}
 						],
 						"styles": [
 							"node_modules/tailwindcss-primeui/v4/index.css",
+							"node_modules/leaflet/dist/leaflet.css",
 							"src/styles.scss"
 						],
 						"scripts": [],
@@ -80,7 +86,8 @@
 						},
 						"allowedCommonJsDependencies": [
 							"brace",
-							"ace-builds"
+							"ace-builds",
+							"leaflet"
 						],
 						"browser": "src/main.ts"
 					},

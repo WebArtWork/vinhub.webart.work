@@ -1,0 +1,10 @@
+.editor {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	max-width: 32rem;
+
+	&__select {
+		align-self: flex-start;
+	}
+}
