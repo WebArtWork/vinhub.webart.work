@@ -9,8 +9,8 @@ export const environment = {
 		password: '',
 	},
 	image: {
-		default: 'https://ngx.webart.work/logo.png',
-		logo: 'https://ngx.webart.work/logo.png',
+		default: '/logo.png',
+		logo: '/logo.png',
 	},
 	defaultLanguageCode: 'en',
 	languages: [
