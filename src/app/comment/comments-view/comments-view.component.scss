@@ -1,0 +1,8 @@
+.comments-view {
+	display: flex;
+	flex-direction: column;
+
+	&__empty {
+		color: var(--text-color-secondary, #64748b);
+	}
+}

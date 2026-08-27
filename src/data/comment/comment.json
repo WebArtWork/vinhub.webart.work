@@ -1,0 +1,37 @@
+[
+	{
+		"_id": "comment-001",
+		"targetType": "listing",
+		"targetId": "listing-001",
+		"authorId": "user-002",
+		"rating": 5,
+		"text": "Great condition car, exactly as described. Smooth transaction.",
+		"createdAt": "2026-07-05T12:00:00.000Z"
+	},
+	{
+		"_id": "comment-002",
+		"targetType": "dealership",
+		"targetId": "dealership-001",
+		"authorId": "user-002",
+		"rating": 4,
+		"text": "Friendly staff and a good selection of vehicles, would recommend.",
+		"createdAt": "2026-06-22T09:30:00.000Z"
+	},
+	{
+		"_id": "comment-003",
+		"targetType": "salesperson",
+		"targetId": "salesperson-001",
+		"authorId": "user-001",
+		"rating": 5,
+		"text": "Maria was extremely helpful and answered all my questions promptly.",
+		"createdAt": "2026-07-11T15:20:00.000Z"
+	},
+	{
+		"_id": "comment-004",
+		"targetType": "car",
+		"targetId": "car-003",
+		"authorId": "user-002",
+		"text": "Curious if this Model 3 still has the full self-driving package included?",
+		"createdAt": "2026-07-19T18:45:00.000Z"
+	}
+]

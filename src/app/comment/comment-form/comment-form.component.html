@@ -1,0 +1,9 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="comment-form">
+	<p-rating [(ngModel)]="rating" [ngModelOptions]="{ standalone: true }" />
+
+	<textarea pTextarea class="w-full" placeholder="Write a comment..." [formField]="commentForm.text"></textarea>
+
+	<div class="comment-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Post</span></button>
+	</div>
+</form>
