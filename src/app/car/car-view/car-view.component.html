@@ -1,0 +1,41 @@
+<p-card styleClass="car-view">
+	@if (image()) {
+		<img class="car-view__img" [src]="image()" [alt]="title()" />
+	} @else {
+		<div class="car-view__img car-view__img--placeholder">
+			<i class="pi pi-car"></i>
+		</div>
+	}
+
+	<div class="car-view__body">
+		<div class="car-view__heading">
+			<h1 class="car-view__title">{{ title() }}</h1>
+			<p-tag [value]="car().condition | titlecase" [severity]="car().condition === 'new' ? 'success' : 'info'" />
+		</div>
+
+		<div class="car-view__price">{{ car().price | currency: car().currency : 'symbol' : '1.0-0' }}</div>
+
+		<div class="car-view__tags">
+			<p-tag [value]="car().type | titlecase" severity="secondary" />
+			<p-tag [value]="car().transmission | titlecase" severity="secondary" />
+			<p-tag [value]="car().fuelType | titlecase" severity="secondary" />
+		</div>
+
+		<dl class="car-view__specs">
+			<div class="car-view__spec">
+				<dt>VIN</dt>
+				<dd>{{ car().vin }}</dd>
+			</div>
+			<div class="car-view__spec">
+				<dt>Mileage</dt>
+				<dd>{{ car().mileage | number }} mi</dd>
+			</div>
+			<div class="car-view__spec">
+				<dt>Color</dt>
+				<dd>{{ car().color }}</dd>
+			</div>
+		</dl>
+
+		<p class="car-view__description">{{ car().description }}</p>
+	</div>
+</p-card>

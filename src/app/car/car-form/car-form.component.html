@@ -1,0 +1,21 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="car-form">
+	<input pInputText class="w-full" placeholder="Make" [formField]="carForm.make" />
+	<input pInputText class="w-full" placeholder="Model" [formField]="carForm.model" />
+	<p-inputnumber class="w-full" placeholder="Year" [formField]="carForm.year" [useGrouping]="false" />
+	<input pInputText class="w-full" placeholder="VIN" [formField]="carForm.vin" />
+
+	<p-select class="w-full" placeholder="Type" [options]="types" [formField]="carForm.type" />
+	<p-select class="w-full" placeholder="Transmission" [options]="transmissions" [formField]="carForm.transmission" />
+	<p-select class="w-full" placeholder="Fuel type" [options]="fuelTypes" [formField]="carForm.fuelType" />
+	<p-select class="w-full" placeholder="Condition" [options]="conditions" [formField]="carForm.condition" />
+
+	<p-inputnumber class="w-full" placeholder="Price" [formField]="carForm.price" mode="currency" [currency]="carModel().currency" />
+	<p-inputnumber class="w-full" placeholder="Mileage" [formField]="carForm.mileage" [useGrouping]="true" />
+	<input pInputText class="w-full" placeholder="Color" [formField]="carForm.color" />
+
+	<textarea pTextarea class="w-full" placeholder="Description" [formField]="carForm.description"></textarea>
+
+	<div class="car-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>

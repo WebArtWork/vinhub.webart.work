@@ -1,0 +1,71 @@
+.car-view {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	&__img {
+		width: 100%;
+		max-height: 24rem;
+		object-fit: cover;
+		border-radius: var(--radius-lg, 0.75rem);
+
+		&--placeholder {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--surface-100, #f1f5f9);
+			font-size: 3rem;
+			color: var(--text-color-secondary, #64748b);
+		}
+	}
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	&__price {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--primary-color, #2563eb);
+	}
+
+	&__specs {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+		gap: 1rem;
+		margin: 0;
+	}
+
+	&__spec {
+		dt {
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			color: var(--text-color-secondary, #64748b);
+		}
+
+		dd {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+
+	&__description {
+		color: var(--text-color-secondary, #64748b);
+		line-height: 1.5;
+	}
+}
