@@ -1,0 +1,30 @@
+<p-card styleClass="salesperson-view">
+	<div class="salesperson-view__heading">
+		<app-salesperson-icon [salesperson]="salesperson()" />
+		<div>
+			<h1 class="salesperson-view__title">{{ salesperson().name }}</h1>
+			<div class="salesperson-view__subtitle">{{ salesperson().title }}</div>
+		</div>
+	</div>
+
+	<p-rating [ngModel]="salesperson().rating" [readonly]="true" />
+
+	<dl class="salesperson-view__specs">
+		<div class="salesperson-view__spec">
+			<dt>Dealership</dt>
+			<dd>{{ dealership()?.name ?? 'Unknown' }}</dd>
+		</div>
+		<div class="salesperson-view__spec">
+			<dt>Phone</dt>
+			<dd>{{ salesperson().phone }}</dd>
+		</div>
+		<div class="salesperson-view__spec">
+			<dt>Email</dt>
+			<dd>{{ salesperson().email }}</dd>
+		</div>
+		<div class="salesperson-view__spec">
+			<dt>Deals closed</dt>
+			<dd>{{ salesperson().dealsClosed }}</dd>
+		</div>
+	</dl>
+</p-card>

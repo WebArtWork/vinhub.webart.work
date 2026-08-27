@@ -1,0 +1,7 @@
+<a class="salesperson-short" [routerLink]="['/salesperson', salesperson()._id]">
+	<app-salesperson-icon [salesperson]="salesperson()" />
+	<div class="salesperson-short__body">
+		<div class="salesperson-short__name">{{ salesperson().name }}</div>
+		<div class="salesperson-short__title">{{ salesperson().title }}</div>
+	</div>
+</a>

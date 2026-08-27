@@ -1,0 +1,46 @@
+[
+	{
+		"_id": "salesperson-001",
+		"name": "Maria Chen",
+		"dealershipId": "dealership-001",
+		"title": "Senior Sales Consultant",
+		"phone": "+1-415-555-0111",
+		"email": "maria.chen@downtownautogroup.example",
+		"avatar": "/assets/salesperson/maria-chen.jpg",
+		"rating": 4.9,
+		"dealsClosed": 214
+	},
+	{
+		"_id": "salesperson-002",
+		"name": "Derek Owusu",
+		"dealershipId": "dealership-001",
+		"title": "Sales Consultant",
+		"phone": "+1-415-555-0121",
+		"email": "derek.owusu@downtownautogroup.example",
+		"avatar": "/assets/salesperson/derek-owusu.jpg",
+		"rating": 4.6,
+		"dealsClosed": 138
+	},
+	{
+		"_id": "salesperson-003",
+		"name": "Priya Natarajan",
+		"dealershipId": "dealership-002",
+		"title": "EV Sales Specialist",
+		"phone": "+1-510-555-0143",
+		"email": "priya.natarajan@bayareamotors.example",
+		"avatar": "/assets/salesperson/priya-natarajan.jpg",
+		"rating": 4.8,
+		"dealsClosed": 176
+	},
+	{
+		"_id": "salesperson-004",
+		"name": "Tom Reilly",
+		"dealershipId": "dealership-003",
+		"title": "Sales Manager",
+		"phone": "+1-415-555-0198",
+		"email": "tom.reilly@ggautohaus.example",
+		"avatar": "/assets/salesperson/tom-reilly.jpg",
+		"rating": 4.7,
+		"dealsClosed": 302
+	}
+]

@@ -1,0 +1,19 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="salesperson-form">
+	<input pInputText class="w-full" placeholder="Name" [formField]="salespersonForm.name" />
+	<input pInputText class="w-full" placeholder="Title" [formField]="salespersonForm.title" />
+	<p-select
+		class="w-full"
+		placeholder="Dealership"
+		[options]="dealerships()"
+		optionLabel="name"
+		optionValue="_id"
+		[formField]="salespersonForm.dealershipId"
+	/>
+	<input pInputText class="w-full" placeholder="Phone" [formField]="salespersonForm.phone" />
+	<input pInputText class="w-full" placeholder="Email" [formField]="salespersonForm.email" />
+	<input pInputText class="w-full" placeholder="Avatar URL" [formField]="salespersonForm.avatar" />
+
+	<div class="salesperson-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>
