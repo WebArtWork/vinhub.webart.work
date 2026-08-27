@@ -11,6 +11,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Feed',
 				description: 'Swipe through active Vinhub listings.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -24,6 +25,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Explore',
 				description: 'Search and filter Vinhub listings.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -39,6 +41,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Map',
 				description: 'Find Vinhub partner dealerships near you.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -68,6 +71,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Car',
 				description: 'Car details, digital passport, and listings.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -81,6 +85,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Listing',
 				description: 'Listing details and contact options.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -97,6 +102,7 @@ export const vinhubRoutes: Routes = [
 				description:
 					"A car's full service, repair, and ownership history.",
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -112,6 +118,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Manufacturer',
 				description: 'Manufacturer profile and available cars.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -127,6 +134,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Dealership',
 				description: 'Dealership profile, sales team, and inventory.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -142,6 +150,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Salesperson',
 				description: 'Salesperson profile and reviews.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>
@@ -157,6 +166,7 @@ export const vinhubRoutes: Routes = [
 				title: 'Client',
 				description: 'Public Vinhub client profile.',
 				image: vinhubSeoImage,
+				index: false,
 			},
 		},
 		loadComponent: () =>

@@ -37,6 +37,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Вхід',
+						description: 'Sign in or create a VIN Hub account.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -61,6 +63,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Мій профіль',
+						description: 'Manage your VIN Hub account profile.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -74,6 +78,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Мої налаштування',
+						description: 'Manage your VIN Hub account settings.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -97,6 +103,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Користувачі',
+						description: 'Manage VIN Hub platform users.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -108,6 +116,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Клієнти',
+						description: 'Manage VIN Hub clients.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -119,6 +129,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Форми',
+						description: 'Manage VIN Hub dynamic forms.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
@@ -130,6 +142,8 @@ export const routes: Routes = [
 				data: {
 					meta: {
 						title: 'Форми',
+						description: 'Manage VIN Hub dynamic forms.',
+						index: false,
 					},
 				},
 				loadChildren: () =>
