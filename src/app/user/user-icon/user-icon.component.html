@@ -1,0 +1,6 @@
+<p-avatar
+	[image]="user().avatar || undefined"
+	[label]="user().avatar ? undefined : user().name.charAt(0)"
+	shape="circle"
+	[style]="{ width: '2.5rem', height: '2.5rem' }"
+/>

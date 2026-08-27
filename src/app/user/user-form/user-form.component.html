@@ -1,0 +1,11 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="user-form">
+	<input pInputText class="w-full" placeholder="Name" [formField]="userForm.name" />
+	<p-select class="w-full" placeholder="Role" [options]="roles" [formField]="userForm.role" />
+	<input pInputText class="w-full" placeholder="Location" [formField]="userForm.location" />
+	<input pInputText class="w-full" placeholder="Avatar URL" [formField]="userForm.avatar" />
+	<textarea pTextarea class="w-full" placeholder="Bio" [formField]="userForm.bio"></textarea>
+
+	<div class="user-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>

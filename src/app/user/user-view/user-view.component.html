@@ -1,0 +1,28 @@
+<p-card styleClass="user-view">
+	<div class="user-view__heading">
+		<app-user-icon [user]="user()" />
+		<div>
+			<h1 class="user-view__title">{{ user().name }}</h1>
+			<p-tag [value]="user().role | titlecase" severity="secondary" />
+		</div>
+	</div>
+
+	<p-rating [ngModel]="user().rating" [readonly]="true" />
+
+	<p class="user-view__bio">{{ user().bio }}</p>
+
+	<dl class="user-view__specs">
+		<div class="user-view__spec">
+			<dt>Location</dt>
+			<dd>{{ user().location }}</dd>
+		</div>
+		<div class="user-view__spec">
+			<dt>Member since</dt>
+			<dd>{{ user().memberSince | date: 'mediumDate' }}</dd>
+		</div>
+		<div class="user-view__spec">
+			<dt>Listings</dt>
+			<dd>{{ user().listingsCount }}</dd>
+		</div>
+	</dl>
+</p-card>

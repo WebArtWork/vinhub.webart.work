@@ -1,0 +1,7 @@
+<a class="user-short" [routerLink]="['/client', user()._id]">
+	<app-user-icon [user]="user()" />
+	<div class="user-short__body">
+		<div class="user-short__name">{{ user().name }}</div>
+		<div class="user-short__role">{{ user().role | titlecase }}</div>
+	</div>
+</a>
