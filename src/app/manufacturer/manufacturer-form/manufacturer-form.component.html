@@ -1,12 +1,12 @@
-<form (submit)="wFormSubmit(); $event.preventDefault()" class="manufacturer-form">
-	<input pInputText class="w-full" placeholder="Name" [formField]="manufacturerForm.name" />
-	<input pInputText class="w-full" placeholder="Country" [formField]="manufacturerForm.country" />
-	<p-inputnumber class="w-full" placeholder="Founded" [formField]="manufacturerForm.founded" [useGrouping]="false" />
-	<input pInputText class="w-full" placeholder="Logo URL" [formField]="manufacturerForm.logo" />
-	<input pInputText class="w-full" placeholder="Website" [formField]="manufacturerForm.website" />
-	<textarea pTextarea class="w-full" placeholder="Description" [formField]="manufacturerForm.description"></textarea>
+<form (submit)="save(); $event.preventDefault()" class="manufacturer-form">
+	<input pInputText class="w-full" placeholder="Name" [ngModel]="model().name" (ngModelChange)="updateModel('name', $event)" name="name" />
+	<input pInputText class="w-full" placeholder="Country" [ngModel]="model().country" (ngModelChange)="updateModel('country', $event)" name="country" />
+	<p-inputnumber class="w-full" placeholder="Founded" [ngModel]="model().founded" (ngModelChange)="updateModel('founded', $event)" name="founded" [useGrouping]="false" />
+	<input pInputText class="w-full" placeholder="Logo URL" [ngModel]="model().logo" (ngModelChange)="updateModel('logo', $event)" name="logo" />
+	<input pInputText class="w-full" placeholder="Website" [ngModel]="model().website" (ngModelChange)="updateModel('website', $event)" name="website" />
+	<textarea pTextarea class="w-full" placeholder="Description" [ngModel]="model().description" (ngModelChange)="updateModel('description', $event)" name="description"></textarea>
 
 	<div class="manufacturer-form__actions">
-		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
 	</div>
 </form>

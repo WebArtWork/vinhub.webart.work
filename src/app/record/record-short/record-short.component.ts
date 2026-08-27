@@ -1,4 +1,4 @@
-import { DatePipe, DecimalPipe, TitleCasePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 import { TagModule } from '@wawjs/ngx-prime/tag';
 import { CarRecord } from '../record.interface';
@@ -13,7 +13,7 @@ const TYPE_ICON: Record<string, string> = {
 
 @Component({
 	selector: 'app-record-short',
-	imports: [DatePipe, DecimalPipe, TitleCasePipe, TagModule],
+	imports: [DatePipe, DecimalPipe, TagModule],
 	templateUrl: './record-short.component.html',
 	styleUrl: './record-short.component.scss',
 })

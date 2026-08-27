@@ -1,15 +1,14 @@
 import { Component, computed, input, output, signal } from '@angular/core';
-import { FormField, form, submit } from '@angular/forms/signals';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputNumberModule } from '@wawjs/ngx-prime/inputnumber';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 import { Dealership } from '../dealership.interface';
-import { dealershipFormSchema } from './dealership-form.schema';
 
 @Component({
 	selector: 'app-dealership-form',
-	imports: [FormField, ButtonModule, InputTextModule, InputNumberModule, TranslateDirective],
+	imports: [FormsModule, ButtonModule, InputTextModule, InputNumberModule, TranslateDirective],
 	templateUrl: './dealership-form.component.html',
 	styleUrl: './dealership-form.component.scss',
 })
@@ -17,7 +16,23 @@ export class DealershipFormComponent {
 	readonly dealership = input<Dealership>();
 	readonly saved = output<Dealership>();
 
-	private readonly _initialModel = computed<Dealership>(() => {
+	readonly model = signal<Dealership>(this._initialModel());
+
+	readonly isSaveDisabled = computed(() => {
+		const model = this.model();
+		return !model.name.trim() || !model.address.trim() || !model.city.trim();
+	});
+
+	updateModel<K extends keyof Dealership>(key: K, value: Dealership[K]): void {
+		this.model.update((current) => ({ ...current, [key]: value }));
+	}
+
+	save(): void {
+		if (this.isSaveDisabled()) return;
+		this.saved.emit(this.model());
+	}
+
+	private _initialModel(): Dealership {
 		const d = this.dealership();
 		return {
 			_id: d?._id ?? '',
@@ -32,16 +47,5 @@ export class DealershipFormComponent {
 			lng: d?.lng ?? 0,
 			rating: d?.rating ?? 0,
 		};
-	});
-
-	readonly dealershipModel = signal<Dealership>(this._initialModel());
-	readonly dealershipForm = form(this.dealershipModel, dealershipFormSchema);
-	readonly isSubmitDisabled = computed(() => this.dealershipForm().invalid());
-
-	wFormSubmit(): void {
-		submit(this.dealershipForm, (formTree) => {
-			this.saved.emit(formTree().value() as Dealership);
-			return Promise.resolve();
-		});
 	}
 }

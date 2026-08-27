@@ -1,11 +1,11 @@
-<form (submit)="wFormSubmit(); $event.preventDefault()" class="request-form">
-	<p-select class="w-full" placeholder="Kind" [options]="kinds" [formField]="requestForm.kind" />
-	<input pInputText class="w-full" placeholder="Your name" [formField]="requestForm.clientName" />
-	<input pInputText class="w-full" placeholder="Your email" [formField]="requestForm.clientEmail" />
-	<input pInputText class="w-full" placeholder="Your phone" [formField]="requestForm.clientPhone" />
-	<textarea pTextarea class="w-full" placeholder="Message" [formField]="requestForm.message"></textarea>
+<form (submit)="save(); $event.preventDefault()" class="request-form">
+	<p-select class="w-full" placeholder="Kind" [options]="kinds" [ngModel]="model().kind" (ngModelChange)="updateModel('kind', $event)" name="kind" />
+	<input pInputText class="w-full" placeholder="Your name" [ngModel]="model().clientName" (ngModelChange)="updateModel('clientName', $event)" name="clientName" />
+	<input pInputText class="w-full" placeholder="Your email" [ngModel]="model().clientEmail" (ngModelChange)="updateModel('clientEmail', $event)" name="clientEmail" />
+	<input pInputText class="w-full" placeholder="Your phone" [ngModel]="model().clientPhone" (ngModelChange)="updateModel('clientPhone', $event)" name="clientPhone" />
+	<textarea pTextarea class="w-full" placeholder="Message" [ngModel]="model().message" (ngModelChange)="updateModel('message', $event)" name="message"></textarea>
 
 	<div class="request-form__actions">
-		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Send request</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Send request</span></button>
 	</div>
 </form>

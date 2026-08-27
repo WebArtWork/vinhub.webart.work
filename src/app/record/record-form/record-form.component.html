@@ -1,22 +1,24 @@
-<form (submit)="wFormSubmit(); $event.preventDefault()" class="record-form">
+<form (submit)="save(); $event.preventDefault()" class="record-form">
 	<p-select
 		class="w-full"
 		placeholder="Car"
 		[options]="cars()"
 		optionLabel="model"
 		optionValue="_id"
-		[formField]="recordForm.carId"
+		[ngModel]="model().carId"
+		(ngModelChange)="updateModel('carId', $event)"
+		name="carId"
 	/>
-	<input pInputText class="w-full" placeholder="Title" [formField]="recordForm.title" />
-	<p-select class="w-full" placeholder="Type" [options]="types" [formField]="recordForm.type" />
-	<p-datepicker class="w-full" placeholder="Date" [formField]="recordForm.date" />
-	<p-inputnumber class="w-full" placeholder="Mileage" [formField]="recordForm.mileage" />
-	<p-inputnumber class="w-full" placeholder="Cost" [formField]="recordForm.cost" mode="currency" currency="USD" />
-	<input pInputText class="w-full" placeholder="Source" [formField]="recordForm.sourceName" />
+	<input pInputText class="w-full" placeholder="Title" [ngModel]="model().title" (ngModelChange)="updateModel('title', $event)" name="title" />
+	<p-select class="w-full" placeholder="Type" [options]="types" [ngModel]="model().type" (ngModelChange)="updateModel('type', $event)" name="type" />
+	<p-datepicker class="w-full" placeholder="Date" [ngModel]="model().date" (ngModelChange)="updateModel('date', $event)" name="date" />
+	<p-inputnumber class="w-full" placeholder="Mileage" [ngModel]="model().mileage" (ngModelChange)="updateModel('mileage', $event)" name="mileage" />
+	<p-inputnumber class="w-full" placeholder="Cost" [ngModel]="model().cost" (ngModelChange)="updateModel('cost', $event)" name="cost" mode="currency" currency="USD" />
+	<input pInputText class="w-full" placeholder="Source" [ngModel]="model().sourceName" (ngModelChange)="updateModel('sourceName', $event)" name="sourceName" />
 
-	<textarea pTextarea class="w-full" placeholder="Description" [formField]="recordForm.description"></textarea>
+	<textarea pTextarea class="w-full" placeholder="Description" [ngModel]="model().description" (ngModelChange)="updateModel('description', $event)" name="description"></textarea>
 
 	<div class="record-form__actions">
-		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
 	</div>
 </form>

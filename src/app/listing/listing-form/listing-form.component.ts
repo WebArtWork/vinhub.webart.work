@@ -1,5 +1,5 @@
 import { Component, computed, inject, input, output, signal } from '@angular/core';
-import { FormField, form, submit } from '@angular/forms/signals';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputNumberModule } from '@wawjs/ngx-prime/inputnumber';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
@@ -9,12 +9,11 @@ import { TranslateDirective } from '@wawjs/ngx-translate';
 import { CarService } from '../../car/car.service';
 import { Listing } from '../listing.interface';
 import { ListingFormModel } from './listing-form.interface';
-import { listingFormSchema } from './listing-form.schema';
 
 @Component({
 	selector: 'app-listing-form',
 	imports: [
-		FormField,
+		FormsModule,
 		ButtonModule,
 		InputTextModule,
 		InputNumberModule,
@@ -36,7 +35,23 @@ export class ListingFormComponent {
 	protected readonly statuses = ['active', 'pending', 'sold', 'rented', 'expired'];
 	protected readonly rentalPeriods = ['day', 'week', 'month'];
 
-	private readonly _initialModel = computed<ListingFormModel>(() => {
+	readonly model = signal<ListingFormModel>(this._initialModel());
+
+	readonly isSaveDisabled = computed(() => {
+		const model = this.model();
+		return !model.carId || !model.title.trim() || model.price <= 0;
+	});
+
+	updateModel<K extends keyof ListingFormModel>(key: K, value: ListingFormModel[K]): void {
+		this.model.update((current) => ({ ...current, [key]: value }));
+	}
+
+	save(): void {
+		if (this.isSaveDisabled()) return;
+		this.saved.emit(this.model());
+	}
+
+	private _initialModel(): ListingFormModel {
 		const l = this.listing();
 		return {
 			carId: l?.carId ?? '',
@@ -48,16 +63,5 @@ export class ListingFormComponent {
 			title: l?.title ?? '',
 			description: l?.description ?? '',
 		};
-	});
-
-	readonly listingModel = signal<ListingFormModel>(this._initialModel());
-	readonly listingForm = form(this.listingModel, listingFormSchema);
-	readonly isSubmitDisabled = computed(() => this.listingForm().invalid());
-
-	wFormSubmit(): void {
-		submit(this.listingForm, (formTree) => {
-			this.saved.emit(formTree().value() as ListingFormModel);
-			return Promise.resolve();
-		});
 	}
 }

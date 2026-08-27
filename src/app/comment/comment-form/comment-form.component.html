@@ -1,9 +1,9 @@
-<form (submit)="wFormSubmit(); $event.preventDefault()" class="comment-form">
-	<p-rating [(ngModel)]="rating" [ngModelOptions]="{ standalone: true }" />
+<form (submit)="save(); $event.preventDefault()" class="comment-form">
+	<p-rating [ngModel]="model().rating" (ngModelChange)="updateModel('rating', $event)" name="rating" />
 
-	<textarea pTextarea class="w-full" placeholder="Write a comment..." [formField]="commentForm.text"></textarea>
+	<textarea pTextarea class="w-full" placeholder="Write a comment..." [ngModel]="model().text" (ngModelChange)="updateModel('text', $event)" name="text"></textarea>
 
 	<div class="comment-form__actions">
-		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Post</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Post</span></button>
 	</div>
 </form>

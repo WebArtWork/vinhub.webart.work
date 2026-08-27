@@ -1,21 +1,21 @@
-<form (submit)="wFormSubmit(); $event.preventDefault()" class="car-form">
-	<input pInputText class="w-full" placeholder="Make" [formField]="carForm.make" />
-	<input pInputText class="w-full" placeholder="Model" [formField]="carForm.model" />
-	<p-inputnumber class="w-full" placeholder="Year" [formField]="carForm.year" [useGrouping]="false" />
-	<input pInputText class="w-full" placeholder="VIN" [formField]="carForm.vin" />
+<form (submit)="save(); $event.preventDefault()" class="car-form">
+	<input pInputText class="w-full" placeholder="Make" [ngModel]="model().make" (ngModelChange)="updateModel('make', $event)" name="make" />
+	<input pInputText class="w-full" placeholder="Model" [ngModel]="model().model" (ngModelChange)="updateModel('model', $event)" name="model" />
+	<p-inputnumber class="w-full" placeholder="Year" [ngModel]="model().year" (ngModelChange)="updateModel('year', $event)" name="year" [useGrouping]="false" />
+	<input pInputText class="w-full" placeholder="VIN" [ngModel]="model().vin" (ngModelChange)="updateModel('vin', $event)" name="vin" />
 
-	<p-select class="w-full" placeholder="Type" [options]="types" [formField]="carForm.type" />
-	<p-select class="w-full" placeholder="Transmission" [options]="transmissions" [formField]="carForm.transmission" />
-	<p-select class="w-full" placeholder="Fuel type" [options]="fuelTypes" [formField]="carForm.fuelType" />
-	<p-select class="w-full" placeholder="Condition" [options]="conditions" [formField]="carForm.condition" />
+	<p-select class="w-full" placeholder="Type" [options]="types" [ngModel]="model().type" (ngModelChange)="updateModel('type', $event)" name="type" />
+	<p-select class="w-full" placeholder="Transmission" [options]="transmissions" [ngModel]="model().transmission" (ngModelChange)="updateModel('transmission', $event)" name="transmission" />
+	<p-select class="w-full" placeholder="Fuel type" [options]="fuelTypes" [ngModel]="model().fuelType" (ngModelChange)="updateModel('fuelType', $event)" name="fuelType" />
+	<p-select class="w-full" placeholder="Condition" [options]="conditions" [ngModel]="model().condition" (ngModelChange)="updateModel('condition', $event)" name="condition" />
 
-	<p-inputnumber class="w-full" placeholder="Price" [formField]="carForm.price" mode="currency" [currency]="carModel().currency" />
-	<p-inputnumber class="w-full" placeholder="Mileage" [formField]="carForm.mileage" [useGrouping]="true" />
-	<input pInputText class="w-full" placeholder="Color" [formField]="carForm.color" />
+	<p-inputnumber class="w-full" placeholder="Price" [ngModel]="model().price" (ngModelChange)="updateModel('price', $event)" name="price" mode="currency" [currency]="model().currency" />
+	<p-inputnumber class="w-full" placeholder="Mileage" [ngModel]="model().mileage" (ngModelChange)="updateModel('mileage', $event)" name="mileage" [useGrouping]="true" />
+	<input pInputText class="w-full" placeholder="Color" [ngModel]="model().color" (ngModelChange)="updateModel('color', $event)" name="color" />
 
-	<textarea pTextarea class="w-full" placeholder="Description" [formField]="carForm.description"></textarea>
+	<textarea pTextarea class="w-full" placeholder="Description" [ngModel]="model().description" (ngModelChange)="updateModel('description', $event)" name="description"></textarea>
 
 	<div class="car-form__actions">
-		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
 	</div>
 </form>

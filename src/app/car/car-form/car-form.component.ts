@@ -1,20 +1,18 @@
-import { Component, computed, input, output } from '@angular/core';
-import { FormField, form, submit } from '@angular/forms/signals';
-import { signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
-import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { InputNumberModule } from '@wawjs/ngx-prime/inputnumber';
+import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
 import { TextareaModule } from '@wawjs/ngx-prime/textarea';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 import { Car } from '../car.interface';
 import { CarFormModel } from './car-form.interface';
-import { carFormSchema } from './car-form.schema';
 
 @Component({
 	selector: 'app-car-form',
 	imports: [
-		FormField,
+		FormsModule,
 		ButtonModule,
 		InputTextModule,
 		InputNumberModule,
@@ -34,7 +32,23 @@ export class CarFormComponent {
 	protected readonly fuelTypes = ['petrol', 'diesel', 'electric', 'hybrid'];
 	protected readonly conditions = ['new', 'used'];
 
-	private readonly _initialModel = computed<CarFormModel>(() => {
+	readonly model = signal<CarFormModel>(this._initialModel());
+
+	readonly isSaveDisabled = computed(() => {
+		const model = this.model();
+		return !model.make.trim() || !model.model.trim() || !model.vin.trim() || model.price <= 0;
+	});
+
+	updateModel<K extends keyof CarFormModel>(key: K, value: CarFormModel[K]): void {
+		this.model.update((current) => ({ ...current, [key]: value }));
+	}
+
+	save(): void {
+		if (this.isSaveDisabled()) return;
+		this.saved.emit(this.model());
+	}
+
+	private _initialModel(): CarFormModel {
 		const c = this.car();
 		return {
 			make: c?.make ?? '',
@@ -51,16 +65,5 @@ export class CarFormComponent {
 			condition: c?.condition ?? 'used',
 			description: c?.description ?? '',
 		};
-	});
-
-	readonly carModel = signal<CarFormModel>(this._initialModel());
-	readonly carForm = form(this.carModel, carFormSchema);
-	readonly isSubmitDisabled = computed(() => this.carForm().invalid());
-
-	wFormSubmit(): void {
-		submit(this.carForm, (formTree) => {
-			this.saved.emit(formTree().value() as CarFormModel);
-			return Promise.resolve();
-		});
 	}
 }
