@@ -16,12 +16,6 @@ export const routes: Routes = [
 			{
 				path: '',
 				pathMatch: 'full',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'VIN Hub',
-					},
-				},
 				loadComponent: () =>
 					import('./pages/vinhub/landing/landing.component').then(
 						(m) => m.LandingPageComponent,
