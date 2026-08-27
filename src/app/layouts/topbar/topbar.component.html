@@ -1,10 +1,8 @@
 <nav
-	class="sticky top-0 z-[100] flex min-h-14 items-center bg-[var(--c-bg-secondary)] shadow px-5 max-md:fixed max-md:bottom-0 max-md:top-auto max-md:w-full max-md:px-3"
+	class="sticky top-0 z-[100] flex min-h-14 items-center bg-[var(--c-bg-secondary)] shadow px-5 max-md:px-3"
 >
-	<ul
-		class="m-0 flex w-full list-none items-center gap-2 p-0 max-md:justify-between max-md:gap-0"
-	>
-		<li class="inline-flex items-center">
+	<ul class="m-0 flex w-full list-none items-center gap-3 p-0">
+		<li class="inline-flex items-center gap-3">
 			<a
 				routerLink="/"
 				class="inline-flex items-center gap-2 text-[var(--c-text-primary)] no-underline"
@@ -12,23 +10,27 @@
 			>
 				<img src="logo.png" alt="VIN Hub" class="h-8 w-8 rounded" />
 			</a>
-		</li>
 
-		<li
-			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
-		>
-			<app-nav-icon
-				[routerLink]="sidebarToggler() ? '/feed' : '/'"
-				[name]="viewport() === 'mobile' ? '' : sidebarToggler() ? translateService.translate('Feed')() : ''"
-				[icon]="sidebarToggler() ? 'th-large' : 'home'"
-			/>
+			<span
+				class="text-sm font-semibold md:hidden"
+				[translate]="displayTitle()"
+			></span>
 		</li>
 
 		<li class="mx-auto max-md:hidden"></li>
 
-		@if (sidebarToggler()) {
+		@for (item of navItems; track item.label) {
+		<li class="inline-flex items-center max-md:hidden">
+			<app-nav-icon
+				[routerLink]="item.to"
+				[name]="translateService.translate(item.label)()"
+				[icon]="item.icon"
+			/>
+		</li>
+		}
+
 		<li
-			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
+			class="inline-flex items-center max-md:hidden"
 			(mouseleave)="onBurgerHover(false)"
 			(mouseenter)="onBurgerHover(true)"
 		>
@@ -41,12 +43,31 @@
 				<i class="pi pi-{{ burgerIcon() }}"></i>
 			</button>
 		</li>
-		} @if (showProfile()) {
-		<li
-			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
-		>
-			<app-nav-icon icon="user" routerLink="/profile" />
-		</li>
-		}
 	</ul>
+</nav>
+
+<nav
+	class="hidden max-md:fixed max-md:inset-x-0 max-md:bottom-0 max-md:z-[100] max-md:flex max-md:min-h-14 max-md:items-center max-md:justify-around max-md:bg-[var(--c-bg-secondary)] max-md:shadow max-md:px-3"
+>
+	@for (item of navItems; track item.label) {
+	<app-nav-icon
+		[routerLink]="item.to"
+		[icon]="item.icon"
+		[ariaLabel]="translateService.translate(item.label)()"
+	/>
+	}
+
+	<span
+		(mouseleave)="onBurgerHover(false)"
+		(mouseenter)="onBurgerHover(true)"
+	>
+		<button
+			type="button"
+			class="inline-flex cursor-pointer items-center justify-center border-0 bg-transparent p-2 text-[1.375rem] leading-none text-[var(--c-text-secondary)] transition-colors hover:text-[var(--c-primary)]"
+			(click)="onBurgerClick()"
+			[attr.aria-label]="translateService.translate('Menu')()"
+		>
+			<i class="pi pi-{{ burgerIcon() }}"></i>
+		</button>
+	</span>
 </nav>

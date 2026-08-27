@@ -1,13 +1,14 @@
+import { Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import {
-	Component,
-	computed,
-	inject,
-	input,
-	output,
-} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { CoreService } from '@wawjs/ngx-core';
+	ActivatedRouteSnapshot,
+	NavigationEnd,
+	Router,
+	RouterLink,
+} from '@angular/router';
+import { filter, map, startWith } from 'rxjs';
 import { TranslateService } from '@wawjs/ngx-translate';
+import { CompanyService } from '../../company/company.service';
 import { NavIconComponent } from '../../shared/nav-icon/nav-icon.component';
 import { SidebarService } from '../sidebar/sidebar.service';
 
@@ -21,21 +22,49 @@ const BURGER_ICONS: Record<BurgerState, string> = {
 	cross: 'times',
 };
 
+interface TopbarNavItem {
+	label: string;
+	icon: string;
+	to: string;
+}
+
 @Component({
 	selector: 'layout-topbar',
 	templateUrl: './topbar.component.html',
 	imports: [RouterLink, NavIconComponent],
 })
 export class TopbarComponent {
-	private readonly _coreService = inject(CoreService);
+	private readonly _router = inject(Router);
 	private readonly _sidebarService = inject(SidebarService);
+	private readonly _companyService = inject(CompanyService);
 	readonly translateService = inject(TranslateService);
 
-	readonly isOpen = input(false);
-	readonly sidebarToggler = input(false);
-	readonly sidebarOpen = output<boolean>();
-	readonly showProfile = input(false);
-	readonly viewport = this._coreService.viewport;
+	protected readonly navItems: TopbarNavItem[] = [
+		{ label: 'Cars', icon: 'car', to: '/explore' },
+		{ label: 'Feed', icon: 'th-large', to: '/feed' },
+		{ label: 'Dealerships', icon: 'shop', to: '/explore' },
+	];
+
+	/** Current page's title, for the mobile header (next to the logo). */
+	protected readonly pageTitle = toSignal(
+		this._router.events.pipe(
+			filter(
+				(event): event is NavigationEnd =>
+					event instanceof NavigationEnd,
+			),
+			map(() =>
+				this._deepestTitle(this._router.routerState.snapshot.root),
+			),
+			startWith(
+				this._deepestTitle(this._router.routerState.snapshot.root),
+			),
+		),
+		{ initialValue: '' },
+	);
+
+	protected readonly displayTitle = computed(
+		() => this.pageTitle() || this._companyService.company().title,
+	);
 
 	readonly burgerState = computed<BurgerState>(() => {
 		if (this._sidebarService.isMobile()) {
@@ -74,5 +103,20 @@ export class TopbarComponent {
 				this._onBurgerHover = null;
 			}, 2000);
 		}
+	}
+
+	private _deepestTitle(route: ActivatedRouteSnapshot): string {
+		let node = route;
+		let title = (node.data?.['meta']?.['title'] as string) ?? '';
+
+		while (node.firstChild) {
+			node = node.firstChild;
+			const childTitle = node.data?.['meta']?.['title'] as
+				| string
+				| undefined;
+			if (childTitle) title = childTitle;
+		}
+
+		return title;
 	}
 }

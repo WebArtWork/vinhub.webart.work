@@ -3,10 +3,10 @@
 	[class.user--withSidebar]="sidebar.pinnedVisible()"
 	[style.--drawer-w.px]="sidebar.widthPx()"
 >
-	<layout-topbar class="user__topbar" [sidebarToggler]="true" />
+	<layout-topbar class="user__topbar" />
 
 	@if (sidebar.anySidebarVisible()) {
-		<layout-sidebar class="user__sidebar" />
+	<layout-sidebar class="user__sidebar" />
 	}
 
 	<div class="user__main relative overflow-auto max-md:mb-14">
