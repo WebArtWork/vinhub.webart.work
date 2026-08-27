@@ -1,0 +1,16 @@
+<a class="car-short" [routerLink]="['/car', car()._id]">
+	<app-car-icon [car]="car()" />
+
+	<div class="car-short__body">
+		<div class="car-short__title">{{ title() }}</div>
+		<div class="car-short__meta">
+			<span>{{ car().mileage | number }} mi</span>
+			<span>·</span>
+			<span>{{ car().transmission | titlecase }}</span>
+			<span>·</span>
+			<span>{{ car().condition | titlecase }}</span>
+		</div>
+	</div>
+
+	<div class="car-short__price">{{ car().price | currency: car().currency : 'symbol' : '1.0-0' }}</div>
+</a>
