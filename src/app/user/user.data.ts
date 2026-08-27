@@ -11,7 +11,11 @@ function _toPublicUser(raw: RawUser): PublicUser {
 	return {
 		_id: _stringOrFallback(raw._id),
 		name: _stringOrFallback(raw.name),
-		role: _oneOf<PublicUserRole>(raw.role, ['buyer', 'seller', 'dealer'], 'buyer'),
+		role: _oneOf<PublicUserRole>(
+			raw.role,
+			['buyer', 'seller', 'dealer'],
+			'buyer',
+		),
 		avatar: _stringOrFallback(raw.avatar),
 		bio: _stringOrFallback(raw.bio),
 		location: _stringOrFallback(raw.location),
@@ -21,14 +25,28 @@ function _toPublicUser(raw: RawUser): PublicUser {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _numberOrFallback(value: number | null | undefined, fallback = 0): number {
-	return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+function _numberOrFallback(
+	value: number | null | undefined,
+	fallback = 0,
+): number {
+	return typeof value === 'number' && Number.isFinite(value)
+		? value
+		: fallback;
 }
 
-function _oneOf<T extends string>(value: string | null | undefined, allowed: T[], fallback: T): T {
+function _oneOf<T extends string>(
+	value: string | null | undefined,
+	allowed: T[],
+	fallback: T,
+): T {
 	return allowed.includes(value as T) ? (value as T) : fallback;
 }

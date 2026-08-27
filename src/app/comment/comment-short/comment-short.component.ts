@@ -17,5 +17,7 @@ export class CommentShortComponent {
 
 	readonly comment = input.required<Comment>();
 
-	protected readonly author = computed(() => this._userService.getById(this.comment().authorId)());
+	protected readonly author = computed(() =>
+		this._userService.getById(this.comment().authorId)(),
+	);
 }

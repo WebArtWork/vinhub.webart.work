@@ -7,14 +7,19 @@ export class RecordService {
 	readonly records = signal<CarRecord[]>(RECORDS_FALLBACK);
 
 	getById(id: string) {
-		return computed(() => this.records().find((record) => record._id === id));
+		return computed(() =>
+			this.records().find((record) => record._id === id),
+		);
 	}
 
 	getByCarId(carId: string) {
 		return computed(() =>
 			this.records()
 				.filter((record) => record.carId === carId)
-				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+				.sort(
+					(a, b) =>
+						new Date(b.date).getTime() - new Date(a.date).getTime(),
+				),
 		);
 	}
 }

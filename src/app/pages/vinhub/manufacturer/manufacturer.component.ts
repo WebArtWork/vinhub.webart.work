@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
@@ -16,9 +21,13 @@ export class ManufacturerPageComponent {
 	private readonly _manufacturerService = inject(ManufacturerService);
 
 	private readonly _manufacturerId = toSignal(
-		inject(ActivatedRoute).paramMap.pipe(map((params) => params.get('id') ?? '')),
+		inject(ActivatedRoute).paramMap.pipe(
+			map((params) => params.get('id') ?? ''),
+		),
 		{ initialValue: '' },
 	);
 
-	readonly manufacturer = computed(() => this._manufacturerService.getById(this._manufacturerId())());
+	readonly manufacturer = computed(() =>
+		this._manufacturerService.getById(this._manufacturerId())(),
+	);
 }

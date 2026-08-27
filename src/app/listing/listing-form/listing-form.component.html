@@ -9,17 +9,62 @@
 		(ngModelChange)="updateModel('carId', $event)"
 		name="carId"
 	/>
-	<input pInputText class="w-full" placeholder="Title" [ngModel]="model().title" (ngModelChange)="updateModel('title', $event)" name="title" />
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Title"
+		[ngModel]="model().title"
+		(ngModelChange)="updateModel('title', $event)"
+		name="title"
+	/>
 
-	<p-select class="w-full" placeholder="Kind" [options]="kinds" [ngModel]="model().kind" (ngModelChange)="updateModel('kind', $event)" name="kind" />
-	<p-select class="w-full" placeholder="Status" [options]="statuses" [ngModel]="model().status" (ngModelChange)="updateModel('status', $event)" name="status" />
-	<p-select class="w-full" placeholder="Rental period" [options]="rentalPeriods" [ngModel]="model().rentalPeriod" (ngModelChange)="updateModel('rentalPeriod', $event)" name="rentalPeriod" />
+	<p-select
+		class="w-full"
+		placeholder="Kind"
+		[options]="kinds"
+		[ngModel]="model().kind"
+		(ngModelChange)="updateModel('kind', $event)"
+		name="kind"
+	/>
+	<p-select
+		class="w-full"
+		placeholder="Status"
+		[options]="statuses"
+		[ngModel]="model().status"
+		(ngModelChange)="updateModel('status', $event)"
+		name="status"
+	/>
+	<p-select
+		class="w-full"
+		placeholder="Rental period"
+		[options]="rentalPeriods"
+		[ngModel]="model().rentalPeriod"
+		(ngModelChange)="updateModel('rentalPeriod', $event)"
+		name="rentalPeriod"
+	/>
 
-	<p-inputnumber class="w-full" placeholder="Price" [ngModel]="model().price" (ngModelChange)="updateModel('price', $event)" name="price" mode="currency" [currency]="model().currency" />
+	<p-inputnumber
+		class="w-full"
+		placeholder="Price"
+		[ngModel]="model().price"
+		(ngModelChange)="updateModel('price', $event)"
+		name="price"
+		mode="currency"
+		[currency]="model().currency"
+	/>
 
-	<textarea pTextarea class="w-full" placeholder="Description" [ngModel]="model().description" (ngModelChange)="updateModel('description', $event)" name="description"></textarea>
+	<textarea
+		pTextarea
+		class="w-full"
+		placeholder="Description"
+		[ngModel]="model().description"
+		(ngModelChange)="updateModel('description', $event)"
+		name="description"
+	></textarea>
 
 	<div class="listing-form__actions">
-		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()">
+			<span translate>Save</span>
+		</button>
 	</div>
 </form>

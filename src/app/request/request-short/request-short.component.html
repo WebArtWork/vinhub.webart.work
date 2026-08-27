@@ -2,9 +2,16 @@
 	<app-request-icon [request]="request()" />
 
 	<div class="request-short__body">
-		<div class="request-short__title">{{ request().clientName }} · {{ request().kind | titlecase }}</div>
-		<div class="request-short__meta">{{ request().createdAt | date: 'short' }}</div>
+		<div class="request-short__title">
+			{{ request().clientName }} · {{ request().kind | titlecase }}
+		</div>
+		<div class="request-short__meta">
+			{{ request().createdAt | date: 'short' }}
+		</div>
 	</div>
 
-	<p-tag [value]="request().status | titlecase" [severity]="request().status === 'new' ? 'info' : 'secondary'" />
+	<p-tag
+		[value]="request().status | titlecase"
+		[severity]="request().status === 'new' ? 'info' : 'secondary'"
+	/>
 </div>

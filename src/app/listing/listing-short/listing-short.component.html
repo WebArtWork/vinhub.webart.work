@@ -5,14 +5,17 @@
 		<div class="listing-short__title">{{ listing().title }}</div>
 		<div class="listing-short__meta">
 			<p-tag [value]="listing().kind | titlecase" severity="secondary" />
-			<p-tag [value]="listing().status | titlecase" [severity]="listing().status === 'active' ? 'success' : 'warn'" />
+			<p-tag
+				[value]="listing().status | titlecase"
+				[severity]="listing().status === 'active' ? 'success' : 'warn'"
+			/>
 		</div>
 	</div>
 
 	<div class="listing-short__price">
-		{{ listing().price | currency: listing().currency : 'symbol' : '1.0-0' }}
-		@if (listing().rentalPeriod) {
-			<span class="listing-short__period">/{{ listing().rentalPeriod }}</span>
+		{{ listing().price | currency: listing().currency : 'symbol' : '1.0-0'
+		}} @if (listing().rentalPeriod) {
+		<span class="listing-short__period">/{{ listing().rentalPeriod }}</span>
 		}
 	</div>
 </a>

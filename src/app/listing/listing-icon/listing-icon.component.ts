@@ -14,5 +14,7 @@ export class ListingIconComponent {
 
 	readonly listing = input.required<Listing>();
 
-	protected readonly car = computed(() => this._carService.getById(this.listing().carId)());
+	protected readonly car = computed(() =>
+		this._carService.getById(this.listing().carId)(),
+	);
 }

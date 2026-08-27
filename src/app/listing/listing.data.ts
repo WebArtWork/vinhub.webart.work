@@ -17,11 +17,19 @@ function _toListing(raw: RawListing): Listing {
 		_id: _stringOrFallback(raw._id),
 		carId: _stringOrFallback(raw.carId),
 		kind: _oneOf<ListingKind>(raw.kind, ['sale', 'rental'], 'sale'),
-		status: _oneOf<ListingStatus>(raw.status, ['active', 'pending', 'sold', 'rented', 'expired'], 'active'),
+		status: _oneOf<ListingStatus>(
+			raw.status,
+			['active', 'pending', 'sold', 'rented', 'expired'],
+			'active',
+		),
 		price: _numberOrFallback(raw.price),
 		currency: _stringOrFallback(raw.currency, 'USD'),
 		rentalPeriod: raw.rentalPeriod
-			? _oneOf<ListingRentalPeriod>(raw.rentalPeriod, ['day', 'week', 'month'], 'day')
+			? _oneOf<ListingRentalPeriod>(
+					raw.rentalPeriod,
+					['day', 'week', 'month'],
+					'day',
+				)
 			: undefined,
 		title: _stringOrFallback(raw.title),
 		description: _stringOrFallback(raw.description),
@@ -32,14 +40,28 @@ function _toListing(raw: RawListing): Listing {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _numberOrFallback(value: number | null | undefined, fallback = 0): number {
-	return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+function _numberOrFallback(
+	value: number | null | undefined,
+	fallback = 0,
+): number {
+	return typeof value === 'number' && Number.isFinite(value)
+		? value
+		: fallback;
 }
 
-function _oneOf<T extends string>(value: string | null | undefined, allowed: T[], fallback: T): T {
+function _oneOf<T extends string>(
+	value: string | null | undefined,
+	allowed: T[],
+	fallback: T,
+): T {
 	return allowed.includes(value as T) ? (value as T) : fallback;
 }

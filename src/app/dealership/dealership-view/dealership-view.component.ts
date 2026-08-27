@@ -9,7 +9,13 @@ import { Dealership } from '../dealership.interface';
 
 @Component({
 	selector: 'app-dealership-view',
-	imports: [FormsModule, CardModule, RatingModule, DealershipIconComponent, CarShortComponent],
+	imports: [
+		FormsModule,
+		CardModule,
+		RatingModule,
+		DealershipIconComponent,
+		CarShortComponent,
+	],
 	templateUrl: './dealership-view.component.html',
 	styleUrl: './dealership-view.component.scss',
 })
@@ -19,6 +25,8 @@ export class DealershipViewComponent {
 	readonly dealership = input.required<Dealership>();
 
 	protected readonly cars = computed(() =>
-		this._carService.cars().filter((car) => car.dealershipId === this.dealership()._id),
+		this._carService
+			.cars()
+			.filter((car) => car.dealershipId === this.dealership()._id),
 	);
 }

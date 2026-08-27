@@ -7,7 +7,13 @@ import { Listing } from '../listing.interface';
 
 @Component({
 	selector: 'app-listing-short',
-	imports: [RouterLink, CurrencyPipe, TitleCasePipe, TagModule, ListingIconComponent],
+	imports: [
+		RouterLink,
+		CurrencyPipe,
+		TitleCasePipe,
+		TagModule,
+		ListingIconComponent,
+	],
 	templateUrl: './listing-short.component.html',
 	styleUrl: './listing-short.component.scss',
 })

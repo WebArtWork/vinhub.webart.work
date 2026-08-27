@@ -1,33 +1,31 @@
 @if (car(); as car) {
-	<div class="car-page">
-		<app-car-view [car]="car" />
+<div class="car-page">
+	<app-car-view [car]="car" />
 
-		@if (records().length) {
-			<section class="car-page__section">
-				<div class="car-page__section-heading">
-					<h2>History</h2>
-					<a [routerLink]="['/records', car._id]">View digital passport</a>
-				</div>
-				@for (record of records(); track record._id) {
-					<app-record-short [record]="record" />
-				}
-			</section>
+	@if (records().length) {
+	<section class="car-page__section">
+		<div class="car-page__section-heading">
+			<h2>History</h2>
+			<a [routerLink]="['/records', car._id]">View digital passport</a>
+		</div>
+		@for (record of records(); track record._id) {
+		<app-record-short [record]="record" />
 		}
-
-		@if (listings().length) {
-			<section class="car-page__section">
-				<h2>Listings</h2>
-				@for (listing of listings(); track listing._id) {
-					<app-listing-short [listing]="listing" />
-				}
-			</section>
+	</section>
+	} @if (listings().length) {
+	<section class="car-page__section">
+		<h2>Listings</h2>
+		@for (listing of listings(); track listing._id) {
+		<app-listing-short [listing]="listing" />
 		}
+	</section>
+	}
 
-		<section class="car-page__section">
-			<h2>Comments</h2>
-			<app-comments-view targetType="car" [targetId]="car._id" />
-		</section>
-	</div>
+	<section class="car-page__section">
+		<h2>Comments</h2>
+		<app-comments-view targetType="car" [targetId]="car._id" />
+	</section>
+</div>
 } @else {
-	<p>Car not found.</p>
+<p>Car not found.</p>
 }

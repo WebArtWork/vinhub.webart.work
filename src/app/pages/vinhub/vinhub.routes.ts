@@ -13,7 +13,8 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./feed/feed.component').then((m) => m.FeedPageComponent),
+		loadComponent: () =>
+			import('./feed/feed.component').then((m) => m.FeedPageComponent),
 	},
 	{
 		path: 'explore',
@@ -25,7 +26,10 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./explore/explore.component').then((m) => m.ExplorePageComponent),
+		loadComponent: () =>
+			import('./explore/explore.component').then(
+				(m) => m.ExplorePageComponent,
+			),
 	},
 	{
 		path: 'map',
@@ -37,7 +41,8 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./map/map.component').then((m) => m.MapPageComponent),
+		loadComponent: () =>
+			import('./map/map.component').then((m) => m.MapPageComponent),
 	},
 	{
 		path: 'editor',
@@ -50,7 +55,10 @@ export const vinhubRoutes: Routes = [
 				index: false,
 			},
 		},
-		loadComponent: () => import('./editor/editor.component').then((m) => m.EditorPageComponent),
+		loadComponent: () =>
+			import('./editor/editor.component').then(
+				(m) => m.EditorPageComponent,
+			),
 	},
 	{
 		path: 'car/:id',
@@ -62,7 +70,8 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./car/car.component').then((m) => m.CarPageComponent),
+		loadComponent: () =>
+			import('./car/car.component').then((m) => m.CarPageComponent),
 	},
 	{
 		path: 'listing/:id',
@@ -74,7 +83,10 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./listing/listing.component').then((m) => m.ListingPageComponent),
+		loadComponent: () =>
+			import('./listing/listing.component').then(
+				(m) => m.ListingPageComponent,
+			),
 	},
 	{
 		path: 'records/:carId',
@@ -82,11 +94,15 @@ export const vinhubRoutes: Routes = [
 		data: {
 			meta: {
 				title: 'Digital passport',
-				description: "A car's full service, repair, and ownership history.",
+				description:
+					"A car's full service, repair, and ownership history.",
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./records/records.component').then((m) => m.RecordsPageComponent),
+		loadComponent: () =>
+			import('./records/records.component').then(
+				(m) => m.RecordsPageComponent,
+			),
 	},
 	{
 		path: 'manufacturer/:id',
@@ -98,7 +114,10 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./manufacturer/manufacturer.component').then((m) => m.ManufacturerPageComponent),
+		loadComponent: () =>
+			import('./manufacturer/manufacturer.component').then(
+				(m) => m.ManufacturerPageComponent,
+			),
 	},
 	{
 		path: 'dealership/:id',
@@ -110,7 +129,10 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./dealership/dealership.component').then((m) => m.DealershipPageComponent),
+		loadComponent: () =>
+			import('./dealership/dealership.component').then(
+				(m) => m.DealershipPageComponent,
+			),
 	},
 	{
 		path: 'salesperson/:id',
@@ -122,7 +144,10 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./salesperson/salesperson.component').then((m) => m.SalespersonPageComponent),
+		loadComponent: () =>
+			import('./salesperson/salesperson.component').then(
+				(m) => m.SalespersonPageComponent,
+			),
 	},
 	{
 		path: 'client/:id',
@@ -134,6 +159,9 @@ export const vinhubRoutes: Routes = [
 				image: vinhubSeoImage,
 			},
 		},
-		loadComponent: () => import('./client/client.component').then((m) => m.ClientPageComponent),
+		loadComponent: () =>
+			import('./client/client.component').then(
+				(m) => m.ClientPageComponent,
+			),
 	},
 ];

@@ -1,8 +1,17 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+	signal,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { DealershipService } from '../../../dealership/dealership.service';
-import { LeafletMapComponent, LeafletMapMarker } from '../../../shared/vinhub/leaflet-map.component';
+import {
+	LeafletMapComponent,
+	LeafletMapMarker,
+} from '../../../shared/vinhub/leaflet-map.component';
 
 const DEFAULT_CENTER = { lat: 37.7793, lng: -122.4193 };
 
@@ -23,8 +32,10 @@ export class MapPageComponent {
 		const dealerships = this._dealershipService.dealerships();
 		if (!dealerships.length) return DEFAULT_CENTER;
 
-		const lat = dealerships.reduce((sum, d) => sum + d.lat, 0) / dealerships.length;
-		const lng = dealerships.reduce((sum, d) => sum + d.lng, 0) / dealerships.length;
+		const lat =
+			dealerships.reduce((sum, d) => sum + d.lat, 0) / dealerships.length;
+		const lng =
+			dealerships.reduce((sum, d) => sum + d.lng, 0) / dealerships.length;
 		return { lat, lng };
 	});
 
@@ -38,7 +49,9 @@ export class MapPageComponent {
 	);
 
 	readonly selectedDealership = computed(() =>
-		this._dealershipService.dealerships().find((d) => d._id === this.selectedId()),
+		this._dealershipService
+			.dealerships()
+			.find((d) => d._id === this.selectedId()),
 	);
 
 	onMarkerSelected(marker: LeafletMapMarker): void {

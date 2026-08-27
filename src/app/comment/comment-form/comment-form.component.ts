@@ -8,7 +8,13 @@ import { CommentFormModel } from './comment-form.interface';
 
 @Component({
 	selector: 'app-comment-form',
-	imports: [FormsModule, ButtonModule, RatingModule, TextareaModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		RatingModule,
+		TextareaModule,
+		TranslateDirective,
+	],
 	templateUrl: './comment-form.component.html',
 	styleUrl: './comment-form.component.scss',
 })
@@ -19,7 +25,10 @@ export class CommentFormComponent {
 
 	readonly isSaveDisabled = computed(() => !this.model().text.trim());
 
-	updateModel<K extends keyof CommentFormModel>(key: K, value: CommentFormModel[K]): void {
+	updateModel<K extends keyof CommentFormModel>(
+		key: K,
+		value: CommentFormModel[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

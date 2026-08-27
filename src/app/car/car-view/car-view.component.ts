@@ -13,6 +13,8 @@ import { Car } from '../car.interface';
 export class CarViewComponent {
 	readonly car = input.required<Car>();
 
-	protected readonly title = computed(() => `${this.car().year} ${this.car().make} ${this.car().model}`);
+	protected readonly title = computed(
+		() => `${this.car().year} ${this.car().make} ${this.car().model}`,
+	);
 	protected readonly image = computed(() => this.car().images[0] ?? '');
 }

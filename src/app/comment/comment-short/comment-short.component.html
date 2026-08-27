@@ -1,16 +1,20 @@
 <div class="comment-short">
 	@if (author(); as author) {
-		<app-user-icon [user]="author" />
+	<app-user-icon [user]="author" />
 	}
 
 	<div class="comment-short__body">
 		<div class="comment-short__heading">
-			<span class="comment-short__author">{{ author()?.name ?? 'Anonymous' }}</span>
-			<span class="comment-short__date">{{ comment().createdAt | date: 'mediumDate' }}</span>
+			<span class="comment-short__author"
+				>{{ author()?.name ?? 'Anonymous' }}</span
+			>
+			<span class="comment-short__date"
+				>{{ comment().createdAt | date: 'mediumDate' }}</span
+			>
 		</div>
 
 		@if (comment().rating) {
-			<p-rating [ngModel]="comment().rating" [readonly]="true" />
+		<p-rating [ngModel]="comment().rating" [readonly]="true" />
 		}
 
 		<p class="comment-short__text">{{ comment().text }}</p>

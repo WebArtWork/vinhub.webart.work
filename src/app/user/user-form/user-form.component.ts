@@ -9,7 +9,14 @@ import { PublicUser } from '../user.interface';
 
 @Component({
 	selector: 'app-user-form',
-	imports: [FormsModule, ButtonModule, InputTextModule, SelectModule, TextareaModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		InputTextModule,
+		SelectModule,
+		TextareaModule,
+		TranslateDirective,
+	],
 	templateUrl: './user-form.component.html',
 	styleUrl: './user-form.component.scss',
 })
@@ -23,7 +30,10 @@ export class UserFormComponent {
 
 	readonly isSaveDisabled = computed(() => !this.model().name.trim());
 
-	updateModel<K extends keyof PublicUser>(key: K, value: PublicUser[K]): void {
+	updateModel<K extends keyof PublicUser>(
+		key: K,
+		value: PublicUser[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

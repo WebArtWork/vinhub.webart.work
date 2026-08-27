@@ -7,10 +7,16 @@ export class SalespersonService {
 	readonly salespeople = signal<Salesperson[]>(SALESPEOPLE_FALLBACK);
 
 	getById(id: string) {
-		return computed(() => this.salespeople().find((salesperson) => salesperson._id === id));
+		return computed(() =>
+			this.salespeople().find((salesperson) => salesperson._id === id),
+		);
 	}
 
 	getByDealershipId(dealershipId: string) {
-		return computed(() => this.salespeople().filter((salesperson) => salesperson.dealershipId === dealershipId));
+		return computed(() =>
+			this.salespeople().filter(
+				(salesperson) => salesperson.dealershipId === dealershipId,
+			),
+		);
 	}
 }

@@ -7,10 +7,16 @@ export class RequestService {
 	readonly requests = signal<CarRequest[]>(REQUESTS_FALLBACK);
 
 	getById(id: string) {
-		return computed(() => this.requests().find((request) => request._id === id));
+		return computed(() =>
+			this.requests().find((request) => request._id === id),
+		);
 	}
 
 	getByListingId(listingId: string) {
-		return computed(() => this.requests().filter((request) => request.listingId === listingId));
+		return computed(() =>
+			this.requests().filter(
+				(request) => request.listingId === listingId,
+			),
+		);
 	}
 }

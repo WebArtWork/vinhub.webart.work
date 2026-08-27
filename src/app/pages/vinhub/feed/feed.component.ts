@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+	signal,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { CarViewComponent } from '../../../car/car-view/car-view.component';
@@ -22,12 +28,16 @@ export class FeedPageComponent {
 	private readonly _index = signal(0);
 
 	readonly activeListings = computed(() =>
-		this._listingService.listings().filter((listing) => listing.status === 'active'),
+		this._listingService
+			.listings()
+			.filter((listing) => listing.status === 'active'),
 	);
 
 	readonly currentListing = computed(() => {
 		const listings = this.activeListings().filter(
-			(listing) => !this.favouriteIds().includes(listing._id) && !this.ignoredIds().includes(listing._id),
+			(listing) =>
+				!this.favouriteIds().includes(listing._id) &&
+				!this.ignoredIds().includes(listing._id),
 		);
 		return listings[this._index() % Math.max(listings.length, 1)];
 	});

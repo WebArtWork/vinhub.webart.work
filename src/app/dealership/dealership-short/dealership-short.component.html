@@ -2,7 +2,9 @@
 	<app-dealership-icon [dealership]="dealership()" />
 	<div class="dealership-short__body">
 		<div class="dealership-short__name">{{ dealership().name }}</div>
-		<div class="dealership-short__location">{{ dealership().city }}, {{ dealership().state }}</div>
+		<div class="dealership-short__location">
+			{{ dealership().city }}, {{ dealership().state }}
+		</div>
 	</div>
 	<p-rating [ngModel]="dealership().rating" [readonly]="true" />
 </a>

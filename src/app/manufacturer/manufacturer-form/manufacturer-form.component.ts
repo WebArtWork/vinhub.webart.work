@@ -9,7 +9,14 @@ import { Manufacturer } from '../manufacturer.interface';
 
 @Component({
 	selector: 'app-manufacturer-form',
-	imports: [FormsModule, ButtonModule, InputTextModule, InputNumberModule, TextareaModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		InputTextModule,
+		InputNumberModule,
+		TextareaModule,
+		TranslateDirective,
+	],
 	templateUrl: './manufacturer-form.component.html',
 	styleUrl: './manufacturer-form.component.scss',
 })
@@ -24,7 +31,10 @@ export class ManufacturerFormComponent {
 		return !model.name.trim() || !model.country.trim();
 	});
 
-	updateModel<K extends keyof Manufacturer>(key: K, value: Manufacturer[K]): void {
+	updateModel<K extends keyof Manufacturer>(
+		key: K,
+		value: Manufacturer[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

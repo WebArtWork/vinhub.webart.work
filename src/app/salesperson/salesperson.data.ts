@@ -21,10 +21,20 @@ function _toSalesperson(raw: RawSalesperson): Salesperson {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _numberOrFallback(value: number | null | undefined, fallback = 0): number {
-	return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+function _numberOrFallback(
+	value: number | null | undefined,
+	fallback = 0,
+): number {
+	return typeof value === 'number' && Number.isFinite(value)
+		? value
+		: fallback;
 }

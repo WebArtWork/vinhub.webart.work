@@ -1,7 +1,10 @@
 <p-card styleClass="listing-view">
 	<div class="listing-view__heading">
 		<h1 class="listing-view__title">{{ listing().title }}</h1>
-		<p-tag [value]="listing().status | titlecase" [severity]="listing().status === 'active' ? 'success' : 'warn'" />
+		<p-tag
+			[value]="listing().status | titlecase"
+			[severity]="listing().status === 'active' ? 'success' : 'warn'"
+		/>
 	</div>
 
 	<div class="listing-view__tags">
@@ -10,16 +13,18 @@
 	</div>
 
 	<div class="listing-view__price">
-		{{ listing().price | currency: listing().currency : 'symbol' : '1.0-0' }}
-		@if (listing().rentalPeriod) {
-			<span class="listing-view__period">/{{ listing().rentalPeriod }}</span>
+		{{ listing().price | currency: listing().currency : 'symbol' : '1.0-0'
+		}} @if (listing().rentalPeriod) {
+		<span class="listing-view__period">/{{ listing().rentalPeriod }}</span>
 		}
 	</div>
 
 	<p class="listing-view__description">{{ listing().description }}</p>
-	<p class="listing-view__posted">Posted {{ listing().postedAt | date: 'mediumDate' }}</p>
+	<p class="listing-view__posted">
+		Posted {{ listing().postedAt | date: 'mediumDate' }}
+	</p>
 
 	@if (car(); as car) {
-		<app-car-view [car]="car" />
+	<app-car-view [car]="car" />
 	}
 </p-card>

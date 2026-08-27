@@ -1,9 +1,7 @@
 <div class="comments-view">
-	@if (comments().length) {
-		@for (comment of comments(); track comment._id) {
-			<app-comment-short [comment]="comment" />
-		}
-	} @else {
-		<p class="comments-view__empty">No comments yet.</p>
+	@if (comments().length) { @for (comment of comments(); track comment._id) {
+	<app-comment-short [comment]="comment" />
+	} } @else {
+	<p class="comments-view__empty">No comments yet.</p>
 	}
 </div>

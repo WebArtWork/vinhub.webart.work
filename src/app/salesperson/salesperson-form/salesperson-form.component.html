@@ -1,6 +1,20 @@
 <form (submit)="save(); $event.preventDefault()" class="salesperson-form">
-	<input pInputText class="w-full" placeholder="Name" [ngModel]="model().name" (ngModelChange)="updateModel('name', $event)" name="name" />
-	<input pInputText class="w-full" placeholder="Title" [ngModel]="model().title" (ngModelChange)="updateModel('title', $event)" name="title" />
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Name"
+		[ngModel]="model().name"
+		(ngModelChange)="updateModel('name', $event)"
+		name="name"
+	/>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Title"
+		[ngModel]="model().title"
+		(ngModelChange)="updateModel('title', $event)"
+		name="title"
+	/>
 	<p-select
 		class="w-full"
 		placeholder="Dealership"
@@ -11,11 +25,34 @@
 		(ngModelChange)="updateModel('dealershipId', $event)"
 		name="dealershipId"
 	/>
-	<input pInputText class="w-full" placeholder="Phone" [ngModel]="model().phone" (ngModelChange)="updateModel('phone', $event)" name="phone" />
-	<input pInputText class="w-full" placeholder="Email" [ngModel]="model().email" (ngModelChange)="updateModel('email', $event)" name="email" />
-	<input pInputText class="w-full" placeholder="Avatar URL" [ngModel]="model().avatar" (ngModelChange)="updateModel('avatar', $event)" name="avatar" />
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Phone"
+		[ngModel]="model().phone"
+		(ngModelChange)="updateModel('phone', $event)"
+		name="phone"
+	/>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Email"
+		[ngModel]="model().email"
+		(ngModelChange)="updateModel('email', $event)"
+		name="email"
+	/>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Avatar URL"
+		[ngModel]="model().avatar"
+		(ngModelChange)="updateModel('avatar', $event)"
+		name="avatar"
+	/>
 
 	<div class="salesperson-form__actions">
-		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()">
+			<span translate>Save</span>
+		</button>
 	</div>
 </form>

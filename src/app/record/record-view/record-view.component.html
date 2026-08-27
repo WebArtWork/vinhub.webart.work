@@ -2,7 +2,7 @@
 	<div class="record-view__heading">
 		<h2 class="record-view__title">{{ record().title }}</h2>
 		@if (record().verified) {
-			<p-tag value="Verified" severity="success" />
+		<p-tag value="Verified" severity="success" />
 		}
 	</div>
 
@@ -22,10 +22,13 @@
 			<dd>{{ record().mileage | number }} mi</dd>
 		</div>
 		@if (record().cost !== undefined) {
-			<div class="record-view__spec">
-				<dt>Cost</dt>
-				<dd>{{ record().cost | currency: record().currency : 'symbol' : '1.0-0' }}</dd>
-			</div>
+		<div class="record-view__spec">
+			<dt>Cost</dt>
+			<dd>
+				{{ record().cost | currency: record().currency : 'symbol' :
+				'1.0-0' }}
+			</dd>
+		</div>
 		}
 		<div class="record-view__spec">
 			<dt>Source</dt>

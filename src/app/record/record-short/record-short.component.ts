@@ -20,5 +20,7 @@ const TYPE_ICON: Record<string, string> = {
 export class RecordShortComponent {
 	readonly record = input.required<CarRecord>();
 
-	protected readonly icon = computed(() => TYPE_ICON[this.record().type] ?? 'pi-file');
+	protected readonly icon = computed(
+		() => TYPE_ICON[this.record().type] ?? 'pi-file',
+	);
 }

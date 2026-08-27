@@ -3,9 +3,14 @@
 		<app-request-icon [request]="request()" />
 		<div>
 			<h2 class="request-view__title">{{ request().clientName }}</h2>
-			<div class="request-view__meta">{{ request().createdAt | date: 'medium' }}</div>
+			<div class="request-view__meta">
+				{{ request().createdAt | date: 'medium' }}
+			</div>
 		</div>
-		<p-tag [value]="request().status | titlecase" [severity]="request().status === 'new' ? 'info' : 'secondary'" />
+		<p-tag
+			[value]="request().status | titlecase"
+			[severity]="request().status === 'new' ? 'info' : 'secondary'"
+		/>
 	</div>
 
 	<p-tag [value]="request().kind | titlecase" severity="secondary" />

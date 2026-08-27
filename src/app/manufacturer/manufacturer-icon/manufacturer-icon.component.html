@@ -1,7 +1,14 @@
 <div class="manufacturer-icon">
 	@if (manufacturer().logo) {
-		<img class="manufacturer-icon__img" [src]="manufacturer().logo" [alt]="manufacturer().name" />
+	<img
+		class="manufacturer-icon__img"
+		[src]="manufacturer().logo"
+		[alt]="manufacturer().name"
+	/>
 	} @else {
-		<i class="pi pi-building manufacturer-icon__placeholder" [attr.aria-label]="manufacturer().name"></i>
+	<i
+		class="pi pi-building manufacturer-icon__placeholder"
+		[attr.aria-label]="manufacturer().name"
+	></i>
 	}
 </div>

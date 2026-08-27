@@ -17,6 +17,8 @@ export class ManufacturerViewComponent {
 	readonly manufacturer = input.required<Manufacturer>();
 
 	protected readonly cars = computed(() =>
-		this._carService.cars().filter((car) => car.manufacturerId === this.manufacturer()._id),
+		this._carService
+			.cars()
+			.filter((car) => car.manufacturerId === this.manufacturer()._id),
 	);
 }

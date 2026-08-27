@@ -1,4 +1,9 @@
-export type RecordType = 'service' | 'repair' | 'accident' | 'ownership_transfer' | 'inspection';
+export type RecordType =
+	| 'service'
+	| 'repair'
+	| 'accident'
+	| 'ownership_transfer'
+	| 'inspection';
 
 export interface CarRecord {
 	_id: string;

@@ -50,7 +50,8 @@ const DEFAULT_SHADOW_URL = 'assets/leaflet/marker-shadow.png';
 })
 export class LeafletMapComponent implements AfterViewInit, OnDestroy {
 	private readonly _platformId = inject(PLATFORM_ID);
-	private readonly _mapHost = viewChild.required<ElementRef<HTMLElement>>('mapHost');
+	private readonly _mapHost =
+		viewChild.required<ElementRef<HTMLElement>>('mapHost');
 
 	readonly center = input.required<{ lat: number; lng: number }>();
 	readonly zoom = input(13);
@@ -117,9 +118,12 @@ export class LeafletMapComponent implements AfterViewInit, OnDestroy {
 		layer.clearLayers();
 
 		for (const marker of markers) {
-			const leafletMarker = leaflet.marker([marker.position.lat, marker.position.lng], {
-				title: marker.title,
-			});
+			const leafletMarker = leaflet.marker(
+				[marker.position.lat, marker.position.lng],
+				{
+					title: marker.title,
+				},
+			);
 
 			if (marker.label) {
 				leafletMarker.bindTooltip(marker.label, { permanent: false });

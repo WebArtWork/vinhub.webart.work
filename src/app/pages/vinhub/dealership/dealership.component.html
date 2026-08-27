@@ -1,21 +1,24 @@
 @if (dealership(); as dealership) {
-	<div class="dealership-page">
-		<app-dealership-view [dealership]="dealership" />
+<div class="dealership-page">
+	<app-dealership-view [dealership]="dealership" />
 
-		@if (salespeople().length) {
-			<section class="dealership-page__section">
-				<h2>Sales team</h2>
-				@for (salesperson of salespeople(); track salesperson._id) {
-					<app-salesperson-short [salesperson]="salesperson" />
-				}
-			</section>
+	@if (salespeople().length) {
+	<section class="dealership-page__section">
+		<h2>Sales team</h2>
+		@for (salesperson of salespeople(); track salesperson._id) {
+		<app-salesperson-short [salesperson]="salesperson" />
 		}
+	</section>
+	}
 
-		<section class="dealership-page__section">
-			<h2>Comments</h2>
-			<app-comments-view targetType="dealership" [targetId]="dealership._id" />
-		</section>
-	</div>
+	<section class="dealership-page__section">
+		<h2>Comments</h2>
+		<app-comments-view
+			targetType="dealership"
+			[targetId]="dealership._id"
+		/>
+	</section>
+</div>
 } @else {
-	<p>Dealership not found.</p>
+<p>Dealership not found.</p>
 }

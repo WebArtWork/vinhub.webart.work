@@ -1,4 +1,11 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import {
+	Component,
+	computed,
+	inject,
+	input,
+	output,
+	signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
@@ -9,7 +16,13 @@ import { Salesperson } from '../salesperson.interface';
 
 @Component({
 	selector: 'app-salesperson-form',
-	imports: [FormsModule, ButtonModule, InputTextModule, SelectModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		InputTextModule,
+		SelectModule,
+		TranslateDirective,
+	],
 	templateUrl: './salesperson-form.component.html',
 	styleUrl: './salesperson-form.component.scss',
 })
@@ -19,7 +32,9 @@ export class SalespersonFormComponent {
 	readonly salesperson = input<Salesperson>();
 	readonly saved = output<Salesperson>();
 
-	protected readonly dealerships = computed(() => this._dealershipService.dealerships());
+	protected readonly dealerships = computed(() =>
+		this._dealershipService.dealerships(),
+	);
 
 	readonly model = signal<Salesperson>(this._initialModel());
 
@@ -28,7 +43,10 @@ export class SalespersonFormComponent {
 		return !model.name.trim() || !model.dealershipId;
 	});
 
-	updateModel<K extends keyof Salesperson>(key: K, value: Salesperson[K]): void {
+	updateModel<K extends keyof Salesperson>(
+		key: K,
+		value: Salesperson[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

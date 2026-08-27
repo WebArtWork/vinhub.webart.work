@@ -1,12 +1,15 @@
 @if (salesperson(); as salesperson) {
-	<div class="salesperson-page">
-		<app-salesperson-view [salesperson]="salesperson" />
+<div class="salesperson-page">
+	<app-salesperson-view [salesperson]="salesperson" />
 
-		<section class="salesperson-page__section">
-			<h2>Comments</h2>
-			<app-comments-view targetType="salesperson" [targetId]="salesperson._id" />
-		</section>
-	</div>
+	<section class="salesperson-page__section">
+		<h2>Comments</h2>
+		<app-comments-view
+			targetType="salesperson"
+			[targetId]="salesperson._id"
+		/>
+	</section>
+</div>
 } @else {
-	<p>Salesperson not found.</p>
+<p>Salesperson not found.</p>
 }

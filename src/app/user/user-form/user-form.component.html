@@ -1,11 +1,48 @@
 <form (submit)="save(); $event.preventDefault()" class="user-form">
-	<input pInputText class="w-full" placeholder="Name" [ngModel]="model().name" (ngModelChange)="updateModel('name', $event)" name="name" />
-	<p-select class="w-full" placeholder="Role" [options]="roles" [ngModel]="model().role" (ngModelChange)="updateModel('role', $event)" name="role" />
-	<input pInputText class="w-full" placeholder="Location" [ngModel]="model().location" (ngModelChange)="updateModel('location', $event)" name="location" />
-	<input pInputText class="w-full" placeholder="Avatar URL" [ngModel]="model().avatar" (ngModelChange)="updateModel('avatar', $event)" name="avatar" />
-	<textarea pTextarea class="w-full" placeholder="Bio" [ngModel]="model().bio" (ngModelChange)="updateModel('bio', $event)" name="bio"></textarea>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Name"
+		[ngModel]="model().name"
+		(ngModelChange)="updateModel('name', $event)"
+		name="name"
+	/>
+	<p-select
+		class="w-full"
+		placeholder="Role"
+		[options]="roles"
+		[ngModel]="model().role"
+		(ngModelChange)="updateModel('role', $event)"
+		name="role"
+	/>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Location"
+		[ngModel]="model().location"
+		(ngModelChange)="updateModel('location', $event)"
+		name="location"
+	/>
+	<input
+		pInputText
+		class="w-full"
+		placeholder="Avatar URL"
+		[ngModel]="model().avatar"
+		(ngModelChange)="updateModel('avatar', $event)"
+		name="avatar"
+	/>
+	<textarea
+		pTextarea
+		class="w-full"
+		placeholder="Bio"
+		[ngModel]="model().bio"
+		(ngModelChange)="updateModel('bio', $event)"
+		name="bio"
+	></textarea>
 
 	<div class="user-form__actions">
-		<button pButton type="submit" [disabled]="isSaveDisabled()"><span translate>Save</span></button>
+		<button pButton type="submit" [disabled]="isSaveDisabled()">
+			<span translate>Save</span>
+		</button>
 	</div>
 </form>

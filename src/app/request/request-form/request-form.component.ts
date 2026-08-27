@@ -9,7 +9,14 @@ import { CarRequest } from '../request.interface';
 
 @Component({
 	selector: 'app-request-form',
-	imports: [FormsModule, ButtonModule, InputTextModule, SelectModule, TextareaModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		InputTextModule,
+		SelectModule,
+		TextareaModule,
+		TranslateDirective,
+	],
 	templateUrl: './request-form.component.html',
 	styleUrl: './request-form.component.scss',
 })
@@ -27,7 +34,10 @@ export class RequestFormComponent {
 		return !model.clientName.trim() || !model.clientEmail.trim();
 	});
 
-	updateModel<K extends keyof CarRequest>(key: K, value: CarRequest[K]): void {
+	updateModel<K extends keyof CarRequest>(
+		key: K,
+		value: CarRequest[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

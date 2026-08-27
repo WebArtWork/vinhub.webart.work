@@ -1,4 +1,11 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import {
+	Component,
+	computed,
+	inject,
+	input,
+	output,
+	signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { DatePickerModule } from '@wawjs/ngx-prime/datepicker';
@@ -33,7 +40,13 @@ export class RecordFormComponent {
 	readonly saved = output<RecordFormModel>();
 
 	protected readonly cars = computed(() => this._carService.cars());
-	protected readonly types = ['service', 'repair', 'accident', 'ownership_transfer', 'inspection'];
+	protected readonly types = [
+		'service',
+		'repair',
+		'accident',
+		'ownership_transfer',
+		'inspection',
+	];
 
 	readonly model = signal<RecordFormModel>(this._initialModel());
 
@@ -42,7 +55,10 @@ export class RecordFormComponent {
 		return !model.carId || !model.title.trim() || !model.date;
 	});
 
-	updateModel<K extends keyof RecordFormModel>(key: K, value: RecordFormModel[K]): void {
+	updateModel<K extends keyof RecordFormModel>(
+		key: K,
+		value: RecordFormModel[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

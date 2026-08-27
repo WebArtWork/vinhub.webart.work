@@ -10,5 +10,7 @@ export class CarIconComponent {
 	readonly car = input.required<Car>();
 
 	protected readonly image = computed(() => this.car().images[0] ?? '');
-	protected readonly alt = computed(() => `${this.car().year} ${this.car().make} ${this.car().model}`);
+	protected readonly alt = computed(
+		() => `${this.car().year} ${this.car().make} ${this.car().model}`,
+	);
 }

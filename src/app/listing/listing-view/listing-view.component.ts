@@ -8,7 +8,14 @@ import { Listing } from '../listing.interface';
 
 @Component({
 	selector: 'app-listing-view',
-	imports: [CurrencyPipe, DatePipe, TitleCasePipe, CardModule, TagModule, CarViewComponent],
+	imports: [
+		CurrencyPipe,
+		DatePipe,
+		TitleCasePipe,
+		CardModule,
+		TagModule,
+		CarViewComponent,
+	],
 	templateUrl: './listing-view.component.html',
 	styleUrl: './listing-view.component.scss',
 })
@@ -17,5 +24,7 @@ export class ListingViewComponent {
 
 	readonly listing = input.required<Listing>();
 
-	protected readonly car = computed(() => this._carService.getById(this.listing().carId)());
+	protected readonly car = computed(() =>
+		this._carService.getById(this.listing().carId)(),
+	);
 }

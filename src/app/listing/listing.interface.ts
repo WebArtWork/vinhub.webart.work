@@ -1,5 +1,10 @@
 export type ListingKind = 'sale' | 'rental';
-export type ListingStatus = 'active' | 'pending' | 'sold' | 'rented' | 'expired';
+export type ListingStatus =
+	| 'active'
+	| 'pending'
+	| 'sold'
+	| 'rented'
+	| 'expired';
 export type ListingRentalPeriod = 'day' | 'week' | 'month';
 
 export interface Listing {

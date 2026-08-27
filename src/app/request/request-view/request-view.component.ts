@@ -7,7 +7,13 @@ import { CarRequest } from '../request.interface';
 
 @Component({
 	selector: 'app-request-view',
-	imports: [DatePipe, TitleCasePipe, CardModule, TagModule, RequestIconComponent],
+	imports: [
+		DatePipe,
+		TitleCasePipe,
+		CardModule,
+		TagModule,
+		RequestIconComponent,
+	],
 	templateUrl: './request-view.component.html',
 	styleUrl: './request-view.component.scss',
 })

@@ -16,5 +16,7 @@ const KIND_ICON: Record<string, string> = {
 export class RequestIconComponent {
 	readonly request = input.required<CarRequest>();
 
-	protected readonly icon = computed(() => KIND_ICON[this.request().kind] ?? 'pi-envelope');
+	protected readonly icon = computed(
+		() => KIND_ICON[this.request().kind] ?? 'pi-envelope',
+	);
 }

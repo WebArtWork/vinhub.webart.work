@@ -1,4 +1,11 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import {
+	Component,
+	computed,
+	inject,
+	input,
+	output,
+	signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputNumberModule } from '@wawjs/ngx-prime/inputnumber';
@@ -32,7 +39,13 @@ export class ListingFormComponent {
 
 	protected readonly cars = computed(() => this._carService.cars());
 	protected readonly kinds = ['sale', 'rental'];
-	protected readonly statuses = ['active', 'pending', 'sold', 'rented', 'expired'];
+	protected readonly statuses = [
+		'active',
+		'pending',
+		'sold',
+		'rented',
+		'expired',
+	];
 	protected readonly rentalPeriods = ['day', 'week', 'month'];
 
 	readonly model = signal<ListingFormModel>(this._initialModel());
@@ -42,7 +55,10 @@ export class ListingFormComponent {
 		return !model.carId || !model.title.trim() || model.price <= 0;
 	});
 
-	updateModel<K extends keyof ListingFormModel>(key: K, value: ListingFormModel[K]): void {
+	updateModel<K extends keyof ListingFormModel>(
+		key: K,
+		value: ListingFormModel[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

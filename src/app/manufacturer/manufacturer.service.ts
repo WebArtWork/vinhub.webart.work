@@ -7,6 +7,10 @@ export class ManufacturerService {
 	readonly manufacturers = signal<Manufacturer[]>(MANUFACTURERS_FALLBACK);
 
 	getById(id: string) {
-		return computed(() => this.manufacturers().find((manufacturer) => manufacturer._id === id));
+		return computed(() =>
+			this.manufacturers().find(
+				(manufacturer) => manufacturer._id === id,
+			),
+		);
 	}
 }

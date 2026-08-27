@@ -5,7 +5,8 @@ type RawManufacturer = Partial<Manufacturer>;
 
 const rawManufacturers = manufacturerData as RawManufacturer[];
 
-export const manufacturers: Manufacturer[] = rawManufacturers.map(_toManufacturer);
+export const manufacturers: Manufacturer[] =
+	rawManufacturers.map(_toManufacturer);
 
 function _toManufacturer(raw: RawManufacturer): Manufacturer {
 	return {
@@ -19,10 +20,20 @@ function _toManufacturer(raw: RawManufacturer): Manufacturer {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _numberOrFallback(value: number | null | undefined, fallback = 0): number {
-	return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+function _numberOrFallback(
+	value: number | null | undefined,
+	fallback = 0,
+): number {
+	return typeof value === 'number' && Number.isFinite(value)
+		? value
+		: fallback;
 }

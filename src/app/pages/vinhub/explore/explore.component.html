@@ -1,14 +1,25 @@
 <div class="explore">
 	<div class="explore__filters">
-		<input pInputText class="w-full" placeholder="Search make, model, title..." [(ngModel)]="query" />
-		<p-select class="w-full" placeholder="Any kind" [options]="kinds" [(ngModel)]="kind" [showClear]="true" />
+		<input
+			pInputText
+			class="w-full"
+			placeholder="Search make, model, title..."
+			[(ngModel)]="query"
+		/>
+		<p-select
+			class="w-full"
+			placeholder="Any kind"
+			[options]="kinds"
+			[(ngModel)]="kind"
+			[showClear]="true"
+		/>
 	</div>
 
 	<div class="explore__results">
 		@for (listing of results(); track listing._id) {
-			<app-listing-short [listing]="listing" />
+		<app-listing-short [listing]="listing" />
 		} @empty {
-			<p class="explore__empty">No listings match your search.</p>
+		<p class="explore__empty">No listings match your search.</p>
 		}
 	</div>
 </div>

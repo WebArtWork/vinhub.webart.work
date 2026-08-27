@@ -6,12 +6,20 @@ import { Car } from '../car.interface';
 
 @Component({
 	selector: 'app-car-short',
-	imports: [RouterLink, CurrencyPipe, DecimalPipe, TitleCasePipe, CarIconComponent],
+	imports: [
+		RouterLink,
+		CurrencyPipe,
+		DecimalPipe,
+		TitleCasePipe,
+		CarIconComponent,
+	],
 	templateUrl: './car-short.component.html',
 	styleUrl: './car-short.component.scss',
 })
 export class CarShortComponent {
 	readonly car = input.required<Car>();
 
-	protected readonly title = computed(() => `${this.car().year} ${this.car().make} ${this.car().model}`);
+	protected readonly title = computed(
+		() => `${this.car().year} ${this.car().make} ${this.car().model}`,
+	);
 }

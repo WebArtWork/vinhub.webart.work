@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
@@ -12,7 +17,13 @@ import { RecordService } from '../../../record/record.service';
 
 @Component({
 	selector: 'app-car-page',
-	imports: [RouterLink, CarViewComponent, RecordShortComponent, ListingShortComponent, CommentsViewComponent],
+	imports: [
+		RouterLink,
+		CarViewComponent,
+		RecordShortComponent,
+		ListingShortComponent,
+		CommentsViewComponent,
+	],
 	templateUrl: './car.component.html',
 	styleUrl: './car.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,11 +34,17 @@ export class CarPageComponent {
 	private readonly _listingService = inject(ListingService);
 
 	private readonly _carId = toSignal(
-		inject(ActivatedRoute).paramMap.pipe(map((params) => params.get('id') ?? '')),
+		inject(ActivatedRoute).paramMap.pipe(
+			map((params) => params.get('id') ?? ''),
+		),
 		{ initialValue: '' },
 	);
 
 	readonly car = computed(() => this._carService.getById(this._carId())());
-	readonly records = computed(() => this._recordService.getByCarId(this._carId())());
-	readonly listings = computed(() => this._listingService.getByCarId(this._carId())());
+	readonly records = computed(() =>
+		this._recordService.getByCarId(this._carId())(),
+	);
+	readonly listings = computed(() =>
+		this._listingService.getByCarId(this._carId())(),
+	);
 }

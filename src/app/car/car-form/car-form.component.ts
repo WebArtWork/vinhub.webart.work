@@ -27,7 +27,14 @@ export class CarFormComponent {
 	readonly car = input<Car>();
 	readonly saved = output<CarFormModel>();
 
-	protected readonly types = ['sedan', 'suv', 'hatchback', 'coupe', 'truck', 'van'];
+	protected readonly types = [
+		'sedan',
+		'suv',
+		'hatchback',
+		'coupe',
+		'truck',
+		'van',
+	];
 	protected readonly transmissions = ['automatic', 'manual'];
 	protected readonly fuelTypes = ['petrol', 'diesel', 'electric', 'hybrid'];
 	protected readonly conditions = ['new', 'used'];
@@ -36,10 +43,18 @@ export class CarFormComponent {
 
 	readonly isSaveDisabled = computed(() => {
 		const model = this.model();
-		return !model.make.trim() || !model.model.trim() || !model.vin.trim() || model.price <= 0;
+		return (
+			!model.make.trim() ||
+			!model.model.trim() ||
+			!model.vin.trim() ||
+			model.price <= 0
+		);
 	});
 
-	updateModel<K extends keyof CarFormModel>(key: K, value: CarFormModel[K]): void {
+	updateModel<K extends keyof CarFormModel>(
+		key: K,
+		value: CarFormModel[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

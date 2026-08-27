@@ -9,7 +9,14 @@ import { DealershipFormComponent } from '../../../dealership/dealership-form/dea
 import { SalespersonFormComponent } from '../../../salesperson/salesperson-form/salesperson-form.component';
 import { UserFormComponent } from '../../../user/user-form/user-form.component';
 
-type EditorEntity = 'car' | 'listing' | 'record' | 'manufacturer' | 'dealership' | 'salesperson' | 'user';
+type EditorEntity =
+	| 'car'
+	| 'listing'
+	| 'record'
+	| 'manufacturer'
+	| 'dealership'
+	| 'salesperson'
+	| 'user';
 
 @Component({
 	selector: 'app-editor',

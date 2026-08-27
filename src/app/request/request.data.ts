@@ -11,8 +11,16 @@ function _toRequest(raw: RawRequest): CarRequest {
 	return {
 		_id: _stringOrFallback(raw._id),
 		listingId: _stringOrFallback(raw.listingId),
-		kind: _oneOf<RequestKind>(raw.kind, ['buy', 'rent', 'test-drive', 'trade-in'], 'buy'),
-		status: _oneOf<RequestStatus>(raw.status, ['new', 'contacted', 'closed', 'declined'], 'new'),
+		kind: _oneOf<RequestKind>(
+			raw.kind,
+			['buy', 'rent', 'test-drive', 'trade-in'],
+			'buy',
+		),
+		status: _oneOf<RequestStatus>(
+			raw.status,
+			['new', 'contacted', 'closed', 'declined'],
+			'new',
+		),
 		clientName: _stringOrFallback(raw.clientName),
 		clientEmail: _stringOrFallback(raw.clientEmail),
 		clientPhone: _stringOrFallback(raw.clientPhone),
@@ -21,10 +29,19 @@ function _toRequest(raw: RawRequest): CarRequest {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _oneOf<T extends string>(value: string | null | undefined, allowed: T[], fallback: T): T {
+function _oneOf<T extends string>(
+	value: string | null | undefined,
+	allowed: T[],
+	fallback: T,
+): T {
 	return allowed.includes(value as T) ? (value as T) : fallback;
 }

@@ -10,7 +10,11 @@ export const comments: Comment[] = rawComments.map(_toComment);
 function _toComment(raw: RawComment): Comment {
 	return {
 		_id: _stringOrFallback(raw._id),
-		targetType: _oneOf<CommentTargetType>(raw.targetType, ['car', 'listing', 'dealership', 'salesperson'], 'listing'),
+		targetType: _oneOf<CommentTargetType>(
+			raw.targetType,
+			['car', 'listing', 'dealership', 'salesperson'],
+			'listing',
+		),
 		targetId: _stringOrFallback(raw.targetId),
 		authorId: _stringOrFallback(raw.authorId),
 		rating: typeof raw.rating === 'number' ? raw.rating : undefined,
@@ -19,10 +23,19 @@ function _toComment(raw: RawComment): Comment {
 	};
 }
 
-function _stringOrFallback(value: string | null | undefined, fallback = ''): string {
-	return typeof value === 'string' && value.trim().length > 0 ? value.trim() : fallback;
+function _stringOrFallback(
+	value: string | null | undefined,
+	fallback = '',
+): string {
+	return typeof value === 'string' && value.trim().length > 0
+		? value.trim()
+		: fallback;
 }
 
-function _oneOf<T extends string>(value: string | null | undefined, allowed: T[], fallback: T): T {
+function _oneOf<T extends string>(
+	value: string | null | undefined,
+	allowed: T[],
+	fallback: T,
+): T {
 	return allowed.includes(value as T) ? (value as T) : fallback;
 }

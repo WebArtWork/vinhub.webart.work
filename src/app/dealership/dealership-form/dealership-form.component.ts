@@ -8,7 +8,13 @@ import { Dealership } from '../dealership.interface';
 
 @Component({
 	selector: 'app-dealership-form',
-	imports: [FormsModule, ButtonModule, InputTextModule, InputNumberModule, TranslateDirective],
+	imports: [
+		FormsModule,
+		ButtonModule,
+		InputTextModule,
+		InputNumberModule,
+		TranslateDirective,
+	],
 	templateUrl: './dealership-form.component.html',
 	styleUrl: './dealership-form.component.scss',
 })
@@ -20,10 +26,15 @@ export class DealershipFormComponent {
 
 	readonly isSaveDisabled = computed(() => {
 		const model = this.model();
-		return !model.name.trim() || !model.address.trim() || !model.city.trim();
+		return (
+			!model.name.trim() || !model.address.trim() || !model.city.trim()
+		);
 	});
 
-	updateModel<K extends keyof Dealership>(key: K, value: Dealership[K]): void {
+	updateModel<K extends keyof Dealership>(
+		key: K,
+		value: Dealership[K],
+	): void {
 		this.model.update((current) => ({ ...current, [key]: value }));
 	}
 

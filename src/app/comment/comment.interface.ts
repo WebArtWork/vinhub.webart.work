@@ -1,4 +1,8 @@
-export type CommentTargetType = 'car' | 'listing' | 'dealership' | 'salesperson';
+export type CommentTargetType =
+	| 'car'
+	| 'listing'
+	| 'dealership'
+	| 'salesperson';
 
 export interface Comment {
 	_id: string;

@@ -10,7 +10,10 @@
 	<dl class="dealership-view__specs">
 		<div class="dealership-view__spec">
 			<dt>Address</dt>
-			<dd>{{ dealership().address }}, {{ dealership().city }}, {{ dealership().state }}</dd>
+			<dd>
+				{{ dealership().address }}, {{ dealership().city }}, {{
+				dealership().state }}
+			</dd>
 		</div>
 		<div class="dealership-view__spec">
 			<dt>Phone</dt>
@@ -23,10 +26,10 @@
 	</dl>
 
 	@if (cars().length) {
-		<div class="dealership-view__cars">
-			@for (car of cars(); track car._id) {
-				<app-car-short [car]="car" />
-			}
-		</div>
+	<div class="dealership-view__cars">
+		@for (car of cars(); track car._id) {
+		<app-car-short [car]="car" />
+		}
+	</div>
 	}
 </p-card>

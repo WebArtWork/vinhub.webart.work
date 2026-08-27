@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
@@ -9,7 +14,11 @@ import { RequestFormComponent } from '../../../request/request-form/request-form
 
 @Component({
 	selector: 'app-listing-page',
-	imports: [ListingViewComponent, RequestFormComponent, CommentsViewComponent],
+	imports: [
+		ListingViewComponent,
+		RequestFormComponent,
+		CommentsViewComponent,
+	],
 	templateUrl: './listing.component.html',
 	styleUrl: './listing.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,9 +27,13 @@ export class ListingPageComponent {
 	private readonly _listingService = inject(ListingService);
 
 	private readonly _listingId = toSignal(
-		inject(ActivatedRoute).paramMap.pipe(map((params) => params.get('id') ?? '')),
+		inject(ActivatedRoute).paramMap.pipe(
+			map((params) => params.get('id') ?? ''),
+		),
 		{ initialValue: '' },
 	);
 
-	readonly listing = computed(() => this._listingService.getById(this._listingId())());
+	readonly listing = computed(() =>
+		this._listingService.getById(this._listingId())(),
+	);
 }
