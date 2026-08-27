@@ -75,26 +75,26 @@ right now, since there's no guard or data model distinguishing a buyer from
 a salesperson/dealer account. This table is here to make that gap visible,
 not to claim a distinction that doesn't exist in code yet.
 
-| Page                       | Unauthorized | Client | Agent |
-| --------------------------- | :----------: | :----: | :---: |
-| Landing (`/`)                |      ✅      |   ✅   |  ✅   |
-| Sign in (`/sign`)             |      ✅      |   ❌   |  ❌   |
-| Feed (`/feed`)                |      ❌      |   ✅   |  ✅   |
-| Explore (`/explore`)          |      ❌      |   ✅   |  ✅   |
-| Map (`/map`)                  |      ❌      |   ✅   |  ✅   |
-| Editor (`/editor`)            |      ❌      |   ✅   |  ✅   |
-| Car (`/car/:id`)              |      ❌      |   ✅   |  ✅   |
-| Listing (`/listing/:id`)      |      ❌      |   ✅   |  ✅   |
-| Digital passport (`/records/:carId`) |      ❌      |   ✅   |  ✅   |
-| Manufacturer (`/manufacturer/:id`)   |      ❌      |   ✅   |  ✅   |
-| Dealership (`/dealership/:id`)       |      ❌      |   ✅   |  ✅   |
-| Salesperson (`/salesperson/:id`)     |      ❌      |   ✅   |  ✅   |
-| Client profile (`/client/:id`)       |      ❌      |   ✅   |  ✅   |
-| My profile (`/profile`)       |      ❌      |   ✅   |  ✅   |
-| Settings (`/settings`)        |      ❌      |   ✅   |  ✅   |
-| Admin: Users (`/admin/users`)     |      ❌      |   ❌   |  ❌   |
-| Admin: Clients (`/admin/clients`) |      ❌      |   ❌   |  ❌   |
-| Admin: Forms (`/admin/forms`)     |      ❌      |   ❌   |  ❌   |
+| Page                                  | Unauthorized | Client | Agent |
+| ------------------------------------- | :----------: | :----: | :---: |
+| Landing (`/`)                         |      ✅      |   ✅   |  ✅   |
+| Sign in (`/sign`)                     |      ✅      |   ❌   |  ❌   |
+| Feed (`/feed`)                        |      ✅      |   ✅   |  ✅   |
+| Explore (`/explore`)                  |      ✅      |   ✅   |  ✅   |
+| Map (`/map`)                          |      ✅      |   ✅   |  ✅   |
+| Car (`/car/:id`)                      |      ✅      |   ✅   |  ✅   |
+| Listing (`/listing/:id`)              |      ✅      |   ✅   |  ✅   |
+| Digital passport (`/records/:carId`)  |      ✅      |   ✅   |  ✅   |
+| Manufacturer (`/manufacturer/:id`)    |      ✅      |   ✅   |  ✅   |
+| Dealership (`/dealership/:id`)        |      ✅      |   ✅   |  ✅   |
+| Salesperson (`/salesperson/:id`)      |      ✅      |   ✅   |  ✅   |
+| Client profile (`/client/:id`)        |      ✅      |   ✅   |  ✅   |
+| Editor (`/editor`)                    |      ❌      |   ✅   |  ✅   |
+| My profile (`/profile`)               |      ❌      |   ✅   |  ✅   |
+| Settings (`/settings`)                |      ❌      |   ✅   |  ✅   |
+| Admin: Users (`/admin/users`)         |      ❌      |   ❌   |  ❌   |
+| Admin: Clients (`/admin/clients`)     |      ❌      |   ❌   |  ❌   |
+| Admin: Forms (`/admin/forms`)         |      ❌      |   ❌   |  ❌   |
 
 Admin pages are gated by a separate `adminsGuard` (platform staff), which is
 distinct from both Client and Agent — neither can see them under the current
