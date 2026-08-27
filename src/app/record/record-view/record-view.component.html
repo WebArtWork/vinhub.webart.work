@@ -1,0 +1,35 @@
+<p-card styleClass="record-view">
+	<div class="record-view__heading">
+		<h2 class="record-view__title">{{ record().title }}</h2>
+		@if (record().verified) {
+			<p-tag value="Verified" severity="success" />
+		}
+	</div>
+
+	<div class="record-view__tags">
+		<p-tag [value]="record().type | titlecase" severity="secondary" />
+	</div>
+
+	<p class="record-view__description">{{ record().description }}</p>
+
+	<dl class="record-view__specs">
+		<div class="record-view__spec">
+			<dt>Date</dt>
+			<dd>{{ record().date | date: 'mediumDate' }}</dd>
+		</div>
+		<div class="record-view__spec">
+			<dt>Mileage</dt>
+			<dd>{{ record().mileage | number }} mi</dd>
+		</div>
+		@if (record().cost !== undefined) {
+			<div class="record-view__spec">
+				<dt>Cost</dt>
+				<dd>{{ record().cost | currency: record().currency : 'symbol' : '1.0-0' }}</dd>
+			</div>
+		}
+		<div class="record-view__spec">
+			<dt>Source</dt>
+			<dd>{{ record().sourceName }}</dd>
+		</div>
+	</dl>
+</p-card>

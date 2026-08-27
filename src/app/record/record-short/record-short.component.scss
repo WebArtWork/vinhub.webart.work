@@ -1,0 +1,35 @@
+.record-short {
+	display: flex;
+	gap: 0.75rem;
+	padding: 0.5rem 0;
+
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background: var(--surface-100, #f1f5f9);
+		color: var(--primary-color, #2563eb);
+		flex-shrink: 0;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	&__title {
+		font-weight: 600;
+	}
+
+	&__meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.8rem;
+		color: var(--text-color-secondary, #64748b);
+	}
+}

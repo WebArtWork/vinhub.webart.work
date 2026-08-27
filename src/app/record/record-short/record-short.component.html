@@ -1,0 +1,15 @@
+<div class="record-short">
+	<i class="pi record-short__icon" [class]="icon()"></i>
+
+	<div class="record-short__body">
+		<div class="record-short__title">{{ record().title }}</div>
+		<div class="record-short__meta">
+			<span>{{ record().date | date: 'mediumDate' }}</span>
+			<span>·</span>
+			<span>{{ record().mileage | number }} mi</span>
+			@if (record().verified) {
+				<p-tag value="Verified" severity="success" />
+			}
+		</div>
+	</div>
+</div>

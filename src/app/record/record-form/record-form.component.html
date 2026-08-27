@@ -1,0 +1,22 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="record-form">
+	<p-select
+		class="w-full"
+		placeholder="Car"
+		[options]="cars()"
+		optionLabel="model"
+		optionValue="_id"
+		[formField]="recordForm.carId"
+	/>
+	<input pInputText class="w-full" placeholder="Title" [formField]="recordForm.title" />
+	<p-select class="w-full" placeholder="Type" [options]="types" [formField]="recordForm.type" />
+	<p-datepicker class="w-full" placeholder="Date" [formField]="recordForm.date" />
+	<p-inputnumber class="w-full" placeholder="Mileage" [formField]="recordForm.mileage" />
+	<p-inputnumber class="w-full" placeholder="Cost" [formField]="recordForm.cost" mode="currency" currency="USD" />
+	<input pInputText class="w-full" placeholder="Source" [formField]="recordForm.sourceName" />
+
+	<textarea pTextarea class="w-full" placeholder="Description" [formField]="recordForm.description"></textarea>
+
+	<div class="record-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>

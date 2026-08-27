@@ -1,0 +1,63 @@
+[
+	{
+		"_id": "record-001",
+		"carId": "car-001",
+		"type": "service",
+		"title": "Scheduled maintenance — oil & filter change",
+		"description": "Synthetic oil change, cabin filter replacement, multi-point inspection passed.",
+		"mileage": 12000,
+		"date": "2024-11-03T00:00:00.000Z",
+		"cost": 89,
+		"currency": "USD",
+		"verified": true,
+		"sourceName": "Toyota of Downtown Service Center"
+	},
+	{
+		"_id": "record-002",
+		"carId": "car-001",
+		"type": "ownership_transfer",
+		"title": "Ownership transferred to current owner",
+		"description": "Title transferred, no liens reported at time of transfer.",
+		"mileage": 8100,
+		"date": "2023-02-18T00:00:00.000Z",
+		"verified": true,
+		"sourceName": "State DMV Records"
+	},
+	{
+		"_id": "record-003",
+		"carId": "car-002",
+		"type": "repair",
+		"title": "Front brake pad replacement",
+		"description": "Replaced front brake pads and resurfaced rotors under routine wear.",
+		"mileage": 6200,
+		"date": "2025-01-22T00:00:00.000Z",
+		"cost": 240,
+		"currency": "USD",
+		"verified": true,
+		"sourceName": "Ford Certified Service"
+	},
+	{
+		"_id": "record-004",
+		"carId": "car-004",
+		"type": "accident",
+		"title": "Minor rear-end collision — repaired",
+		"description": "Rear bumper and taillight replaced after low-speed collision. No frame damage.",
+		"mileage": 27800,
+		"date": "2023-09-10T00:00:00.000Z",
+		"cost": 1850,
+		"currency": "USD",
+		"verified": true,
+		"sourceName": "Honda Collision Center"
+	},
+	{
+		"_id": "record-005",
+		"carId": "car-005",
+		"type": "inspection",
+		"title": "Annual state safety & emissions inspection",
+		"description": "Passed state safety and emissions inspection with no advisories.",
+		"mileage": 41800,
+		"date": "2025-05-02T00:00:00.000Z",
+		"verified": true,
+		"sourceName": "State Inspection Authority"
+	}
+]
