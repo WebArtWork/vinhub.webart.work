@@ -66,6 +66,40 @@ appear embedded inside other pages/entities (e.g. comments on an entity
 page, requests inside Feed/Explore). `user`'s dedicated page is named
 `client` to avoid confusion with the auth/account user.
 
+## Page access matrix
+
+Reflects the actual route guards in `app.routes.ts` / `pages/vinhub/vinhub.routes.ts`
+today. The demo has no real role system yet (see "Explicitly out of scope"
+below) — **Client** and **Agent** are both just "any authenticated user"
+right now, since there's no guard or data model distinguishing a buyer from
+a salesperson/dealer account. This table is here to make that gap visible,
+not to claim a distinction that doesn't exist in code yet.
+
+| Page                       | Unauthorized | Client | Agent |
+| --------------------------- | :----------: | :----: | :---: |
+| Landing (`/`)                |      ✅      |   ✅   |  ✅   |
+| Sign in (`/sign`)             |      ✅      |   ❌   |  ❌   |
+| Feed (`/feed`)                |      ❌      |   ✅   |  ✅   |
+| Explore (`/explore`)          |      ❌      |   ✅   |  ✅   |
+| Map (`/map`)                  |      ❌      |   ✅   |  ✅   |
+| Editor (`/editor`)            |      ❌      |   ✅   |  ✅   |
+| Car (`/car/:id`)              |      ❌      |   ✅   |  ✅   |
+| Listing (`/listing/:id`)      |      ❌      |   ✅   |  ✅   |
+| Digital passport (`/records/:carId`) |      ❌      |   ✅   |  ✅   |
+| Manufacturer (`/manufacturer/:id`)   |      ❌      |   ✅   |  ✅   |
+| Dealership (`/dealership/:id`)       |      ❌      |   ✅   |  ✅   |
+| Salesperson (`/salesperson/:id`)     |      ❌      |   ✅   |  ✅   |
+| Client profile (`/client/:id`)       |      ❌      |   ✅   |  ✅   |
+| My profile (`/profile`)       |      ❌      |   ✅   |  ✅   |
+| Settings (`/settings`)        |      ❌      |   ✅   |  ✅   |
+| Admin: Users (`/admin/users`)     |      ❌      |   ❌   |  ❌   |
+| Admin: Clients (`/admin/clients`) |      ❌      |   ❌   |  ❌   |
+| Admin: Forms (`/admin/forms`)     |      ❌      |   ❌   |  ❌   |
+
+Admin pages are gated by a separate `adminsGuard` (platform staff), which is
+distinct from both Client and Agent — neither can see them under the current
+guard setup.
+
 ### Explicitly out of scope for this demo
 
 - Real backend/database/API
