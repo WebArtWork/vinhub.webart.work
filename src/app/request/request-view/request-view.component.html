@@ -1,0 +1,25 @@
+<p-card styleClass="request-view">
+	<div class="request-view__heading">
+		<app-request-icon [request]="request()" />
+		<div>
+			<h2 class="request-view__title">{{ request().clientName }}</h2>
+			<div class="request-view__meta">{{ request().createdAt | date: 'medium' }}</div>
+		</div>
+		<p-tag [value]="request().status | titlecase" [severity]="request().status === 'new' ? 'info' : 'secondary'" />
+	</div>
+
+	<p-tag [value]="request().kind | titlecase" severity="secondary" />
+
+	<p class="request-view__message">{{ request().message }}</p>
+
+	<dl class="request-view__specs">
+		<div class="request-view__spec">
+			<dt>Email</dt>
+			<dd>{{ request().clientEmail }}</dd>
+		</div>
+		<div class="request-view__spec">
+			<dt>Phone</dt>
+			<dd>{{ request().clientPhone }}</dd>
+		</div>
+	</dl>
+</p-card>

@@ -1,0 +1,46 @@
+[
+	{
+		"_id": "request-001",
+		"listingId": "listing-001",
+		"kind": "buy",
+		"status": "new",
+		"clientName": "Alex Morgan",
+		"clientEmail": "alex.morgan@example.com",
+		"clientPhone": "+1-415-555-0301",
+		"message": "Interested in the Camry — is it still available for a test drive this weekend?",
+		"createdAt": "2026-07-20T10:05:00.000Z"
+	},
+	{
+		"_id": "request-002",
+		"listingId": "listing-002",
+		"kind": "test-drive",
+		"status": "contacted",
+		"clientName": "Jamie Lin",
+		"clientEmail": "jamie.lin@example.com",
+		"clientPhone": "+1-415-555-0322",
+		"message": "Would like to schedule a test drive for the F-150 next Tuesday afternoon.",
+		"createdAt": "2026-07-15T13:45:00.000Z"
+	},
+	{
+		"_id": "request-003",
+		"listingId": "listing-003",
+		"kind": "rent",
+		"status": "new",
+		"clientName": "Sam Okafor",
+		"clientEmail": "sam.okafor@example.com",
+		"clientPhone": "+1-510-555-0355",
+		"message": "Looking to rent the Model 3 for a week starting August 1st.",
+		"createdAt": "2026-07-22T08:20:00.000Z"
+	},
+	{
+		"_id": "request-004",
+		"listingId": "listing-005",
+		"kind": "trade-in",
+		"status": "closed",
+		"clientName": "Nora Fitzgerald",
+		"clientEmail": "nora.fitzgerald@example.com",
+		"clientPhone": "+1-415-555-0388",
+		"message": "Would like to trade in my current car toward the Golf listing.",
+		"createdAt": "2026-06-28T17:10:00.000Z"
+	}
+]

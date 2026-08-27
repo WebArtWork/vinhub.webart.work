@@ -1,0 +1,47 @@
+.request-view {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	&__meta {
+		font-size: 0.75rem;
+		color: var(--text-color-secondary, #64748b);
+	}
+
+	&__message {
+		color: var(--text-color-secondary, #64748b);
+		line-height: 1.5;
+	}
+
+	&__specs {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+		gap: 1rem;
+		margin: 0;
+	}
+
+	&__spec {
+		dt {
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			color: var(--text-color-secondary, #64748b);
+		}
+
+		dd {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+}

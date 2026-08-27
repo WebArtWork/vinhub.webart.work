@@ -1,0 +1,23 @@
+.request-short {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.5rem;
+
+	&__body {
+		flex: 1;
+		min-width: 0;
+	}
+
+	&__title {
+		font-weight: 600;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__meta {
+		font-size: 0.75rem;
+		color: var(--text-color-secondary, #64748b);
+	}
+}
