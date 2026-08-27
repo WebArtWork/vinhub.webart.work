@@ -44,31 +44,11 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Settings')() : ''"
-		[ariaLabel]="translateService.translate('Settings')()"
-		(click)="closeIfOverlay()"
-		routerLink="/settings"
-		icon="cog"
-	/>
-
-	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
-
-	<app-nav-icon
-		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Feed')() : ''"
-		[ariaLabel]="translateService.translate('Feed')()"
-		(click)="closeIfOverlay()"
-		routerLink="/feed"
-		icon="car"
-	/>
-
-	<app-nav-icon
-		[class.sidebar--minimized-icon]="!showNames()"
 		[name]="showNames() ? translateService.translate('Explore')() : ''"
 		[ariaLabel]="translateService.translate('Explore')()"
 		(click)="closeIfOverlay()"
 		routerLink="/explore"
-		icon="search"
+		icon="th-large"
 	/>
 
 	<app-nav-icon
@@ -78,6 +58,17 @@
 		(click)="closeIfOverlay()"
 		routerLink="/map"
 		icon="map"
+	/>
+
+	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Settings')() : ''"
+		[ariaLabel]="translateService.translate('Settings')()"
+		(click)="closeIfOverlay()"
+		routerLink="/settings"
+		icon="cog"
 	/>
 
 	<app-nav-icon

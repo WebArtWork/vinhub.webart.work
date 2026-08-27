@@ -5,9 +5,8 @@ import { vinhubEditorRoutes, vinhubRoutes } from './pages/vinhub/vinhub.routes';
 
 export const routes: Routes = [
 	{
-		// Public discovery — landing plus feed/explore/map/entity detail pages,
-		// reachable without signing in, rendered inside the same topbar/sidebar
-		// shell as the rest of the app for a consistent look.
+		// Single shell (topbar + sidebar) for everything public: landing, sign-in,
+		// and feed/explore/map/entity detail pages — reachable without signing in.
 		path: '',
 		loadComponent: () =>
 			import('./layouts/user/user.component').then(
@@ -22,20 +21,9 @@ export const routes: Routes = [
 						(m) => m.LandingPageComponent,
 					),
 			},
-			...vinhubRoutes,
-		],
-	},
-	{
-		path: '',
-		canActivate: [guestGuard],
-		loadComponent: () =>
-			import('./layouts/guest/guest.component').then(
-				(m) => m.GuestComponent,
-			),
-		children: [
 			{
 				path: 'sign',
-				canActivate: [MetaGuard],
+				canActivate: [guestGuard, MetaGuard],
 				data: {
 					meta: {
 						title: 'Вхід',
@@ -48,6 +36,7 @@ export const routes: Routes = [
 						(m) => m.routes,
 					),
 			},
+			...vinhubRoutes,
 		],
 	},
 	{

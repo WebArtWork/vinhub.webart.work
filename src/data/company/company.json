@@ -3,7 +3,7 @@
 	"name": "VIN Hub",
 	"title": "VIN Hub",
 	"description": "Buy, sell, and rent cars with a verified digital passport for every vehicle's history.",
-	"image": "https://vinhub.webart.work/logo.png",
-	"favicon": "https://vinhub.webart.work/favicon.png",
+	"image": "/logo.png?v=20260827",
+	"favicon": "/favicon.png?v=20260827",
 	"siteUrl": "https://vinhub.webart.work"
 }
