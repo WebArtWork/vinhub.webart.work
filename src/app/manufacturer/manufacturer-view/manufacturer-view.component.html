@@ -1,0 +1,19 @@
+<p-card styleClass="manufacturer-view">
+	<div class="manufacturer-view__heading">
+		<app-manufacturer-icon [manufacturer]="manufacturer()" />
+		<div>
+			<h1 class="manufacturer-view__title">{{ manufacturer().name }}</h1>
+			<div class="manufacturer-view__meta">{{ manufacturer().country }} · founded {{ manufacturer().founded }}</div>
+		</div>
+	</div>
+
+	<p class="manufacturer-view__description">{{ manufacturer().description }}</p>
+
+	@if (cars().length) {
+		<div class="manufacturer-view__cars">
+			@for (car of cars(); track car._id) {
+				<app-car-short [car]="car" />
+			}
+		</div>
+	}
+</p-card>

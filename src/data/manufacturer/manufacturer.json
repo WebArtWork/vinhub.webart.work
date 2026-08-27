@@ -1,0 +1,47 @@
+[
+	{
+		"_id": "manufacturer-toyota",
+		"name": "Toyota",
+		"country": "Japan",
+		"founded": 1937,
+		"logo": "/assets/manufacturer/toyota.png",
+		"description": "Japanese automaker known for reliability-focused sedans, SUVs, and hybrid technology.",
+		"website": "https://www.toyota.com"
+	},
+	{
+		"_id": "manufacturer-ford",
+		"name": "Ford",
+		"country": "United States",
+		"founded": 1903,
+		"logo": "/assets/manufacturer/ford.png",
+		"description": "American automaker with a long history in trucks, SUVs, and mass-market vehicles.",
+		"website": "https://www.ford.com"
+	},
+	{
+		"_id": "manufacturer-tesla",
+		"name": "Tesla",
+		"country": "United States",
+		"founded": 2003,
+		"logo": "/assets/manufacturer/tesla.png",
+		"description": "Electric vehicle manufacturer known for the Model S/3/X/Y lineup and Supercharger network.",
+		"website": "https://www.tesla.com"
+	},
+	{
+		"_id": "manufacturer-honda",
+		"name": "Honda",
+		"country": "Japan",
+		"founded": 1948,
+		"logo": "/assets/manufacturer/honda.png",
+		"description": "Japanese automaker producing fuel-efficient sedans, SUVs, and hybrids.",
+		"website": "https://www.honda.com"
+	},
+	{
+		"_id": "manufacturer-vw",
+		"name": "Volkswagen",
+		"country": "Germany",
+		"founded": 1937,
+		"logo": "/assets/manufacturer/vw.png",
+		"description": "German automaker offering a broad lineup of compact and mid-size vehicles worldwide.",
+		"website": "https://www.vw.com"
+	}
+]

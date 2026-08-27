@@ -1,0 +1,7 @@
+<a class="manufacturer-short" [routerLink]="['/manufacturer', manufacturer()._id]">
+	<app-manufacturer-icon [manufacturer]="manufacturer()" />
+	<div class="manufacturer-short__body">
+		<div class="manufacturer-short__name">{{ manufacturer().name }}</div>
+		<div class="manufacturer-short__country">{{ manufacturer().country }}</div>
+	</div>
+</a>

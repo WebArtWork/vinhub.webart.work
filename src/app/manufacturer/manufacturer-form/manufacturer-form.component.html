@@ -1,0 +1,12 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="manufacturer-form">
+	<input pInputText class="w-full" placeholder="Name" [formField]="manufacturerForm.name" />
+	<input pInputText class="w-full" placeholder="Country" [formField]="manufacturerForm.country" />
+	<p-inputnumber class="w-full" placeholder="Founded" [formField]="manufacturerForm.founded" [useGrouping]="false" />
+	<input pInputText class="w-full" placeholder="Logo URL" [formField]="manufacturerForm.logo" />
+	<input pInputText class="w-full" placeholder="Website" [formField]="manufacturerForm.website" />
+	<textarea pTextarea class="w-full" placeholder="Description" [formField]="manufacturerForm.description"></textarea>
+
+	<div class="manufacturer-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>

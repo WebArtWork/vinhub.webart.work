@@ -1,0 +1,21 @@
+.manufacturer-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--radius-md, 0.5rem);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--surface-100, #f1f5f9);
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	&__placeholder {
+		font-size: 1.25rem;
+		color: var(--text-color-secondary, #64748b);
+	}
+}
