@@ -1,0 +1,5 @@
+@if (user(); as user) {
+	<app-user-view [user]="user" />
+} @else {
+	<p>Client not found.</p>
+}

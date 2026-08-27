@@ -53,6 +53,44 @@
 
 	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
 
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Feed')() : ''"
+		[ariaLabel]="translateService.translate('Feed')()"
+		(click)="closeIfOverlay()"
+		routerLink="/feed"
+		icon="car"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Explore')() : ''"
+		[ariaLabel]="translateService.translate('Explore')()"
+		(click)="closeIfOverlay()"
+		routerLink="/explore"
+		icon="search"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Map')() : ''"
+		[ariaLabel]="translateService.translate('Map')()"
+		(click)="closeIfOverlay()"
+		routerLink="/map"
+		icon="map"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('Editor')() : ''"
+		[ariaLabel]="translateService.translate('Editor')()"
+		(click)="closeIfOverlay()"
+		routerLink="/editor"
+		icon="pencil"
+	/>
+
+	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
+
 	@if (userService.role('admin')) {
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"

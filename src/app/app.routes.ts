@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { MetaGuard } from '@wawjs/ngx-core';
 import { adminsGuard, authenticatedGuard, guestGuard } from '@wawjs/ngx-bos';
+import { vinhubRoutes } from './pages/vinhub/vinhub.routes';
 
 export const routes: Routes = [
 	{
@@ -39,6 +40,7 @@ export const routes: Routes = [
 				(m) => m.UserComponent,
 			),
 		children: [
+			...vinhubRoutes,
 			{
 				path: 'dashboard',
 				canActivate: [MetaGuard],
