@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 import { MetaGuard } from '@wawjs/ngx-core';
 import { adminsGuard, authenticatedGuard, guestGuard } from '@wawjs/ngx-bos';
-import { vinhubRoutes } from './pages/vinhub/vinhub.routes';
+import { vinhubEditorRoutes, vinhubRoutes } from './pages/vinhub/vinhub.routes';
 
 export const routes: Routes = [
 	{
-		// Public landing — reachable without signing in, but rendered inside the
-		// same topbar/sidebar shell as the rest of the app for a consistent look.
+		// Public discovery — landing plus feed/explore/map/entity detail pages,
+		// reachable without signing in, rendered inside the same topbar/sidebar
+		// shell as the rest of the app for a consistent look.
 		path: '',
 		loadComponent: () =>
 			import('./layouts/user/user.component').then(
@@ -21,6 +22,7 @@ export const routes: Routes = [
 						(m) => m.LandingPageComponent,
 					),
 			},
+			...vinhubRoutes,
 		],
 	},
 	{
@@ -56,7 +58,7 @@ export const routes: Routes = [
 				(m) => m.UserComponent,
 			),
 		children: [
-			...vinhubRoutes,
+			...vinhubEditorRoutes,
 			{
 				path: 'profile',
 				canActivate: [MetaGuard],
