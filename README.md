@@ -21,7 +21,7 @@ Business apps own routes, roles, schemas, dashboards, integrations, environment 
 
 ```sh
 npm install   # install dependencies
-npm start     # serve on http://localhost:4200 with proxy.conf.json
+npm start     # serve on http://localhost:4200, talking directly to the API URL in environment.ts
 ```
 
 Environments live in `src/environments/`:
@@ -31,7 +31,7 @@ Environments live in `src/environments/`:
 
 ## Scripts
 
-- `npm start` — dev server with proxying to the configured API URL (`proxy.conf.json`)
+- `npm start` — dev server talking directly to the API URL configured in `src/environments/environment.ts`
 - `npm run build` — production app build to `dist/`
 - `npm run build:ngx-bos` — build the `@wawjs/ngx-bos` package with ng-packagr
 - `npm run start:uikit` / `npm run build:uikit` — serve/build `projects/uikit`
