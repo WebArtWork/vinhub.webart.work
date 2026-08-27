@@ -5,18 +5,29 @@ import { vinhubRoutes } from './pages/vinhub/vinhub.routes';
 
 export const routes: Routes = [
 	{
+		// Public landing — reachable without signing in, but rendered inside the
+		// same topbar/sidebar shell as the rest of the app for a consistent look.
 		path: '',
-		pathMatch: 'full',
-		canActivate: [MetaGuard],
-		data: {
-			meta: {
-				title: 'VIN Hub',
-			},
-		},
 		loadComponent: () =>
-			import('./pages/vinhub/landing/landing.component').then(
-				(m) => m.LandingPageComponent,
+			import('./layouts/user/user.component').then(
+				(m) => m.UserComponent,
 			),
+		children: [
+			{
+				path: '',
+				pathMatch: 'full',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'VIN Hub',
+					},
+				},
+				loadComponent: () =>
+					import('./pages/vinhub/landing/landing.component').then(
+						(m) => m.LandingPageComponent,
+					),
+			},
+		],
 	},
 	{
 		path: '',
