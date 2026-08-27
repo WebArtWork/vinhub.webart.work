@@ -12,7 +12,7 @@ import { HttpService } from '@wawjs/ngx-http';
 export class SessionBridgeService {
 	private readonly _httpService = inject(HttpService);
 	private readonly _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-	private readonly _bridgeOrigin = new URL(environment.url).origin;
+	private readonly _bridgeOrigin = _safeOrigin(environment.url);
 
 	private _iframe: HTMLIFrameElement | null = null;
 	private _ready = false;
@@ -20,7 +20,8 @@ export class SessionBridgeService {
 
 	/** Call once on app start. Silently adopts a session pushed by another app, if any. */
 	init(): void {
-		if (!this._isBrowser) return;
+		// No bridge host configured (e.g. local dev without environment.url) — nothing to bridge to.
+		if (!this._isBrowser || !this._bridgeOrigin) return;
 
 		// Already have a token locally (e.g. this app's own login) — nothing to pull.
 		if (this._httpService.header('token')) return;
@@ -39,7 +40,7 @@ export class SessionBridgeService {
 
 	/** Call right after a successful login/signup in this app. */
 	push(token: string): void {
-		if (!this._isBrowser || !token) return;
+		if (!this._isBrowser || !this._bridgeOrigin || !token) return;
 
 		if (!this._iframe) {
 			// init() wasn't called (or returned early because a token already
@@ -89,4 +90,12 @@ export class SessionBridgeService {
 			window.location.reload();
 		}
 	};
+}
+
+function _safeOrigin(url: string): string {
+	try {
+		return new URL(url).origin;
+	} catch {
+		return '';
+	}
 }

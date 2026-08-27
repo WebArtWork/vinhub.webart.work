@@ -6,8 +6,17 @@ import { vinhubRoutes } from './pages/vinhub/vinhub.routes';
 export const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'sign',
 		pathMatch: 'full',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'VIN Hub',
+			},
+		},
+		loadComponent: () =>
+			import('./pages/vinhub/landing/landing.component').then(
+				(m) => m.LandingPageComponent,
+			),
 	},
 	{
 		path: '',
@@ -41,19 +50,6 @@ export const routes: Routes = [
 			),
 		children: [
 			...vinhubRoutes,
-			{
-				path: 'dashboard',
-				canActivate: [MetaGuard],
-				data: {
-					meta: {
-						title: 'Панель',
-					},
-				},
-				loadChildren: () =>
-					import('./pages/user/dashboard/dashboard.routes').then(
-						(m) => m.routes,
-					),
-			},
 			{
 				path: 'profile',
 				canActivate: [MetaGuard],

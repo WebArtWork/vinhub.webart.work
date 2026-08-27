@@ -9,8 +9,8 @@ export const environment = {
 		password: '',
 	},
 	image: {
-		default: '/logo.png',
-		logo: '/logo.png',
+		default: 'https://vinhub.webart.work/logo.png',
+		logo: 'https://vinhub.webart.work/logo.png',
 	},
 	defaultLanguageCode: 'en',
 	languages: [

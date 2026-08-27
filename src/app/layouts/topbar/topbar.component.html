@@ -8,8 +8,8 @@
 			class="inline-flex items-center max-md:flex-1 max-md:justify-center"
 		>
 			<app-nav-icon
-				[routerLink]="sidebarToggler() ? '/dashboard' : '/'"
-				[name]="viewport() === 'mobile' ? '' : sidebarToggler() ? translateService.translate('Dashboard')() : ''"
+				[routerLink]="sidebarToggler() ? '/feed' : '/'"
+				[name]="viewport() === 'mobile' ? '' : sidebarToggler() ? translateService.translate('Feed')() : ''"
 				[icon]="sidebarToggler() ? 'th-large' : 'home'"
 			/>
 		</li>

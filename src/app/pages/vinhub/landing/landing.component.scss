@@ -1,0 +1,63 @@
+.landing {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 3rem 1.5rem;
+
+	&__hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 2.5rem;
+		font-weight: 800;
+	}
+
+	&__tagline {
+		max-width: 32rem;
+		color: var(--text-color-secondary, #64748b);
+		font-size: 1.1rem;
+		line-height: 1.5;
+	}
+
+	&__actions {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__scenarios {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: 1.5rem;
+	}
+
+	&__scenario {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__scenario-icon {
+		font-size: 1.5rem;
+		color: var(--primary-color, #2563eb);
+	}
+
+	&__scenario-title {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	&__scenario-description {
+		margin: 0;
+		color: var(--text-color-secondary, #64748b);
+		line-height: 1.5;
+	}
+}
