@@ -18,44 +18,44 @@ in components.
 
 ### Entities (static JSON data, realistic content)
 
-- [ ] `car` — a few cars across different types (sedan, SUV, hatchback,
+- [x] `car` — a few cars across different types (sedan, SUV, hatchback,
       truck, etc.)
-- [ ] `listing` — sale + rental listings tied to those cars
-- [ ] `record` — car history entries (service, repair, accident, ownership
+- [x] `listing` — sale + rental listings tied to those cars
+- [x] `record` — car history entries (service, repair, accident, ownership
       transfer) — this is the "digital passport" differentiator
-- [ ] `manufacturer` — a few manufacturer profiles
-- [ ] `dealership` — a few dealerships
-- [ ] `salesperson` — a few salespeople, linked to dealerships
-- [ ] `request` — a few buyer/renter requests
-- [ ] `user` — public profile view
-- [ ] `comment` — comments/reviews on a few entities
+- [x] `manufacturer` — a few manufacturer profiles
+- [x] `dealership` — a few dealerships
+- [x] `salesperson` — a few salespeople, linked to dealerships
+- [x] `request` — a few buyer/renter requests
+- [x] `user` — public profile view
+- [x] `comment` — comments/reviews on a few entities
 
 ### Components per entity (`*-view`, `*-short`, `*-icon`, `*-form`)
 
-- [ ] car: view, short, icon, form
-- [ ] listing: view, short, icon, form
-- [ ] record: view, short, form (no icon per README)
-- [ ] manufacturer: view, short, icon, form
-- [ ] dealership: view, short, icon, form
-- [ ] salesperson: view, short, icon, form
-- [ ] request: view, short, icon, form
-- [ ] user: view, short, icon, form
-- [ ] comment: comments-view, comment-short, comment-form
+- [x] car: view, short, icon, form
+- [x] listing: view, short, icon, form
+- [x] record: view, short, form (no icon per README)
+- [x] manufacturer: view, short, icon, form
+- [x] dealership: view, short, icon, form
+- [x] salesperson: view, short, icon, form
+- [x] request: view, short, icon, form
+- [x] user: view, short, icon, form
+- [x] comment: comments-view, comment-short, comment-form
 
 ### Pages
 
-- [ ] Feed — scrollable feed, swipe left/right (favourite/ignore)
+- [x] Feed — scrollable feed, swipe left/right (favourite/ignore)
       against local static state
-- [ ] Explore — search/filter UI against the static dataset
-- [ ] Map — pins for entities, static coordinates in fixtures
-- [ ] Editor — forms render and validate, no persistence
-- [ ] car — dedicated detail page (replaces generic Entity page)
-- [ ] listing — dedicated detail page
-- [ ] records — dedicated detail page
-- [ ] manufacturer — dedicated detail page
-- [ ] dealership — dedicated detail page
-- [ ] salesperson — dedicated detail page
-- [ ] client — dedicated detail page (replaces generic user-facing Entity view)
+- [x] Explore — search/filter UI against the static dataset
+- [x] Map — pins for entities, static coordinates in fixtures
+- [x] Editor — forms render and validate, no persistence
+- [x] car — dedicated detail page (replaces generic Entity page)
+- [x] listing — dedicated detail page
+- [x] records — dedicated detail page
+- [x] manufacturer — dedicated detail page
+- [x] dealership — dedicated detail page
+- [x] salesperson — dedicated detail page
+- [x] client — dedicated detail page (replaces generic user-facing Entity view)
 
 Removed: Sign, Workspace (already covered by existing template pages),
 Investment (not needed yet). Workspace's role is replaced by Explore.
