@@ -1,0 +1,23 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="listing-form">
+	<p-select
+		class="w-full"
+		placeholder="Car"
+		[options]="cars()"
+		optionLabel="model"
+		optionValue="_id"
+		[formField]="listingForm.carId"
+	/>
+	<input pInputText class="w-full" placeholder="Title" [formField]="listingForm.title" />
+
+	<p-select class="w-full" placeholder="Kind" [options]="kinds" [formField]="listingForm.kind" />
+	<p-select class="w-full" placeholder="Status" [options]="statuses" [formField]="listingForm.status" />
+	<p-select class="w-full" placeholder="Rental period" [options]="rentalPeriods" [formField]="listingForm.rentalPeriod" />
+
+	<p-inputnumber class="w-full" placeholder="Price" [formField]="listingForm.price" mode="currency" [currency]="listingModel().currency" />
+
+	<textarea pTextarea class="w-full" placeholder="Description" [formField]="listingForm.description"></textarea>
+
+	<div class="listing-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>
