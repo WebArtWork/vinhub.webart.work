@@ -1,0 +1,41 @@
+[
+	{
+		"_id": "dealership-001",
+		"name": "Downtown Auto Group",
+		"address": "1200 Market St",
+		"city": "San Francisco",
+		"state": "CA",
+		"phone": "+1-415-555-0110",
+		"email": "sales@downtownautogroup.example",
+		"logo": "/assets/dealership/downtown.png",
+		"lat": 37.7793,
+		"lng": -122.4193,
+		"rating": 4.6
+	},
+	{
+		"_id": "dealership-002",
+		"name": "Bay Area Motors",
+		"address": "455 Harbor Blvd",
+		"city": "Oakland",
+		"state": "CA",
+		"phone": "+1-510-555-0142",
+		"email": "info@bayareamotors.example",
+		"logo": "/assets/dealership/bayarea.png",
+		"lat": 37.8044,
+		"lng": -122.2712,
+		"rating": 4.3
+	},
+	{
+		"_id": "dealership-003",
+		"name": "Golden Gate Autohaus",
+		"address": "88 Lombard St",
+		"city": "San Francisco",
+		"state": "CA",
+		"phone": "+1-415-555-0199",
+		"email": "contact@ggautohaus.example",
+		"logo": "/assets/dealership/goldengate.png",
+		"lat": 37.8021,
+		"lng": -122.4187,
+		"rating": 4.8
+	}
+]

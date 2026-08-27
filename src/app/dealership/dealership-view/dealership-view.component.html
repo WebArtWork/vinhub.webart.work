@@ -1,0 +1,32 @@
+<p-card styleClass="dealership-view">
+	<div class="dealership-view__heading">
+		<app-dealership-icon [dealership]="dealership()" />
+		<div>
+			<h1 class="dealership-view__title">{{ dealership().name }}</h1>
+			<p-rating [ngModel]="dealership().rating" [readonly]="true" />
+		</div>
+	</div>
+
+	<dl class="dealership-view__specs">
+		<div class="dealership-view__spec">
+			<dt>Address</dt>
+			<dd>{{ dealership().address }}, {{ dealership().city }}, {{ dealership().state }}</dd>
+		</div>
+		<div class="dealership-view__spec">
+			<dt>Phone</dt>
+			<dd>{{ dealership().phone }}</dd>
+		</div>
+		<div class="dealership-view__spec">
+			<dt>Email</dt>
+			<dd>{{ dealership().email }}</dd>
+		</div>
+	</dl>
+
+	@if (cars().length) {
+		<div class="dealership-view__cars">
+			@for (car of cars(); track car._id) {
+				<app-car-short [car]="car" />
+			}
+		</div>
+	}
+</p-card>

@@ -1,0 +1,7 @@
+<div class="dealership-icon">
+	@if (dealership().logo) {
+		<img class="dealership-icon__img" [src]="dealership().logo" [alt]="dealership().name" />
+	} @else {
+		<i class="pi pi-shop dealership-icon__placeholder" [attr.aria-label]="dealership().name"></i>
+	}
+</div>

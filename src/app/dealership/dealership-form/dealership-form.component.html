@@ -1,0 +1,15 @@
+<form (submit)="wFormSubmit(); $event.preventDefault()" class="dealership-form">
+	<input pInputText class="w-full" placeholder="Name" [formField]="dealershipForm.name" />
+	<input pInputText class="w-full" placeholder="Address" [formField]="dealershipForm.address" />
+	<input pInputText class="w-full" placeholder="City" [formField]="dealershipForm.city" />
+	<input pInputText class="w-full" placeholder="State" [formField]="dealershipForm.state" />
+	<input pInputText class="w-full" placeholder="Phone" [formField]="dealershipForm.phone" />
+	<input pInputText class="w-full" placeholder="Email" [formField]="dealershipForm.email" />
+	<input pInputText class="w-full" placeholder="Logo URL" [formField]="dealershipForm.logo" />
+	<p-inputnumber class="w-full" placeholder="Latitude" [formField]="dealershipForm.lat" [minFractionDigits]="4" />
+	<p-inputnumber class="w-full" placeholder="Longitude" [formField]="dealershipForm.lng" [minFractionDigits]="4" />
+
+	<div class="dealership-form__actions">
+		<button pButton type="submit" [disabled]="isSubmitDisabled()"><span translate>Save</span></button>
+	</div>
+</form>
