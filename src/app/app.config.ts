@@ -20,7 +20,27 @@ import { provideNgxSocket } from '@wawjs/ngx-socket';
 import { provideNgxTinymce } from '@wawjs/ngx-tinymce';
 import { provideTranslate } from '@wawjs/ngx-translate';
 import { provideNgxPrime } from '@wawjs/ngx-prime/config';
+import { definePreset } from '@wawjs/css-prime-styled';
 import Aura from '@wawjs/css-prime-themes/aura';
+
+/** VIN Hub brand blue, matched to the logo's circuit/passport accent color. */
+const VinHubPreset = definePreset(Aura, {
+	semantic: {
+		primary: {
+			50: '#eaf6ff',
+			100: '#d2edff',
+			200: '#a8dcff',
+			300: '#71c4ff',
+			400: '#3aa8ff',
+			500: '#128fef',
+			600: '#0a72c2',
+			700: '#0c5a9c',
+			800: '#0f4a7d',
+			900: '#123d67',
+			950: '#0b2745',
+		},
+	},
+});
 import { NgxBosConfig, ngxBosProvide } from '@wawjs/ngx-bos';
 import { io } from 'socket.io-client';
 import { environment } from '@env';
@@ -73,7 +93,7 @@ export const appConfig: ApplicationConfig = {
 		}),
 		provideNgxPrime({
 			theme: {
-				preset: Aura,
+				preset: VinHubPreset,
 				options: { darkModeSelector: "[data-mode='dark']" },
 			},
 		}),

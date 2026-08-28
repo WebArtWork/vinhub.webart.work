@@ -44,20 +44,11 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Explore')() : ''"
-		[ariaLabel]="translateService.translate('Explore')()"
+		[name]="showNames() ? translateService.translate('Share profile')() : ''"
+		[ariaLabel]="translateService.translate('Share profile')()"
 		(click)="closeIfOverlay()"
-		routerLink="/explore"
-		icon="th-large"
-	/>
-
-	<app-nav-icon
-		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Map')() : ''"
-		[ariaLabel]="translateService.translate('Map')()"
-		(click)="closeIfOverlay()"
-		routerLink="/map"
-		icon="map"
+		routerLink="/share-profile"
+		icon="id-card"
 	/>
 
 	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />
@@ -73,11 +64,47 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
-		[name]="showNames() ? translateService.translate('Editor')() : ''"
-		[ariaLabel]="translateService.translate('Editor')()"
+		[name]="showNames() ? translateService.translate('Share VIN Hub')() : ''"
+		[ariaLabel]="translateService.translate('Share VIN Hub')()"
 		(click)="closeIfOverlay()"
-		routerLink="/editor"
-		icon="pencil"
+		routerLink="/share"
+		icon="qrcode"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('For Buyers')() : ''"
+		[ariaLabel]="translateService.translate('For Buyers')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-users"
+		icon="user"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('For Salespeople')() : ''"
+		[ariaLabel]="translateService.translate('For Salespeople')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-salespeople"
+		icon="id-card"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('For Manufacturers')() : ''"
+		[ariaLabel]="translateService.translate('For Manufacturers')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-manufacturers"
+		icon="building"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('For Dealerships')() : ''"
+		[ariaLabel]="translateService.translate('For Dealerships')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-dealerships"
+		icon="briefcase"
 	/>
 
 	<hr class="my-2 border-0 border-t-2 border-t-[var(--c-text-primary)]" />

@@ -1,10 +1,10 @@
 /* Design tokens (CSS variables). Runtime-themable; keep SCSS using var(--token) */
 :root {
-	/* brand / actions */
-	--c-primary: #d7d71d;
-	--c-primary-hover: #0051f1;
-	--c-secondary: #c53d3d;
-	--c-secondary-hover: #962a2a;
+	/* brand / actions — matched to the VIN Hub logo (navy body, cyan-blue accent, green passport check) */
+	--c-primary: #128fef;
+	--c-primary-hover: #0a72c2;
+	--c-secondary: #16a34a;
+	--c-secondary-hover: #0f7d38;
 
 	/* surfaces */
 	--c-bg-primary: #f3f4f7;
@@ -55,7 +55,7 @@
 	--motion-slow: 0.4s;
 
 	/* focus */
-	--focus-ring: 0 0 0 3px rgba(215, 215, 29, 0.35);
+	--focus-ring: 0 0 0 3px rgba(18, 143, 239, 0.35);
 }
 
 /* ========= modes ========= */
@@ -77,7 +77,7 @@ html[data-mode='dark'] {
 	--c-placeholder: #d3cdcd;
 
 	/* focus (keeps using primary) */
-	--focus-ring: 0 0 0 3px rgba(227, 227, 72, 0.35);
+	--focus-ring: 0 0 0 3px rgba(58, 168, 255, 0.4);
 }
 
 /* ========= density ========= */

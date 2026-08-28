@@ -1,17 +1,11 @@
 <p-card styleClass="listing-card" (click)="onCardClick()">
 	<ng-template #header>
-		@if (image()) {
 		<img
 			class="listing-card__photo"
-			[src]="image()"
+			[src]="image() || '/listing-default.png'"
 			[alt]="subtitle()"
 			loading="lazy"
 		/>
-		} @else {
-		<div class="listing-card__photo listing-card__photo--placeholder">
-			<i class="pi pi-car"></i>
-		</div>
-		}
 	</ng-template>
 
 	<h3 class="listing-card__title">{{ listing().title }}</h3>

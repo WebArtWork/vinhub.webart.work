@@ -13,7 +13,7 @@
 		"transmission": "automatic",
 		"fuelType": "petrol",
 		"condition": "used",
-		"images": ["/assets/car/camry-1.jpg"],
+		"images": ["/assets/car/camry-1.png"],
 		"description": "One-owner Camry SE, dealer-serviced since new, clean title and no accident history.",
 		"manufacturerId": "manufacturer-toyota",
 		"dealershipId": "dealership-001"
@@ -32,7 +32,7 @@
 		"transmission": "automatic",
 		"fuelType": "petrol",
 		"condition": "used",
-		"images": ["/assets/car/f150-1.jpg"],
+		"images": ["/assets/car/f150-1.png"],
 		"description": "F-150 XLT SuperCrew with tow package, backup camera, and remaining factory warranty.",
 		"manufacturerId": "manufacturer-ford",
 		"dealershipId": "dealership-001"
@@ -51,7 +51,7 @@
 		"transmission": "automatic",
 		"fuelType": "electric",
 		"condition": "new",
-		"images": ["/assets/car/model3-1.jpg"],
+		"images": ["/assets/car/model3-1.png"],
 		"description": "Brand-new Model 3 Long Range, dual motor, still under full manufacturer warranty.",
 		"manufacturerId": "manufacturer-tesla",
 		"dealershipId": "dealership-002"
@@ -70,7 +70,7 @@
 		"transmission": "automatic",
 		"fuelType": "hybrid",
 		"condition": "used",
-		"images": ["/assets/car/crv-1.jpg"],
+		"images": ["/assets/car/crv-1.png"],
 		"description": "CR-V Hybrid EX-L, one accident-free previous owner, new tires installed 2024.",
 		"manufacturerId": "manufacturer-honda",
 		"dealershipId": "dealership-002"
@@ -89,7 +89,7 @@
 		"transmission": "manual",
 		"fuelType": "diesel",
 		"condition": "used",
-		"images": ["/assets/car/golf-1.jpg"],
+		"images": ["/assets/car/golf-1.png"],
 		"description": "Golf TDI Comfortline, manual gearbox, full service record from a single dealership.",
 		"manufacturerId": "manufacturer-vw",
 		"dealershipId": "dealership-003"

@@ -6,6 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	background: var(--surface-100, #f1f5f9);
+	object-fit: cover;
 
 	&--placeholder {
 		color: var(--text-color-secondary, #64748b);

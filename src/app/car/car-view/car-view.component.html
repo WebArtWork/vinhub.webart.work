@@ -1,11 +1,9 @@
 <p-card styleClass="car-view">
-	@if (image()) {
-	<img class="car-view__img" [src]="image()" [alt]="title()" />
-	} @else {
-	<div class="car-view__img car-view__img--placeholder">
-		<i class="pi pi-car"></i>
-	</div>
-	}
+	<img
+		class="car-view__img"
+		[src]="image() || '/car-default.png'"
+		[alt]="title()"
+	/>
 
 	<div class="car-view__body">
 		<div class="car-view__heading">

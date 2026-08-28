@@ -40,9 +40,9 @@ export class TopbarComponent {
 	readonly translateService = inject(TranslateService);
 
 	protected readonly navItems: TopbarNavItem[] = [
-		{ label: 'Cars', icon: 'car', to: '/explore' },
+		{ label: 'Cars', icon: 'car', to: '/' },
 		{ label: 'Feed', icon: 'th-large', to: '/feed' },
-		{ label: 'Dealerships', icon: 'shop', to: '/explore' },
+		{ label: 'Dealerships', icon: 'shop', to: '/' },
 	];
 
 	/** Current page's title, for the mobile header (next to the logo). */

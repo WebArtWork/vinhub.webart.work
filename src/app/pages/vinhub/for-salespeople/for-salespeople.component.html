@@ -1,0 +1,48 @@
+@if (showForm()) {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1>Become a VIN Hub salesperson</h1>
+		</header>
+
+		<app-lead-form kind="salesperson" submitLabel="Send application" />
+	</div>
+} @else {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1>Grow your sales with VIN Hub</h1>
+			<p>Get your own public profile, publish listings, and build a reputation buyers can trust.</p>
+			<button pButton type="button" (click)="showForm.set(true)">Create your profile</button>
+		</header>
+
+		<section class="landing-page__section">
+			<h2>How it works</h2>
+			<ul class="landing-page__list">
+				<li>Your salesperson profile shows up in VIN Hub search and on every listing you publish.</li>
+				<li>Attach your listings to a dealership, or sell independently — your choice.</li>
+				<li>Buyers see your reviews and full listing history in one verified place.</li>
+				<li>Share your profile link with a click to bring buyers straight to your listings.</li>
+			</ul>
+		</section>
+
+		<section class="landing-page__section">
+			<h2>Why VIN Hub</h2>
+			<p>Verified digital passports and public profiles help buyers choose you with confidence — no cold outreach needed.</p>
+		</section>
+
+		<section class="landing-page__section">
+			<h2>Questions</h2>
+			<p-accordion [multiple]="true">
+				@for (item of faq; track item.question) {
+					<p-accordionpanel [value]="item.question">
+						<p-accordionheader>{{ item.question }}</p-accordionheader>
+						<p-accordioncontent>{{ item.answer }}</p-accordioncontent>
+					</p-accordionpanel>
+				}
+			</p-accordion>
+		</section>
+
+		<footer class="landing-page__cta">
+			<button pButton type="button" (click)="showForm.set(true)">Create your profile</button>
+		</footer>
+	</div>
+}

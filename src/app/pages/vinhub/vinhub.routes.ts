@@ -5,6 +5,70 @@ import { vinhubSeoImage } from './vinhub.seo';
 /** Public discovery — reachable without signing in. */
 export const vinhubRoutes: Routes = [
 	{
+		path: 'for-users',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'For Buyers',
+				description:
+					'Buy, sell, and rent cars on VIN Hub with a verified digital passport.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./for-users/for-users.component').then(
+				(m) => m.ForUsersPageComponent,
+			),
+	},
+	{
+		path: 'for-salespeople',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'For Salespeople',
+				description:
+					'Grow your sales with a public VIN Hub salesperson profile.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./for-salespeople/for-salespeople.component').then(
+				(m) => m.ForSalespeoplePageComponent,
+			),
+	},
+	{
+		path: 'for-manufacturers',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'For Manufacturers',
+				description:
+					'Put your model catalog in front of verified VIN Hub buyers.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./for-manufacturers/for-manufacturers.component').then(
+				(m) => m.ForManufacturersPageComponent,
+			),
+	},
+	{
+		path: 'for-dealerships',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'For Dealerships',
+				description:
+					'Grow your dealership with a verified VIN Hub profile.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./for-dealerships/for-dealerships.component').then(
+				(m) => m.ForDealershipsPageComponent,
+			),
+	},
+	{
 		path: 'feed',
 		canActivate: [MetaGuard],
 		data: {
@@ -19,18 +83,8 @@ export const vinhubRoutes: Routes = [
 	},
 	{
 		path: 'explore',
-		canActivate: [MetaGuard],
-		data: {
-			meta: {
-				title: 'Explore',
-				description: 'Search and filter Vinhub listings.',
-				image: vinhubSeoImage,
-			},
-		},
-		loadComponent: () =>
-			import('./explore/explore.component').then(
-				(m) => m.ExplorePageComponent,
-			),
+		pathMatch: 'full',
+		redirectTo: '',
 	},
 	{
 		path: 'map',

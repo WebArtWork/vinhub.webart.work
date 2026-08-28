@@ -17,8 +17,8 @@ export const routes: Routes = [
 				path: '',
 				pathMatch: 'full',
 				loadComponent: () =>
-					import('./pages/vinhub/landing/landing.component').then(
-						(m) => m.LandingPageComponent,
+					import('./pages/vinhub/explore/explore.component').then(
+						(m) => m.ExplorePageComponent,
 					),
 			},
 			{
@@ -36,6 +36,21 @@ export const routes: Routes = [
 						(m) => m.routes,
 					),
 			},
+			{
+				path: 'share',
+				canActivate: [MetaGuard],
+				data: {
+					shareKind: 'app',
+					meta: {
+						title: 'Share VIN Hub',
+						description: 'Scan the QR code to join VIN Hub in a few seconds.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/user/share/share.routes').then(
+						(m) => m.routes,
+					),
+			},
 			...vinhubRoutes,
 		],
 	},
@@ -48,6 +63,22 @@ export const routes: Routes = [
 			),
 		children: [
 			...vinhubEditorRoutes,
+			{
+				path: 'share-profile',
+				canActivate: [MetaGuard],
+				data: {
+					shareKind: 'profile',
+					meta: {
+						title: 'Share profile',
+						description: 'Scan the QR code to open my VIN Hub profile.',
+						index: false,
+					},
+				},
+				loadChildren: () =>
+					import('./pages/user/share/share.routes').then(
+						(m) => m.routes,
+					),
+			},
 			{
 				path: 'profile',
 				canActivate: [MetaGuard],

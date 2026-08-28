@@ -6,7 +6,7 @@
 	position: relative;
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	user-select: none;
 	white-space: nowrap;
 	cursor: pointer;
@@ -66,4 +66,5 @@
 
 .mi__iconOnly {
 	gap: 0;
+	justify-content: center;
 }
