@@ -9,10 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { PublicUserService } from '../../../user/user.service';
 import { UserViewComponent } from '../../../user/user-view/user-view.component';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-client-page',
-	imports: [UserViewComponent],
+	imports: [UserViewComponent, TranslateDirective],
 	templateUrl: './client.component.html',
 	styleUrl: './client.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

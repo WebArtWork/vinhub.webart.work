@@ -10,10 +10,11 @@ import { map } from 'rxjs';
 import { CarService } from '../../../car/car.service';
 import { RecordViewComponent } from '../../../record/record-view/record-view.component';
 import { RecordService } from '../../../record/record.service';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-records-page',
-	imports: [RecordViewComponent],
+	imports: [RecordViewComponent, TranslateDirective],
 	templateUrl: './records.component.html',
 	styleUrl: './records.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

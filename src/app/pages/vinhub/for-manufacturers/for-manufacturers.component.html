@@ -1,36 +1,36 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>List your models on VIN Hub</h1>
+			<h1 translate>List your models on VIN Hub</h1>
 		</header>
 
-		<app-lead-form kind="manufacturer" submitLabel="Send application" />
+		<app-lead-form kind="manufacturer" [submitLabel]="translateService.translate('Send application')()" />
 	</div>
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>Put your models in front of verified buyers</h1>
-			<p>A manufacturer profile ties your model catalog to every listing and digital passport across VIN Hub.</p>
-			<button pButton type="button" (click)="showForm.set(true)">Get listed</button>
+			<h1 translate>Put your models in front of verified buyers</h1>
+			<p translate>A manufacturer profile ties your model catalog to every listing and digital passport across VIN Hub.</p>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Get listed</button>
 		</header>
 
 		<section class="landing-page__section">
-			<h2>How it works</h2>
+			<h2 translate>How it works</h2>
 			<ul class="landing-page__list">
-				<li>Your manufacturer profile appears on every listing and car page for your models.</li>
-				<li>Partner dealerships and salespeople link their inventory back to your catalog.</li>
-				<li>Buyers browse your models with full, verified ownership and service history.</li>
-				<li>Share your profile link to drive buyers straight to your listings.</li>
+				<li translate>Your manufacturer profile appears on every listing and car page for your models.</li>
+				<li translate>Partner dealerships and salespeople link their inventory back to your catalog.</li>
+				<li translate>Buyers browse your models with full, verified ownership and service history.</li>
+				<li translate>Share your profile link to drive buyers straight to your listings.</li>
 			</ul>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Why VIN Hub</h2>
-			<p>Verified digital passports build buyer trust in your models before they ever visit a dealership.</p>
+			<h2 translate>Why VIN Hub</h2>
+			<p translate>Verified digital passports build buyer trust in your models before they ever visit a dealership.</p>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Questions</h2>
+			<h2 translate>Questions</h2>
 			<p-accordion [multiple]="true">
 				@for (item of faq; track item.question) {
 					<p-accordionpanel [value]="item.question">
@@ -42,7 +42,7 @@
 		</section>
 
 		<footer class="landing-page__cta">
-			<button pButton type="button" (click)="showForm.set(true)">Get listed</button>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Get listed</button>
 		</footer>
 	</div>
 }

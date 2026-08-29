@@ -10,10 +10,11 @@ import { map } from 'rxjs';
 import { CommentsViewComponent } from '../../../comment/comments-view/comments-view.component';
 import { SalespersonViewComponent } from '../../../salesperson/salesperson-view/salesperson-view.component';
 import { SalespersonService } from '../../../salesperson/salesperson.service';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-salesperson-page',
-	imports: [SalespersonViewComponent, CommentsViewComponent],
+	imports: [SalespersonViewComponent, CommentsViewComponent, TranslateDirective],
 	templateUrl: './salesperson.component.html',
 	styleUrl: './salesperson.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

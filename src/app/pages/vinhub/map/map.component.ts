@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 import { DealershipService } from '../../../dealership/dealership.service';
 import {
 	LeafletMapComponent,
@@ -17,7 +18,7 @@ const DEFAULT_CENTER = { lat: 37.7793, lng: -122.4193 };
 
 @Component({
 	selector: 'app-map',
-	imports: [ButtonModule, LeafletMapComponent],
+	imports: [ButtonModule, LeafletMapComponent, TranslateDirective],
 	templateUrl: './map.component.html',
 	styleUrl: './map.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

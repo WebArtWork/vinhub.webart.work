@@ -7,13 +7,14 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 import { CarViewComponent } from '../../../car/car-view/car-view.component';
 import { CarService } from '../../../car/car.service';
 import { ListingService } from '../../../listing/listing.service';
 
 @Component({
 	selector: 'app-feed',
-	imports: [ButtonModule, CarViewComponent],
+	imports: [ButtonModule, CarViewComponent, TranslateDirective],
 	templateUrl: './feed.component.html',
 	styleUrl: './feed.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,

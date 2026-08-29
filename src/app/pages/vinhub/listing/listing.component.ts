@@ -11,6 +11,7 @@ import { CommentsViewComponent } from '../../../comment/comments-view/comments-v
 import { ListingViewComponent } from '../../../listing/listing-view/listing-view.component';
 import { ListingService } from '../../../listing/listing.service';
 import { RequestFormComponent } from '../../../request/request-form/request-form.component';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-listing-page',
@@ -18,6 +19,7 @@ import { RequestFormComponent } from '../../../request/request-form/request-form
 		ListingViewComponent,
 		RequestFormComponent,
 		CommentsViewComponent,
+		TranslateDirective,
 	],
 	templateUrl: './listing.component.html',
 	styleUrl: './listing.component.scss',

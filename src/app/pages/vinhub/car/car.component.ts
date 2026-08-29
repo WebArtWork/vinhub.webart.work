@@ -14,6 +14,7 @@ import { ListingShortComponent } from '../../../listing/listing-short/listing-sh
 import { ListingService } from '../../../listing/listing.service';
 import { RecordShortComponent } from '../../../record/record-short/record-short.component';
 import { RecordService } from '../../../record/record.service';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-car-page',
@@ -23,6 +24,7 @@ import { RecordService } from '../../../record/record.service';
 		RecordShortComponent,
 		ListingShortComponent,
 		CommentsViewComponent,
+		TranslateDirective,
 	],
 	templateUrl: './car.component.html',
 	styleUrl: './car.component.scss',

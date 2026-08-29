@@ -1,14 +1,14 @@
 <div class="landing">
 	<section class="landing__hero">
 		<h1 class="landing__title">VIN Hub</h1>
-		<p class="landing__tagline">
+		<p class="landing__tagline" translate>
 			Buy, sell, and rent cars with a verified digital passport for every
 			vehicle's history.
 		</p>
 
 		<div class="landing__actions">
-			<button pButton routerLink="/">Explore listings</button>
-			<button pButton severity="secondary" routerLink="/sign">
+			<button pButton routerLink="/" translate>Explore listings</button>
+			<button pButton severity="secondary" routerLink="/sign" translate>
 				Sign in
 			</button>
 		</div>
@@ -18,10 +18,8 @@
 		@for (scenario of scenarios; track scenario.title) {
 		<p-card styleClass="landing__scenario">
 			<i class="pi landing__scenario-icon" [class]="scenario.icon"></i>
-			<h2 class="landing__scenario-title">{{ scenario.title }}</h2>
-			<p class="landing__scenario-description">
-				{{ scenario.description }}
-			</p>
+			<h2 class="landing__scenario-title" [translate]="scenario.title"></h2>
+			<p class="landing__scenario-description" [translate]="scenario.description"></p>
 		</p-card>
 		}
 	</section>

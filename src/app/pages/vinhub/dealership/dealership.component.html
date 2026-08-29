@@ -4,7 +4,7 @@
 
 	@if (salespeople().length) {
 	<section class="dealership-page__section">
-		<h2>Sales team</h2>
+		<h2 translate>Sales team</h2>
 		@for (salesperson of salespeople(); track salesperson._id) {
 		<app-salesperson-short [salesperson]="salesperson" />
 		}
@@ -12,7 +12,7 @@
 	}
 
 	<section class="dealership-page__section">
-		<h2>Comments</h2>
+		<h2 translate>Comments</h2>
 		<app-comments-view
 			targetType="dealership"
 			[targetId]="dealership._id"
@@ -20,5 +20,5 @@
 	</section>
 </div>
 } @else {
-<p>Dealership not found.</p>
+<p translate>Dealership not found.</p>
 }

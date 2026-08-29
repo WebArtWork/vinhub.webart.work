@@ -12,6 +12,7 @@ import { DealershipViewComponent } from '../../../dealership/dealership-view/dea
 import { DealershipService } from '../../../dealership/dealership.service';
 import { SalespersonShortComponent } from '../../../salesperson/salesperson-short/salesperson-short.component';
 import { SalespersonService } from '../../../salesperson/salesperson.service';
+import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
 	selector: 'app-dealership-page',
@@ -19,6 +20,7 @@ import { SalespersonService } from '../../../salesperson/salesperson.service';
 		DealershipViewComponent,
 		SalespersonShortComponent,
 		CommentsViewComponent,
+		TranslateDirective,
 	],
 	templateUrl: './dealership.component.html',
 	styleUrl: './dealership.component.scss',

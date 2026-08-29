@@ -1,36 +1,36 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>Become a VIN Hub partner</h1>
+			<h1 translate>Become a VIN Hub partner</h1>
 		</header>
 
-		<app-lead-form kind="dealership" submitLabel="Send application" />
+		<app-lead-form kind="dealership" [submitLabel]="translateService.translate('Send application')()" />
 	</div>
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>Grow your dealership with VIN Hub</h1>
-			<p>A dealership profile, your sales team's profiles, and all your inventory in one verified place.</p>
-			<button pButton type="button" (click)="showForm.set(true)">Become a partner</button>
+			<h1 translate>Grow your dealership with VIN Hub</h1>
+			<p translate>A dealership profile, your sales team's profiles, and all your inventory in one verified place.</p>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Become a partner</button>
 		</header>
 
 		<section class="landing-page__section">
-			<h2>How it works</h2>
+			<h2 translate>How it works</h2>
 			<ul class="landing-page__list">
-				<li>Your dealership profile appears in VIN Hub search.</li>
-				<li>Each of your salespeople gets their own public profile.</li>
-				<li>Buyers see all of your active listings in one place.</li>
-				<li>Share your profile link with a click.</li>
+				<li translate>Your dealership profile appears in VIN Hub search.</li>
+				<li translate>Each of your salespeople gets their own public profile.</li>
+				<li translate>Buyers see all of your active listings in one place.</li>
+				<li translate>Share your profile link with a click.</li>
 			</ul>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Why VIN Hub</h2>
-			<p>We build trust through transparency: verified profiles and digital passports help buyers choose you.</p>
+			<h2 translate>Why VIN Hub</h2>
+			<p translate>We build trust through transparency: verified profiles and digital passports help buyers choose you.</p>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Questions</h2>
+			<h2 translate>Questions</h2>
 			<p-accordion [multiple]="true">
 				@for (item of faq; track item.question) {
 					<p-accordionpanel [value]="item.question">
@@ -42,7 +42,7 @@
 		</section>
 
 		<footer class="landing-page__cta">
-			<button pButton type="button" (click)="showForm.set(true)">Become a partner</button>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Become a partner</button>
 		</footer>
 	</div>
 }

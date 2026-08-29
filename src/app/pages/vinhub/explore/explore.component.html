@@ -1,16 +1,16 @@
 <div class="explore-page">
 	<div class="explore-page__header">
-		<h1 class="explore-page__title">Explore</h1>
+		<h1 class="explore-page__title" translate>Explore</h1>
 
 		<input
 			pInputText
 			class="explore-page__search"
-			placeholder="Search make, model, title..."
+			[placeholder]="translateService.translate('Search make, model, title...')()"
 			[(ngModel)]="query"
 		/>
 		<p-select
 			class="explore-page__kind"
-			placeholder="Any kind"
+			[placeholder]="translateService.translate('Any kind')()"
 			[options]="kinds"
 			[(ngModel)]="kind"
 			[showClear]="true"
@@ -22,6 +22,7 @@
 			severity="secondary"
 			size="small"
 			class="explore-page__map-link"
+			translate
 		>
 			Map
 		</a>
@@ -34,7 +35,7 @@
 			(open)="openListing(listing._id)"
 		/>
 		} @empty {
-		<p class="explore-page__empty">No listings match your search.</p>
+		<p class="explore-page__empty" translate>No listings match your search.</p>
 		}
 	</div>
 </div>

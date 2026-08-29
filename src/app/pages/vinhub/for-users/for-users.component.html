@@ -1,36 +1,36 @@
 @if (showForm()) {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>Join VIN Hub</h1>
+			<h1 translate>Join VIN Hub</h1>
 		</header>
 
-		<app-lead-form kind="user" submitLabel="Send inquiry" />
+		<app-lead-form kind="user" [submitLabel]="translateService.translate('Send inquiry')()" />
 	</div>
 } @else {
 	<div class="landing-page">
 		<header class="landing-page__hero">
-			<h1>Buy, sell, and rent with confidence</h1>
-			<p>Every VIN Hub listing comes with a verified digital passport — no guessing about a car's real history.</p>
-			<button pButton type="button" (click)="showForm.set(true)">Join VIN Hub</button>
+			<h1 translate>Buy, sell, and rent with confidence</h1>
+			<p translate>Every VIN Hub listing comes with a verified digital passport — no guessing about a car's real history.</p>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Join VIN Hub</button>
 		</header>
 
 		<section class="landing-page__section">
-			<h2>How it works</h2>
+			<h2 translate>How it works</h2>
 			<ul class="landing-page__list">
-				<li>Search and filter listings from dealerships, salespeople, and private sellers.</li>
-				<li>Open a car's digital passport to see its full service, repair, and ownership history.</li>
-				<li>Message the seller directly from the listing — no third-party contact forms.</li>
-				<li>Save cars you like and get back to them anytime from your profile.</li>
+				<li translate>Search and filter listings from dealerships, salespeople, and private sellers.</li>
+				<li translate>Open a car's digital passport to see its full service, repair, and ownership history.</li>
+				<li translate>Message the seller directly from the listing — no third-party contact forms.</li>
+				<li translate>Save cars you like and get back to them anytime from your profile.</li>
 			</ul>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Why VIN Hub</h2>
-			<p>We build trust through transparency: verified histories and public seller profiles mean buyers and sellers are always looking at the same facts.</p>
+			<h2 translate>Why VIN Hub</h2>
+			<p translate>We build trust through transparency: verified histories and public seller profiles mean buyers and sellers are always looking at the same facts.</p>
 		</section>
 
 		<section class="landing-page__section">
-			<h2>Questions</h2>
+			<h2 translate>Questions</h2>
 			<p-accordion [multiple]="true">
 				@for (item of faq; track item.question) {
 					<p-accordionpanel [value]="item.question">
@@ -42,7 +42,7 @@
 		</section>
 
 		<footer class="landing-page__cta">
-			<button pButton type="button" (click)="showForm.set(true)">Join VIN Hub</button>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Join VIN Hub</button>
 		</footer>
 	</div>
 }

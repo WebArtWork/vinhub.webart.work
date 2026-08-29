@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
+import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
 import { CarService } from '../../../car/car.service';
 import { ListingCardComponent } from '../../../listing/listing-card/listing-card.component';
 import { ListingService } from '../../../listing/listing.service';
@@ -23,12 +24,14 @@ import { ListingService } from '../../../listing/listing.service';
 		InputTextModule,
 		SelectModule,
 		ListingCardComponent,
+		TranslateDirective,
 	],
 	templateUrl: './explore.component.html',
 	styleUrl: './explore.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExplorePageComponent {
+	readonly translateService = inject(TranslateService);
 	private readonly _router = inject(Router);
 	private readonly _listingService = inject(ListingService);
 	private readonly _carService = inject(CarService);

@@ -5,8 +5,8 @@
 	@if (records().length) {
 	<section class="car-page__section">
 		<div class="car-page__section-heading">
-			<h2>History</h2>
-			<a [routerLink]="['/records', car._id]">View digital passport</a>
+			<h2 translate>History</h2>
+			<a [routerLink]="['/records', car._id]" translate>View digital passport</a>
 		</div>
 		@for (record of records(); track record._id) {
 		<app-record-short [record]="record" />
@@ -14,7 +14,7 @@
 	</section>
 	} @if (listings().length) {
 	<section class="car-page__section">
-		<h2>Listings</h2>
+		<h2 translate>Listings</h2>
 		@for (listing of listings(); track listing._id) {
 		<app-listing-short [listing]="listing" />
 		}
@@ -22,10 +22,10 @@
 	}
 
 	<section class="car-page__section">
-		<h2>Comments</h2>
+		<h2 translate>Comments</h2>
 		<app-comments-view targetType="car" [targetId]="car._id" />
 	</section>
 </div>
 } @else {
-<p>Car not found.</p>
+<p translate>Car not found.</p>
 }

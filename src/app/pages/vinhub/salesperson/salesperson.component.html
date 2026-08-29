@@ -3,7 +3,7 @@
 	<app-salesperson-view [salesperson]="salesperson" />
 
 	<section class="salesperson-page__section">
-		<h2>Comments</h2>
+		<h2 translate>Comments</h2>
 		<app-comments-view
 			targetType="salesperson"
 			[targetId]="salesperson._id"
@@ -11,5 +11,5 @@
 	</section>
 </div>
 } @else {
-<p>Salesperson not found.</p>
+<p translate>Salesperson not found.</p>
 }

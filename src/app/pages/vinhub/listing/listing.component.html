@@ -3,15 +3,15 @@
 	<app-listing-view [listing]="listing" />
 
 	<section class="listing-page__section">
-		<h2>Contact about this listing</h2>
+		<h2 translate>Contact about this listing</h2>
 		<app-request-form [listingId]="listing._id" />
 	</section>
 
 	<section class="listing-page__section">
-		<h2>Comments</h2>
+		<h2 translate>Comments</h2>
 		<app-comments-view targetType="listing" [targetId]="listing._id" />
 	</section>
 </div>
 } @else {
-<p>Listing not found.</p>
+<p translate>Listing not found.</p>
 }
