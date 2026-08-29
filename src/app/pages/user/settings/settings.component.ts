@@ -5,11 +5,13 @@ import {
 	inject,
 	signal,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormField, form, submit } from '@angular/forms/signals';
 import { UserService } from '@wawjs/ngx-bos';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { PasswordModule } from '@wawjs/ngx-prime/password';
+import { SelectModule } from '@wawjs/ngx-prime/select';
 import {
 	LanguageService,
 	TranslateDirective,
@@ -22,7 +24,7 @@ import { SecurityModel } from './settings.interface';
 import { securitySchema } from './settings.schema';
 
 @Component({
-	imports: [FormField, ButtonModule, PasswordModule, FieldErrorComponent, TranslateDirective],
+	imports: [FormField, FormsModule, ButtonModule, PasswordModule, SelectModule, FieldErrorComponent, TranslateDirective],
 	templateUrl: './settings.component.html',
 	styleUrl: './settings.component.scss',
 })
@@ -36,8 +38,6 @@ export class SettingsComponent {
 	languageFlagUrl(code: string): string {
 		return languageFlagUrl(code);
 	}
-
-	readonly isLanguageListOpen = signal(false);
 
 	readonly securityModel = signal<SecurityModel>({
 		currentPassword: '',
@@ -87,6 +87,5 @@ export class SettingsComponent {
 
 	setLanguage(code: string): void {
 		void this.translateService.setLanguage(code);
-		this.isLanguageListOpen.set(false);
 	}
 }
