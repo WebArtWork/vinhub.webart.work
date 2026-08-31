@@ -7,13 +7,13 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
-import { CarViewComponent } from '../../../car/car-view/car-view.component';
-import { CarService } from '../../../car/car.service';
-import { CommentsViewComponent } from '../../../comment/comments-view/comments-view.component';
-import { ListingShortComponent } from '../../../listing/listing-short/listing-short.component';
-import { ListingService } from '../../../listing/listing.service';
-import { RecordShortComponent } from '../../../record/record-short/record-short.component';
-import { RecordService } from '../../../record/record.service';
+import { CarViewComponent } from '../../../features/car/car-view/car-view.component';
+import { CarService } from '../../../features/car/car.service';
+import { CommentsViewComponent } from '../../../features/comment/comments-view/comments-view.component';
+import { ListingShortComponent } from '../../../features/listing/listing-short/listing-short.component';
+import { ListingService } from '../../../features/listing/listing.service';
+import { RecordShortComponent } from '../../../features/record/record-short/record-short.component';
+import { RecordService } from '../../../features/record/record.service';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

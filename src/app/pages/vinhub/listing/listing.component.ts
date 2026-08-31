@@ -7,10 +7,10 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { CommentsViewComponent } from '../../../comment/comments-view/comments-view.component';
-import { ListingViewComponent } from '../../../listing/listing-view/listing-view.component';
-import { ListingService } from '../../../listing/listing.service';
-import { RequestFormComponent } from '../../../request/request-form/request-form.component';
+import { CommentsViewComponent } from '../../../features/comment/comments-view/comments-view.component';
+import { ListingViewComponent } from '../../../features/listing/listing-view/listing-view.component';
+import { ListingService } from '../../../features/listing/listing.service';
+import { RequestFormComponent } from '../../../features/request/request-form/request-form.component';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

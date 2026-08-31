@@ -7,9 +7,9 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { CarService } from '../../../car/car.service';
-import { RecordViewComponent } from '../../../record/record-view/record-view.component';
-import { RecordService } from '../../../record/record.service';
+import { CarService } from '../../../features/car/car.service';
+import { RecordViewComponent } from '../../../features/record/record-view/record-view.component';
+import { RecordService } from '../../../features/record/record.service';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

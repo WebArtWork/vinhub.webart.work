@@ -7,9 +7,9 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { CommentsViewComponent } from '../../../comment/comments-view/comments-view.component';
-import { SalespersonViewComponent } from '../../../salesperson/salesperson-view/salesperson-view.component';
-import { SalespersonService } from '../../../salesperson/salesperson.service';
+import { CommentsViewComponent } from '../../../features/comment/comments-view/comments-view.component';
+import { SalespersonViewComponent } from '../../../features/salesperson/salesperson-view/salesperson-view.component';
+import { SalespersonService } from '../../../features/salesperson/salesperson.service';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({
