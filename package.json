@@ -26,7 +26,7 @@
 		"@wawjs/css-prime-themes": "^1.1.0",
 		"@wawjs/css-prime-utils": "^1.1.0",
 		"@wawjs/ngx-ace": "22.0.5",
-		"@wawjs/ngx-bos": "22.0.5",
+		"@wawjs/ngx-bos": "22.0.3",
 		"@wawjs/ngx-core": "22.0.5",
 		"@wawjs/ngx-crud": "22.0.5",
 		"@wawjs/ngx-fabric": "22.0.5",
