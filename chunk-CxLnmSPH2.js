@@ -1,0 +1,1 @@
+var t=[{path:``,loadComponent:()=>import(`./chunk-BGiED_Kt.js`).then(o=>o.ProfileComponent)}];export{t as routes};
