@@ -37,6 +37,21 @@ export const routes: Routes = [
 					),
 			},
 			{
+				path: 'feedback',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Feedback',
+						description: 'Share feedback or report a bug in VIN Hub.',
+						index: false,
+					},
+				},
+				loadChildren: () =>
+					import('./pages/user/feedback/feedback.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
 				path: 'share',
 				canActivate: [MetaGuard],
 				data: {
