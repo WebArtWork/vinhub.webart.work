@@ -11,9 +11,9 @@ import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { InputTextModule } from '@wawjs/ngx-prime/inputtext';
 import { SelectModule } from '@wawjs/ngx-prime/select';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
-import { CarService } from '../../../car/car.service';
-import { ListingCardComponent } from '../../../listing/listing-card/listing-card.component';
-import { ListingService } from '../../../listing/listing.service';
+import { CarService } from '../../../features/car/car.service';
+import { ListingCardComponent } from '../../../features/listing/listing-card/listing-card.component';
+import { ListingService } from '../../../features/listing/listing.service';
 
 @Component({
 	selector: 'app-explore',

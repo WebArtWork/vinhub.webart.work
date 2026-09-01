@@ -7,8 +7,8 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { PublicUserService } from '../../../user/user.service';
-import { UserViewComponent } from '../../../user/user-view/user-view.component';
+import { PublicUserService } from '../../../features/user/user.service';
+import { UserViewComponent } from '../../../features/user/user-view/user-view.component';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

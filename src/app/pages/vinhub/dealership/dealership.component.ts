@@ -7,11 +7,11 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { CommentsViewComponent } from '../../../comment/comments-view/comments-view.component';
-import { DealershipViewComponent } from '../../../dealership/dealership-view/dealership-view.component';
-import { DealershipService } from '../../../dealership/dealership.service';
-import { SalespersonShortComponent } from '../../../salesperson/salesperson-short/salesperson-short.component';
-import { SalespersonService } from '../../../salesperson/salesperson.service';
+import { CommentsViewComponent } from '../../../features/comment/comments-view/comments-view.component';
+import { DealershipViewComponent } from '../../../features/dealership/dealership-view/dealership-view.component';
+import { DealershipService } from '../../../features/dealership/dealership.service';
+import { SalespersonShortComponent } from '../../../features/salesperson/salesperson-short/salesperson-short.component';
+import { SalespersonService } from '../../../features/salesperson/salesperson.service';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

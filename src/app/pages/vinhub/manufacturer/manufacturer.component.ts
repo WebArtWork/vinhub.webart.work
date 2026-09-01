@@ -7,8 +7,8 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { ManufacturerViewComponent } from '../../../manufacturer/manufacturer-view/manufacturer-view.component';
-import { ManufacturerService } from '../../../manufacturer/manufacturer.service';
+import { ManufacturerViewComponent } from '../../../features/manufacturer/manufacturer-view/manufacturer-view.component';
+import { ManufacturerService } from '../../../features/manufacturer/manufacturer.service';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 
 @Component({

@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { filter, map, startWith } from 'rxjs';
 import { TranslateService } from '@wawjs/ngx-translate';
-import { CompanyService } from '../../company/company.service';
+import { CompanyService } from '../../features/company/company.service';
 import { NavIconComponent } from '../../shared/nav-icon/nav-icon.component';
 import { SidebarService } from '../sidebar/sidebar.service';
 

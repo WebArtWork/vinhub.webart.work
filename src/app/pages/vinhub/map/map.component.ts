@@ -8,7 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { TranslateDirective } from '@wawjs/ngx-translate';
-import { DealershipService } from '../../../dealership/dealership.service';
+import { DealershipService } from '../../../features/dealership/dealership.service';
 import {
 	LeafletMapComponent,
 	LeafletMapMarker,
