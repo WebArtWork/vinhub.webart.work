@@ -109,6 +109,15 @@
 
 	<app-nav-icon
 		[class.sidebar--minimized-icon]="!showNames()"
+		[name]="showNames() ? translateService.translate('For Service Centers')() : ''"
+		[ariaLabel]="translateService.translate('For Service Centers')()"
+		(click)="closeIfOverlay()"
+		routerLink="/for-service-centers"
+		icon="wrench"
+	/>
+
+	<app-nav-icon
+		[class.sidebar--minimized-icon]="!showNames()"
 		[name]="showNames() ? translateService.translate('Feedback')() : ''"
 		[ariaLabel]="translateService.translate('Feedback')()"
 		(click)="closeIfOverlay()"

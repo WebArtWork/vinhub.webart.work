@@ -1,0 +1,54 @@
+@if (showForm()) {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1 translate>Become a VIN Hub partner</h1>
+		</header>
+
+		<app-lead-form kind="service-center" [submitLabel]="translateService.translate('Send application')()" />
+	</div>
+} @else {
+	<div class="landing-page">
+		<header class="landing-page__hero">
+			<h1 translate>Grow your service center with VIN Hub</h1>
+			<p translate>
+				A service center profile that runs diagnostics, repairs, and inspections, and feeds every completed job
+				straight into a car's digital passport.
+			</p>
+			<button pButton type="button" (click)="showForm.set(true)" translate>Become a partner</button>
+		</header>
+
+		<section class="landing-page__section">
+			<h2 translate>How it works</h2>
+			<ul class="landing-page__list">
+				<li translate>Your service center profile appears in VIN Hub search.</li>
+				<li translate>Diagnostics, repairs, inspections, and maintenance you perform are logged as verified records.</li>
+				<li translate>Every completed job you submit is added directly to the car's digital passport.</li>
+				<li translate>Car owners see the update in their vehicle's history right away.</li>
+			</ul>
+		</section>
+
+		<section class="landing-page__section">
+			<h2 translate>Why VIN Hub</h2>
+			<p translate>
+				We build trust through transparency: verified service records give buyers and owners confidence in a car's
+				real maintenance history.
+			</p>
+		</section>
+
+		<section class="landing-page__section">
+			<h2 translate>Questions</h2>
+			<p-accordion [multiple]="true">
+				@for (item of faq; track item.question) {
+					<p-accordionpanel [value]="item.question">
+						<p-accordionheader>{{ item.question }}</p-accordionheader>
+						<p-accordioncontent>{{ item.answer }}</p-accordioncontent>
+					</p-accordionpanel>
+				}
+			</p-accordion>
+		</section>
+
+		<footer class="landing-page__cta">
+			<button pButton type="button" (click)="showForm.set(true)" translate>Become a partner</button>
+		</footer>
+	</div>
+}

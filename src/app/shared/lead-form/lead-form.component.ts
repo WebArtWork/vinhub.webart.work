@@ -5,13 +5,14 @@ import { TextareaModule } from '@wawjs/ngx-prime/textarea';
 import { ButtonModule } from '@wawjs/ngx-prime/button';
 import { ContactService } from '../../contact.service';
 
-export type LeadFormKind = 'user' | 'salesperson' | 'manufacturer' | 'dealership';
+export type LeadFormKind = 'user' | 'salesperson' | 'manufacturer' | 'dealership' | 'service-center';
 
 const KIND_LABELS: Record<LeadFormKind, string> = {
 	user: 'Buyer inquiry',
 	salesperson: 'Salesperson application',
 	manufacturer: 'Manufacturer application',
 	dealership: 'Dealership application',
+	'service-center': 'Service center application',
 };
 
 /** Inline lead-capture form used on the /for-* landing pages. Sends to the VIN Hub Telegram contact channel. */

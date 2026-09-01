@@ -15,7 +15,7 @@ export const environment = {
 		default: 'https://vinhub.webart.work/logo.png',
 		logo: 'https://vinhub.webart.work/logo.png',
 	},
-	defaultLanguageCode: 'ua',
+	defaultLanguageCode: 'en',
 	languages: [
 		{
 			code: 'ua',

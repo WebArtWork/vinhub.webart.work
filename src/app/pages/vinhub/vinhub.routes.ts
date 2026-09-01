@@ -69,6 +69,22 @@ export const vinhubRoutes: Routes = [
 			),
 	},
 	{
+		path: 'for-service-centers',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'For Service Centers',
+				description:
+					'Provide diagnostics, repairs, and inspections, and add verified records to the digital passport.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./for-service-centers/for-service-centers.component').then(
+				(m) => m.ForServiceCentersPageComponent,
+			),
+	},
+	{
 		path: 'feed',
 		canActivate: [MetaGuard],
 		data: {
