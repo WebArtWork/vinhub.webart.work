@@ -11,6 +11,11 @@ interface LandingScenario {
 	description: string;
 }
 
+interface LandingRole {
+	label: string;
+	link: string;
+}
+
 @Component({
 	selector: 'app-landing',
 	imports: [RouterLink, ButtonModule, CardModule, FooterComponent, TranslateDirective],
@@ -19,6 +24,14 @@ interface LandingScenario {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageComponent {
+	protected readonly roles: LandingRole[] = [
+		{ label: 'For buyers', link: '/for-users' },
+		{ label: 'For salespeople', link: '/for-salespeople' },
+		{ label: 'For dealerships', link: '/for-dealerships' },
+		{ label: 'For manufacturers', link: '/for-manufacturers' },
+		{ label: 'For service centers', link: '/for-service-centers' },
+	];
+
 	protected readonly scenarios: LandingScenario[] = [
 		{
 			icon: 'pi-question-circle',

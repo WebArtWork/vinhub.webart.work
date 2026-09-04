@@ -1,4 +1,4 @@
-import manufacturerData from '../../data/manufacturer/manufacturer.json';
+import manufacturerData from '../../../data/manufacturer/manufacturer.json';
 import { Manufacturer } from './manufacturer.interface';
 
 type RawManufacturer = Partial<Manufacturer>;

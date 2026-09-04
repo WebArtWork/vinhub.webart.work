@@ -1,4 +1,4 @@
-import salespersonData from '../../data/salesperson/salesperson.json';
+import salespersonData from '../../../data/salesperson/salesperson.json';
 import { Salesperson } from './salesperson.interface';
 
 type RawSalesperson = Partial<Salesperson>;

@@ -1,4 +1,4 @@
-import commentData from '../../data/comment/comment.json';
+import commentData from '../../../data/comment/comment.json';
 import { Comment, CommentTargetType } from './comment.interface';
 
 type RawComment = Partial<Comment>;

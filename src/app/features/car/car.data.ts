@@ -1,4 +1,4 @@
-import carData from '../../data/car/car.json';
+import carData from '../../../data/car/car.json';
 import {
 	Car,
 	CarCondition,

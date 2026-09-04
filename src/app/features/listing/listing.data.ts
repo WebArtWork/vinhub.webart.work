@@ -1,4 +1,4 @@
-import listingData from '../../data/listing/listing.json';
+import listingData from '../../../data/listing/listing.json';
 import {
 	Listing,
 	ListingKind,

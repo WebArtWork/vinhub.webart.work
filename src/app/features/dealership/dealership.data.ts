@@ -1,4 +1,4 @@
-import dealershipData from '../../data/dealership/dealership.json';
+import dealershipData from '../../../data/dealership/dealership.json';
 import { Dealership } from './dealership.interface';
 
 type RawDealership = Partial<Dealership>;

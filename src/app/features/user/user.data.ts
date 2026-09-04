@@ -1,4 +1,4 @@
-import userData from '../../data/user/user.json';
+import userData from '../../../data/user/user.json';
 import { PublicUser, PublicUserRole } from './user.interface';
 
 type RawUser = Partial<PublicUser>;

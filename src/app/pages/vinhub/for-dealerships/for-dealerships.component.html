@@ -34,8 +34,8 @@
 			<p-accordion [multiple]="true">
 				@for (item of faq; track item.question) {
 					<p-accordionpanel [value]="item.question">
-						<p-accordionheader>{{ item.question }}</p-accordionheader>
-						<p-accordioncontent>{{ item.answer }}</p-accordioncontent>
+						<p-accordionheader [panel]="$any(content)">{{ item.question }}</p-accordionheader>
+						<p-accordioncontent #content="ngAccordionPanel">{{ item.answer }}</p-accordioncontent>
 					</p-accordionpanel>
 				}
 			</p-accordion>

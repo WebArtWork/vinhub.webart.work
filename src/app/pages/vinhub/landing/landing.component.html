@@ -12,6 +12,12 @@
 				Sign in
 			</button>
 		</div>
+
+		<div class="landing__roles">
+			@for (role of roles; track role.link) {
+			<a pButton [outlined]="true" severity="secondary" [routerLink]="role.link" [translate]="role.label"></a>
+			}
+		</div>
 	</section>
 
 	<section class="landing__scenarios">
@@ -22,6 +28,42 @@
 			<p class="landing__scenario-description" [translate]="scenario.description"></p>
 		</p-card>
 		}
+	</section>
+
+	<section class="landing__pairs">
+		<div class="landing__pair">
+			<div class="landing__pair-card landing__pair-card--problem">
+				<span class="landing__badge landing__badge--secondary" translate>Familiar situation</span>
+				<p translate>
+					A dealership lists a used car as "one owner, no accidents." The buyer has no way to check —
+					so they haggle the price down anyway, just in case, or walk away over doubts alone.
+				</p>
+			</div>
+			<div class="landing__pair-card landing__pair-card--solution">
+				<span class="landing__badge landing__badge--primary" translate>How VIN Hub solves it</span>
+				<p translate>
+					The same car's digital passport shows verified service, repair, and ownership records up
+					front. Buyers see the real history before they even ask — no haggling over doubts.
+				</p>
+			</div>
+		</div>
+
+		<div class="landing__pair">
+			<div class="landing__pair-card landing__pair-card--problem">
+				<span class="landing__badge landing__badge--secondary" translate>Why a dealership would bother</span>
+				<p translate>
+					Building a track record with buyers one deal at a time is slow, and word of mouth
+					doesn't scale — every new buyer has to trust you from zero.
+				</p>
+			</div>
+			<div class="landing__pair-card landing__pair-card--solution">
+				<span class="landing__badge landing__badge--primary" translate>What keeping a passport gets you</span>
+				<p translate>
+					Every verified listing and closed sale builds your public dealership profile and rating —
+					so trust compounds across your whole inventory, not just one car at a time.
+				</p>
+			</div>
+		</div>
 	</section>
 </div>
 

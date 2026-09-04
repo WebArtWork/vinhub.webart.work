@@ -1,4 +1,4 @@
-import recordData from '../../data/record/record.json';
+import recordData from '../../../data/record/record.json';
 import { CarRecord, RecordType } from './record.interface';
 
 type RawRecord = Partial<CarRecord>;
