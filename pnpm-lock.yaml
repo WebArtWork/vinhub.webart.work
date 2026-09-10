@@ -89,6 +89,9 @@ importers:
       '@wawjs/ngx-translate':
         specifier: 22.0.6
         version: 22.0.6(f1a49631647c416b75f449c53e08cb6c)
+      ace-builds:
+        specifier: ^1.44.0
+        version: 1.44.0
       chart.js:
         specifier: ^4.5.1
         version: 4.5.1
