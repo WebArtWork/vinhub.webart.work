@@ -100,7 +100,52 @@ export const vinhubRoutes: Routes = [
 	{
 		path: 'explore',
 		pathMatch: 'full',
-		redirectTo: '',
+		redirectTo: 'cars',
+	},
+	{
+		path: 'cars',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'Cars',
+				description: 'Browse cars for sale and rent on VIN Hub.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./explore/explore.component').then(
+				(m) => m.ExplorePageComponent,
+			),
+	},
+	{
+		path: 'dealerships',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'Dealerships',
+				description: 'Browse dealerships partnered with VIN Hub.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./dealerships/dealerships.component').then(
+				(m) => m.DealershipsPageComponent,
+			),
+	},
+	{
+		path: 'manufacturers',
+		canActivate: [MetaGuard],
+		data: {
+			meta: {
+				title: 'Manufacturers',
+				description: 'Browse manufacturers listed on VIN Hub.',
+				image: vinhubSeoImage,
+			},
+		},
+		loadComponent: () =>
+			import('./manufacturers/manufacturers.component').then(
+				(m) => m.ManufacturersPageComponent,
+			),
 	},
 	{
 		path: 'map',

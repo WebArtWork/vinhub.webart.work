@@ -5,7 +5,14 @@ import { CardModule } from '@wawjs/ngx-prime/card';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 import { FooterComponent } from '../../../layouts/footer/footer.component';
 
-interface LandingScenario {
+interface LandingPillar {
+	icon: string;
+	title: string;
+	description: string;
+	link: string;
+}
+
+interface LandingFeature {
 	icon: string;
 	title: string;
 	description: string;
@@ -24,32 +31,52 @@ interface LandingRole {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageComponent {
-	protected readonly roles: LandingRole[] = [
-		{ label: 'For buyers', link: '/for-users' },
-		{ label: 'For salespeople', link: '/for-salespeople' },
-		{ label: 'For dealerships', link: '/for-dealerships' },
-		{ label: 'For manufacturers', link: '/for-manufacturers' },
-		{ label: 'For service centers', link: '/for-service-centers' },
+	/** The three pillars of the marketplace — what the platform actually connects. */
+	protected readonly pillars: LandingPillar[] = [
+		{
+			icon: 'pi-car',
+			title: 'Авто',
+			description: 'Оголошення про продаж і оренду з цифровим паспортом кожного авто.',
+			link: '/cars',
+		},
+		{
+			icon: 'pi-building',
+			title: 'Дилери',
+			description: 'Перевірені дилерські центри з публічним профілем і рейтингом.',
+			link: '/dealerships',
+		},
+		{
+			icon: 'pi-briefcase',
+			title: 'Виробники',
+			description: 'Каталоги моделей від виробників, підтверджені записами в паспорті.',
+			link: '/manufacturers',
+		},
 	];
 
-	protected readonly scenarios: LandingScenario[] = [
-		{
-			icon: 'pi-question-circle',
-			title: 'Buying a used car is a leap of faith',
-			description:
-				"The seller knows the car's real history. The buyer doesn't — accidents, repairs, and past owners are easy to hide or simply forget.",
-		},
+	protected readonly features: LandingFeature[] = [
 		{
 			icon: 'pi-shield',
-			title: 'One verified history, for everyone',
+			title: 'Цифровий паспорт',
 			description:
-				"VIN Hub's digital passport tracks every service, repair, accident, and ownership transfer for a car — so buyers and sellers are looking at the same facts.",
+				'Сервіс, ремонти, аварії та зміна власників — в одній перевіреній історії авто.',
 		},
 		{
-			icon: 'pi-users',
-			title: 'From listing to handshake, in one place',
-			description:
-				'Dealerships, salespeople, and private sellers list cars for sale or rent; buyers browse, ask questions, and reach out — without leaving VIN Hub.',
+			icon: 'pi-search',
+			title: 'Пошук за фактами',
+			description: 'Фільтруйте оголошення за маркою, моделлю та типом угоди — продаж або оренда.',
 		},
+		{
+			icon: 'pi-comments',
+			title: 'Прямий контакт',
+			description: 'Пишіть продавцю чи дилеру напряму з оголошення, без посередників.',
+		},
+	];
+
+	protected readonly roles: LandingRole[] = [
+		{ label: 'Для покупців', link: '/for-users' },
+		{ label: 'Для продавців', link: '/for-salespeople' },
+		{ label: 'Для дилерів', link: '/for-dealerships' },
+		{ label: 'Для виробників', link: '/for-manufacturers' },
+		{ label: 'Для сервісних центрів', link: '/for-service-centers' },
 	];
 }

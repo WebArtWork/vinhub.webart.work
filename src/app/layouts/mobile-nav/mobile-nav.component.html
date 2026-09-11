@@ -6,9 +6,25 @@
 	>
 		<li class="inline-flex flex-none items-center">
 			<app-nav-icon
-				routerLink="/"
+				routerLink="/cars"
 				[ariaLabel]="translateService.translate('Cars')()"
 				icon="car"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/dealerships"
+				[ariaLabel]="translateService.translate('Dealerships')()"
+				icon="building"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/manufacturers"
+				[ariaLabel]="translateService.translate('Manufacturers')()"
+				icon="briefcase"
 			/>
 		</li>
 
@@ -17,14 +33,6 @@
 				routerLink="/feed"
 				[ariaLabel]="translateService.translate('Feed')()"
 				icon="th-large"
-			/>
-		</li>
-
-		<li class="inline-flex flex-none items-center">
-			<app-nav-icon
-				routerLink="/"
-				[ariaLabel]="translateService.translate('Dealerships')()"
-				icon="shop"
 			/>
 		</li>
 

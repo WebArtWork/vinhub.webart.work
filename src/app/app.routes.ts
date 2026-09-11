@@ -17,8 +17,8 @@ export const routes: Routes = [
 				path: '',
 				pathMatch: 'full',
 				loadComponent: () =>
-					import('./pages/vinhub/explore/explore.component').then(
-						(m) => m.ExplorePageComponent,
+					import('./pages/vinhub/landing/landing.component').then(
+						(m) => m.LandingPageComponent,
 					),
 			},
 			{
