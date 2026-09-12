@@ -1,0 +1,1 @@
+import{X as Lo,ir as re}from"./chunk-LOPIX45B.js";import{z as c}from"./main-XEIXBL7H.js";var n=c;var A=(()=>{class o{constructor(){this.company=Lo(n)}static{this.ɵfac=function(c){return new(c||o)}}static{this.ɵprov=re({token:o,factory:o.ɵfac,providedIn:`root`})}}return o})();export{A as t};
